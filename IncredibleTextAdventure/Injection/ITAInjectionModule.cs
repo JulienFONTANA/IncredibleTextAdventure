@@ -1,8 +1,10 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.Directives.Action;
 using IncredibleTextAdventure.Directives.Move;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
+using IncredibleTextAdventure.Service.Context;
 using Ninject.Modules;
 
 namespace IncredibleTextAdventure.Injection
@@ -19,8 +21,16 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindDirectives()
         {
+            BindActionDirectives();
             BindMoveDirectives();
         }
+
+        private void BindActionDirectives()
+        {
+            Bind<IDirective>().To<HelpDirective>();
+            Bind<IDirective>().To<LookDirective>();
+        }
+
 
         private void BindMoveDirectives()
         {
@@ -38,6 +48,7 @@ namespace IncredibleTextAdventure.Injection
         private void BindService()
         {
             Bind<IITAService>().To<ITAService>();
+            Bind<IGameContext>().To<GameContext>();
         }
 
         private void BindConsole()

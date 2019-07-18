@@ -1,6 +1,5 @@
-﻿using IncredibleTextAdventure.Characters;
-using IncredibleTextAdventure.Directives;
-using IncredibleTextAdventure.ITAConsole;
+﻿using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Service.Context;
 using System;
 
 namespace IncredibleTextAdventure.Service
@@ -9,39 +8,29 @@ namespace IncredibleTextAdventure.Service
     {
         private readonly IConsoleReader _consoleReader;
         private readonly IConsoleWriter _consoleWriter;
-        private readonly IDirective[] _moveDirectives;
-        private readonly IPlayer _player;
+        private readonly IGameContext _gameContext;
 
         public ITAService(IConsoleReader consoleReader,
             IConsoleWriter consoleWriter,
-            IDirective[] moveDirectives,
-            IPlayer player)
+            IGameContext gameContext)
         {
             _consoleReader = consoleReader;
             _consoleWriter = consoleWriter;
-            _moveDirectives = moveDirectives;
-            _player = player;
+            _gameContext = gameContext;
         }
 
         public void Play()
         {
             bool inGame = true;
 
-            _consoleWriter.WriteToConsole("Hello there...");
+            _consoleWriter.WriteToConsole("You wake up with simple clothes in a small room. A lock [door] is in front of you. In a corner is a [table], with a [key] on it.");
             while (inGame)
             {
-                var line = _consoleReader.ReadLineFromConsole();
+                var cmd = _consoleReader.ReadLineFromConsole();
 
-                foreach (var move in _moveDirectives)
-                {
-                    if (move.CanApply(line))
-                    {
-                        move.Execute(_player);
-                        _player.Info();
-                    }
-                }
+                _gameContext.Command(cmd);
 
-                if (line.Equals("exit", StringComparison.OrdinalIgnoreCase))
+                if (cmd.Equals("exit", StringComparison.OrdinalIgnoreCase))
                 {
                     inGame = false;
                 }

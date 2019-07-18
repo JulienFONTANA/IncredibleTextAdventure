@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directives\Action\HelpDirective.cs" />
+    <Compile Include="Directives\Action\LookDirective.cs" />
     <Compile Include="ITAConsole\ConsoleWriter.cs" />
     <Compile Include="ITAConsole\IConsoleWriter.cs" />
     <Compile Include="Directives\IDirective.cs" />
@@ -63,9 +65,16 @@
     <Compile Include="Injection\ITAInjectionModule.cs" />
     <Compile Include="Characters\IPlayer.cs" />
     <Compile Include="Characters\Player.cs" />
+    <Compile Include="Items\Table.cs" />
+    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Items\Door.cs" />
+    <Compile Include="Items\Key.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITAConsole\IConsoleReader.cs" />
     <Compile Include="ITAConsole\ConsoleReader.cs" />
+    <Compile Include="Service\Context\GameContext.cs" />
+    <Compile Include="Service\Context\IGameContext.cs" />
     <Compile Include="Service\IITAService.cs" />
     <Compile Include="Service\ITAService.cs" />
   </ItemGroup>

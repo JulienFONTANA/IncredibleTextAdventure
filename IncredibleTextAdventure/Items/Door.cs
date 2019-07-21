@@ -6,6 +6,7 @@
         {
             Name = "Door";
             Description = "It looks like a cell door. What might be on the other side ?";
+            CanBePickedUp = false;
         }
     }
 }

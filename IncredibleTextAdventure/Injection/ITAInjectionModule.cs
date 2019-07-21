@@ -22,6 +22,8 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<LookDirective>();
             Bind<IDirective>().To<MoveDirective>();
             Bind<IDirective>().To<HelpDirective>();
+            Bind<IDirective>().To<PickDirective>();
+            Bind<IDirective>().To<InventoryDirective>();
         }
 
         private void BindPlayer()

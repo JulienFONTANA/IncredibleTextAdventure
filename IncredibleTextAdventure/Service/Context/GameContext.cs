@@ -9,7 +9,6 @@ namespace IncredibleTextAdventure.Service.Context
     {
         // TODO - Right now, Context contains all items. I'll have to introduce "rooms" or something
         public List<IItem> AllItems { get; set; }
-
         public IPlayer Player { get; set; }
 
         private readonly IDirective[] _directives;

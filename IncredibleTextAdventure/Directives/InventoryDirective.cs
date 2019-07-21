@@ -4,12 +4,12 @@ using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
 {
-    public class HelpDirective : IDirective
+    public class InventoryDirective : IDirective
     {
         private IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(Help)";
+        private const string CmdPattern = @"^(Inventory)";
 
-        public HelpDirective(IConsoleWriter consoleWriter)
+        public InventoryDirective(IConsoleWriter consoleWriter)
         {
             _consoleWriter = consoleWriter;
         }
@@ -21,7 +21,7 @@ namespace IncredibleTextAdventure.Directives
 
         public void TryApply(string cmd, GameContext context)
         {
-            _consoleWriter.WriteToConsole("TODO : Write help !");
+            _consoleWriter.WriteToConsole($"{context.Player.DisplayInventory()}");
         }
     }
 }

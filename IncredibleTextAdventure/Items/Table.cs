@@ -6,6 +6,7 @@
         {
             Name = "Table";
             Description = "A wooden table. Of course, one of the legs is shorter.";
+            CanBePickedUp = false;
         }
     }
 }

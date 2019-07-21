@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directives\InventoryDirective.cs" />
     <Compile Include="Directives\HelpDirective.cs" />
+    <Compile Include="Directives\PickDirective.cs" />
     <Compile Include="Directives\LookDirective.cs" />
     <Compile Include="Directives\MoveDirective.cs" />
     <Compile Include="ITAConsole\ConsoleWriter.cs" />

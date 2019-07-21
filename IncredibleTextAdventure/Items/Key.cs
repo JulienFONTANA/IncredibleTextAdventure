@@ -6,6 +6,7 @@
         {
             Name = "Key";
             Description = "A rusty copper key, green and heavy !";
+            CanBePickedUp = true;
         }
     }
 }

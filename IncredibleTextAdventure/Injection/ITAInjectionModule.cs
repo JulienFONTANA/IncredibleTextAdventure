@@ -1,7 +1,5 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
-using IncredibleTextAdventure.Directives.Action;
-using IncredibleTextAdventure.Directives.Move;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -21,23 +19,9 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindDirectives()
         {
-            BindActionDirectives();
-            BindMoveDirectives();
-        }
-
-        private void BindActionDirectives()
-        {
-            Bind<IDirective>().To<HelpDirective>();
             Bind<IDirective>().To<LookDirective>();
-        }
-
-
-        private void BindMoveDirectives()
-        {
-            Bind<IDirective>().To<MoveNorthDirective>();
-            Bind<IDirective>().To<MoveSouthDirective>();
-            Bind<IDirective>().To<MoveEastDirective>();
-            Bind<IDirective>().To<MoveWestDirective>();
+            Bind<IDirective>().To<MoveDirective>();
+            Bind<IDirective>().To<HelpDirective>();
         }
 
         private void BindPlayer()

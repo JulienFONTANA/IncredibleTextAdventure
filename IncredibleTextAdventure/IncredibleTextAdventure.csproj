@@ -53,15 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directives\Action\HelpDirective.cs" />
-    <Compile Include="Directives\Action\LookDirective.cs" />
+    <Compile Include="Directives\HelpDirective.cs" />
+    <Compile Include="Directives\LookDirective.cs" />
+    <Compile Include="Directives\MoveDirective.cs" />
     <Compile Include="ITAConsole\ConsoleWriter.cs" />
     <Compile Include="ITAConsole\IConsoleWriter.cs" />
     <Compile Include="Directives\IDirective.cs" />
-    <Compile Include="Directives\Move\MoveEastDirective.cs" />
-    <Compile Include="Directives\Move\MoveNorthDirective.cs" />
-    <Compile Include="Directives\Move\MoveSouthDirective.cs" />
-    <Compile Include="Directives\Move\MoveWestDirective.cs" />
     <Compile Include="Injection\ITAInjectionModule.cs" />
     <Compile Include="Characters\IPlayer.cs" />
     <Compile Include="Characters\Player.cs" />

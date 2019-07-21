@@ -8,15 +8,17 @@ namespace IncredibleTextAdventure.Service.Context
     public class GameContext : IGameContext
     {
         // TODO - Right now, Context contains all items. I'll have to introduce "rooms" or something
-        private readonly List<IItem> _allItems;
+        public List<IItem> AllItems { get; set; }
+
+        public IPlayer Player { get; set; }
+
         private readonly IDirective[] _directives;
-        private readonly IPlayer _player;
 
         public GameContext(IPlayer player,
             IDirective[] directives)
         {
-            _player = player;
-            _allItems = new List<IItem>
+            Player = player;
+            AllItems = new List<IItem>
             {
                 new Key(),
                 new Door(),
@@ -31,8 +33,8 @@ namespace IncredibleTextAdventure.Service.Context
             {
                 if (action.CanApply(cmd))
                 {
-                    action.Execute(_player);
-                    _player.Info();
+                    action.TryApply(cmd, this);
+                    Player.Info();
                 }
             }
         }

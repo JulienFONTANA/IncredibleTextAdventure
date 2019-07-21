@@ -1,10 +1,10 @@
-﻿using IncredibleTextAdventure.Characters;
+﻿using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
 {
     public interface IDirective
     {
-        void Execute(IPlayer player);
         bool CanApply(string cmd);
+        void TryApply(string cmd, GameContext context);
     }
 }

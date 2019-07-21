@@ -54,6 +54,11 @@ namespace IncredibleTextAdventure.Characters
             }
         }
 
+        public IItem GetItemFromInventory(string name)
+        {
+            return Inventory.FirstOrDefault(item => item.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+        }
+
         public void Info()
         {
             ConsoleWriter.WriteToConsole($"Player coordinates are {yCoord}°N - {xCoord}°E");

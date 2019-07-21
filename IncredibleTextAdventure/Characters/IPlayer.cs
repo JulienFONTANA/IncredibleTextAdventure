@@ -11,5 +11,6 @@ namespace IncredibleTextAdventure.Characters
         bool UseFromInventory(IItem item);
         string DisplayInventory();
         void Info();
+        IItem GetItemFromInventory(string name);
     }
 }

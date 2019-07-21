@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
 
@@ -17,13 +18,15 @@ namespace IncredibleTextAdventure.Service.Context
             IDirective[] directives)
         {
             Player = player;
+            _directives = directives;
+
+            // TODO - rework, that's ugly
             AllItems = new List<IItem>
             {
                 new Key(),
                 new Door(),
                 new Table()
             };
-            _directives = directives;
         }
 
         public void Command(string cmd)
@@ -33,7 +36,7 @@ namespace IncredibleTextAdventure.Service.Context
                 if (action.CanApply(cmd))
                 {
                     action.TryApply(cmd, this);
-                    Player.Info();
+                    //Player.Info();
                 }
             }
         }

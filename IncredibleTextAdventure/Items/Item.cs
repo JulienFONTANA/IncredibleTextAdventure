@@ -5,5 +5,8 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public bool CanBePickedUp { get; set; }
+
+        public abstract bool CanInteractWith(string other);
+        public abstract void InteractWith(IItem objectToUse);
     }
 }

@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Directives
     public class PickDirective : IDirective
     {
         private IConsoleWriter _consoleWriter;
-                private const string CmdPattern = @"^(pick|get|take)";
+        private const string CmdPattern = @"^(pick|get|take)";
         private const string FullPattern = @"^(pick|get|take)[ \t]?(the|up)?[ \t]?(?<capture>(.*))";
 
         public PickDirective(IConsoleWriter consoleWriter)

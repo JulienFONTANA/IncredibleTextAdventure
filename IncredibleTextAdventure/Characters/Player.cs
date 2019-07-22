@@ -26,7 +26,7 @@ namespace IncredibleTextAdventure.Characters
         public void AddToInventory (IItem item)
         {
             Inventory.Add(item);
-            ConsoleWriter.WriteToConsole($"Added {item.Name} to your inventory !");
+            ConsoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
         }
 
         public bool UseFromInventory(IItem item)
@@ -35,7 +35,7 @@ namespace IncredibleTextAdventure.Characters
             {
                 return Inventory.Remove(item);
             }
-            throw new ArgumentException($"Item {item.Name} doesn't belong to player inventory !");
+            throw new ArgumentException($"Item [{item.Name}] doesn't belong to player inventory !");
         }
 
         public string DisplayInventory()

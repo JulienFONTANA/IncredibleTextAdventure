@@ -5,7 +5,7 @@
         public Key()
         {
             Name = "Key";
-            Description = "A rusty copper key, green and heavy !";
+            Description = "A rusty copper [key], green and heavy !";
             CanBePickedUp = true;
         }
 

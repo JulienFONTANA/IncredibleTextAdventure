@@ -5,7 +5,7 @@
         public Table()
         {
             Name = "Table";
-            Description = "A wooden table. Of course, one of the legs is shorter.";
+            Description = "A crude wooden [table]. Of course, one of the legs is shorter.";
             CanBePickedUp = false;
         }
 

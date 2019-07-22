@@ -39,20 +39,20 @@ namespace IncredibleTextAdventure.Directives
                 var objectToUse = context.Player.GetItemFromInventory(sourceObj);
                 if (ReferenceEquals(objectToUse, null))
                 {
-                    _consoleWriter.WriteToConsole("What are you trying to use? Is the object in your inventory?");
+                    _consoleWriter.WriteToConsole("What are you trying to [use]? Is the object in your [inventory]?");
                     return;
                 }
 
                 var objectToUseOn = context.AllItems.FirstOrDefault(i => i.Name.Equals(targetObj, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(objectToUseOn, null))
                 {
-                    _consoleWriter.WriteToConsole($"What are you trying to use {objectToUse.Name} on?");
+                    _consoleWriter.WriteToConsole($"What are you trying to use [{objectToUse.Name}] on?");
                     return;
                 }
 
                 if (!objectToUseOn.CanInteractWith(sourceObj))
                 {
-                    _consoleWriter.WriteToConsole($"You can't use {objectToUse.Name} on {objectToUseOn.Name} !!!");
+                    _consoleWriter.WriteToConsole($"You can't use [{objectToUse.Name}] on [{objectToUseOn.Name}] !!!");
                     return;
                 }
 

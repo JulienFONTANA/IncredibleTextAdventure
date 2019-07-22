@@ -1,30 +1,64 @@
 ﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace IncredibleTextAdventure.ITAConsole
 {
     public class ConsoleWriter : IConsoleWriter
     {
+        const int splitLength = 80;
+
         public void WriteToConsole(string text)
         {
-            if (text.Length > 80)
+            if (text.Length > splitLength)
             {
-                var split = SpliceText(text, 80);
-                foreach (var chunk in split)
-                {
-                    Console.WriteLine(chunk);
-                }
+                SpliceText(text);
             }
             else
             {
-                Console.WriteLine(text);
+                ColorDisplay(text);
+            }
+            Console.WriteLine();
+        }
+
+        private void SpliceText(string text)
+        {
+            int index = 0;
+            int lastIndex = 0;
+            while (true)
+            {
+                var split = text.Substring(index, splitLength);
+                var lastWhiteSpace = split.LastIndexOf(' ');
+                var displayText = text.Substring(index, lastWhiteSpace).Trim();
+                ColorDisplay(displayText);
+                index = lastIndex + lastWhiteSpace;
+                lastIndex = index;
+                if (index + splitLength > text.Length)
+                {
+                    var lastDisplay = text.Substring(index).Trim();
+                    ColorDisplay(lastDisplay);
+                    break;
+                }
             }
         }
 
-        private static string[] SpliceText(string text, int lineLength)
+        private void ColorDisplay(string text)
         {
-            return Regex.Matches(text, ".{1," + lineLength + "}").Cast<Match>().Select(m => m.Value).ToArray();
+            foreach (var c in text)
+            {
+                if (c.Equals('['))
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    continue;
+                }
+                if (c.Equals(']'))
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    continue;
+                }
+
+                Console.Write(c);
+            }
+
+            Console.WriteLine();
         }
     }
 }

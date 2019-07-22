@@ -19,11 +19,16 @@ namespace IncredibleTextAdventure.Service
             _gameContext = gameContext;
         }
 
+        // TODO - move this
+        private const string introTextToPutSomewhereElse = @"You wake up with simple clothes in a small room. The walls are grey and smooth. "
+                            + "Your eyes slowly gets used to darkness, and the shape of a [door] starts to form in front of you. In a corner "
+                            + "is a small [table], made of crude wood. A metal [key] was put here on display.";
+
         public void Play()
         {
             bool inGame = true;
 
-            _consoleWriter.WriteToConsole("You wake up with simple clothes in a small room. A lock [door] is in front of you. In a corner is a [table], with a [key] on it.");
+            _consoleWriter.WriteToConsole(introTextToPutSomewhereElse);
             while (inGame)
             {
                 var cmd = _consoleReader.ReadLineFromConsole();

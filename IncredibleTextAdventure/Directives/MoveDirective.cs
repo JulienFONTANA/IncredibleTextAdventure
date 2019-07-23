@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Directives
     {
         private IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(move|go)";
-        private const string FullPattern = @"^(move|go)[ \t]?(?<capture>(.*))";
+        private const string FullPattern = @"^(move|go)[ \t]?(?<capture>(\w.*))";
 
         public MoveDirective(IConsoleWriter consoleWriter)
         {

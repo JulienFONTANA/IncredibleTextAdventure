@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Directives
     {
         private IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(use)";
-        private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
+        private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(\w.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(\w.*))";
 
         public UseDirective(IConsoleWriter consoleWriter)
         {
@@ -28,8 +28,8 @@ namespace IncredibleTextAdventure.Directives
             if (match.Success)
             {
                 // TODO - not that great...
-                var sourceObj = match.Groups["sourceObj"]?.Value.Trim();
-                var targetObj = match.Groups["targetObj"]?.Value.Trim();
+                var sourceObj = match.Groups["sourceObj"]?.Value;
+                var targetObj = match.Groups["targetObj"]?.Value;
 
                 if (ReferenceEquals(sourceObj, null) || ReferenceEquals(targetObj, null))
                 {

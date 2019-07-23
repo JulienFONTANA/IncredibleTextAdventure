@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Directives
     {
         private IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(look)";
-        private const string FullPattern = @"^(look)[ \t]?(at|the)?[ \t]?(?<capture>(.*))";
+        private const string FullPattern = @"^(look)[ \t]?(at|the)?[ \t]?(?<capture>(\w.*))";
 
         public LookDirective(IConsoleWriter consoleWriter)
         {

@@ -6,8 +6,8 @@ namespace IncredibleTextAdventure.Directives
 {
     public class WhereDirective : IDirective
     {
-        private IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(Where)[ \t]?(am I ?)?";
+        private readonly IConsoleWriter _consoleWriter;
+        private const string CmdPattern = @"^(Where)[ \t]?(am I \?)?";
 
         public WhereDirective(IConsoleWriter consoleWriter)
         {

@@ -4,12 +4,12 @@ using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
 {
-    public class InventoryDirective : IDirective
+    public class DrinkDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(Inventory)";
+        private const string CmdPattern = @"^(Drink)[ \t]?(from fountain)?";
 
-        public InventoryDirective(IConsoleWriter consoleWriter)
+        public DrinkDirective(IConsoleWriter consoleWriter)
         {
             _consoleWriter = consoleWriter;
         }
@@ -21,7 +21,7 @@ namespace IncredibleTextAdventure.Directives
 
         public void TryApply(string cmd, GameContext context)
         {
-            _consoleWriter.WriteToConsole($"{context.GetPlayer().DisplayInventory()}");
+            _consoleWriter.WriteToConsole($"You try to drink from the fountain, but alas, it's empty !");
         }
     }
 }

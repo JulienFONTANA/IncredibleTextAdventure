@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Items;
 
 namespace IncredibleTextAdventure.Rooms
@@ -12,6 +13,7 @@ namespace IncredibleTextAdventure.Rooms
 
         List<IItem> GetItemsInRoom();
         List<string> GetLinkedRooms();
+        List<IDirective> GetSpecialDirectives();
         bool IsFirstTimePlayerEntersRoom();
         void SetFirstTimeFalse();
         void RemoveItemFromRoom(IItem itemToRemove);

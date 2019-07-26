@@ -1,4 +1,6 @@
-﻿using IncredibleTextAdventure.Items;
+﻿using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
 
 namespace IncredibleTextAdventure.Rooms
@@ -21,6 +23,12 @@ namespace IncredibleTextAdventure.Rooms
             {
                 new Flowers(),
                 new Fountain()
+            };
+
+            SpecialDirectives = new List<IDirective>
+            {
+                // TODO - rework
+                new DrinkDirective(new ConsoleWriter())
             };
         }
     }

@@ -7,8 +7,8 @@ namespace IncredibleTextAdventure.Items
         public Flowers()
         {
             Name = "Flowers";
-            Description = "Magnificent flowers. You don't really want to pick them up...";
-            CanBePickedUp = false;
+            Description = "Magnificent flowers. The petals looks almost as if made of colorfull glass...";
+            CanBePickedUp = true;
         }
 
         public override bool CanInteractWith(string other)

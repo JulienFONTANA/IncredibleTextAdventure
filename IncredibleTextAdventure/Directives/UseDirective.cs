@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Directives
 {
     public class UseDirective : IDirective
     {
-        private IConsoleWriter _consoleWriter;
+        private readonly IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(use)";
         private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
 

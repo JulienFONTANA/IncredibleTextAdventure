@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Directives
 {
     public class MoveDirective : IDirective
     {
-        private IConsoleWriter _consoleWriter;
+        private readonly IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(move|go)";
         private const string FullPattern = @"^(move|go)[ \t]?(to)?[ \t]?(?<capture>(.*))";
 
@@ -30,23 +30,22 @@ namespace IncredibleTextAdventure.Directives
                 var capture = match.Groups["capture"].Value.Trim();
 
                 var currentRoom = context.GetCurrentRoom();
+                if (capture.Equals(currentRoom.Name))
+                {
+                    _consoleWriter.WriteToConsole($"You are already in the {capture}.");
+                }
+
                 var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Equals(capture, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(roomToGo, null))
                 {
                     _consoleWriter.WriteToConsole("You can't go there.");
+                    return;
                 }
 
                 var nextRoom = context.GetRoom(roomToGo);
                 if (ReferenceEquals(nextRoom, null))
                 {
-                    if (roomToGo.Equals(currentRoom))
-                    {
-                        _consoleWriter.WriteToConsole($"You are already in the {roomToGo}.");
-                    }
-                    else
-                    {
-                        _consoleWriter.WriteToConsole("You can't go there.");
-                    }
+                    _consoleWriter.WriteToConsole("You can't go there.");
                 }
                 else if (!context.GetRoom(roomToGo).IsAccessible)
                 {

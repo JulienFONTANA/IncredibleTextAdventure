@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Directives
 {
     public class LookDirective : IDirective
     {
-        private IConsoleWriter _consoleWriter;
+        private readonly IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(look)";
         private const string FullPattern = @"^(look)[ \t]?(at)?[ \t]?(the)?(?<capture>(.*))";
 

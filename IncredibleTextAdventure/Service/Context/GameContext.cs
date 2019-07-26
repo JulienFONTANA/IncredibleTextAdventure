@@ -43,6 +43,18 @@ namespace IncredibleTextAdventure.Service.Context
                     foundAction = true;
                 }
             }
+            var specialDirectives = GetCurrentRoom().GetSpecialDirectives();
+            if (specialDirectives.Any())
+            {
+                foreach (var action in specialDirectives)
+                {
+                    if (action.CanApply(cmd))
+                    {
+                        action.TryApply(cmd, this);
+                        foundAction = true;
+                    }
+                }
+            }
             if (!foundAction)
             {
                 _consoleWriter.WriteToConsole("You can't do that...");
@@ -68,7 +80,7 @@ namespace IncredibleTextAdventure.Service.Context
         private bool CheckExitGame()
         {
             _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? Exit is not a valid in game command. "
-                            + "If you want to exit the game, press 'Y'");
+                                        + "If you want to exit the game, press 'Y'");
             var answer = _consoleReader.ReadLineFromConsole();
             if (answer.Trim().Equals("Y", System.StringComparison.OrdinalIgnoreCase))
             {

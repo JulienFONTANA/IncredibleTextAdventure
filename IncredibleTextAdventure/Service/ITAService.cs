@@ -1,6 +1,5 @@
 ﻿using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
-using System;
 
 namespace IncredibleTextAdventure.Service
 {
@@ -27,15 +26,10 @@ namespace IncredibleTextAdventure.Service
             while (inGame)
             {
                 var cmd = _consoleReader.ReadLineFromConsole();
-                if (!string.IsNullOrEmpty(cmd))
-                {
-                    _gameContext.Command(cmd);
+                if (string.IsNullOrEmpty(cmd))
+                    continue;
 
-                    if (cmd.Equals("exit", StringComparison.OrdinalIgnoreCase))
-                    {
-                        inGame = false;
-                    }
-                }
+                inGame = !_gameContext.Command(cmd);
             }
         }
 

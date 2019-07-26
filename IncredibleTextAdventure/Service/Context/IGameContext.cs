@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Service.Context
         // TODO - make this private ?
         IPlayer Player { get; set; }
 
-        void Command(string cmd);
+        bool Command(string cmd);
         IRoom GetCurrentRoom();
         IRoom GetRoom(string room);
     }

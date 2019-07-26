@@ -42,7 +42,8 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                context.Player.AddToInventory(objToPickUp);
+                context.GetPlayer().AddToInventory(objToPickUp);
+                context.GetCurrentRoom().RemoveItemFromRoom(objToPickUp);
             }
         }
     }

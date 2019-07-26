@@ -35,8 +35,8 @@ namespace IncredibleTextAdventure.Service
 
         private void InitGame()
         {
-            var room = _gameContext.GetRoom(_gameContext.Player.GetPlayerLocalisation());
-            room.IsFirstTime = false;
+            var room = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerLocalisation());
+            room.SetFirstTimeFalse();
             _consoleWriter.WriteToConsole(room.FirstDescription);
         }
     }

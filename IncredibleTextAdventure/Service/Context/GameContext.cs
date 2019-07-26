@@ -8,8 +8,7 @@ namespace IncredibleTextAdventure.Service.Context
 {
     public class GameContext : IGameContext
     {
-        public IPlayer Player { get; set; }
-
+        private readonly IPlayer _player;
         private readonly IConsoleWriter _consoleWriter;
         private readonly IConsoleReader _consoleReader;
         private readonly IDirective[] _directives;
@@ -21,7 +20,7 @@ namespace IncredibleTextAdventure.Service.Context
             IDirective[] directives,
             IRoom[] rooms)
         {
-            Player = player;
+            _player = player;
             _consoleWriter = consoleWriter;
             _consoleReader = consoleReader;
             _directives = directives;
@@ -53,12 +52,17 @@ namespace IncredibleTextAdventure.Service.Context
 
         public IRoom GetCurrentRoom()
         {
-            return _rooms.FirstOrDefault(r => r.Name.Equals(Player.GetPlayerLocalisation(), System.StringComparison.OrdinalIgnoreCase));
+            return _rooms.FirstOrDefault(r => r.Name.Equals(GetPlayer().GetPlayerLocalisation(), System.StringComparison.OrdinalIgnoreCase));
         }
 
         public IRoom GetRoom(string room)
         {
             return _rooms.FirstOrDefault(r => r.Name.Equals(room, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        public IPlayer GetPlayer()
+        {
+            return _player;
         }
 
         private bool CheckExitGame()

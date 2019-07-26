@@ -21,7 +21,7 @@ namespace IncredibleTextAdventure.Directives
 
         public void TryApply(string cmd, GameContext context)
         {
-            _consoleWriter.WriteToConsole($"{context.Player.DisplayInventory()}");
+            _consoleWriter.WriteToConsole($"{context.GetPlayer().DisplayInventory()}");
         }
     }
 }

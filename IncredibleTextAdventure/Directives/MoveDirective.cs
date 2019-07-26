@@ -29,13 +29,26 @@ namespace IncredibleTextAdventure.Directives
             {
                 var capture = match.Groups["capture"].Value.Trim();
 
-                var roomToGo = context.GetCurrentRoom().GetLinkedRooms().FirstOrDefault(x => x.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var currentRoom = context.GetCurrentRoom();
+                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Equals(capture, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(roomToGo, null))
                 {
                     _consoleWriter.WriteToConsole("You can't go there.");
                 }
 
-                if (!context.GetRoom(roomToGo).IsAccessible)
+                var nextRoom = context.GetRoom(roomToGo);
+                if (ReferenceEquals(nextRoom, null))
+                {
+                    if (roomToGo.Equals(currentRoom))
+                    {
+                        _consoleWriter.WriteToConsole($"You are already in the {roomToGo}.");
+                    }
+                    else
+                    {
+                        _consoleWriter.WriteToConsole("You can't go there.");
+                    }
+                }
+                else if (!context.GetRoom(roomToGo).IsAccessible)
                 {
                     _consoleWriter.WriteToConsole($"You can't access {roomToGo} !");
                 }
@@ -53,7 +66,7 @@ namespace IncredibleTextAdventure.Directives
         private void MoveToRoom(GameContext context, string roomToGo)
         {
             var room = context.GetRoom(roomToGo);
-            context.Player.SetPlayerLocalisation(roomToGo);
+            context.GetPlayer().SetPlayerLocalisation(roomToGo);
             if (room.IsFirstTimePlayerEntersRoom())
             {
                 _consoleWriter.WriteToConsole(room.FirstDescription);

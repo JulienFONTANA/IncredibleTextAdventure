@@ -35,7 +35,7 @@ namespace IncredibleTextAdventure.Directives
                     _consoleWriter.WriteToConsole("What are trying to do?");
                 }
 
-                var objectToUse = context.Player.GetItemFromInventory(sourceObj);
+                var objectToUse = context.GetPlayer().GetItemFromInventory(sourceObj);
                 if (ReferenceEquals(objectToUse, null))
                 {
                     _consoleWriter.WriteToConsole("What are you trying to [use]? Is the object in your [inventory]?");
@@ -54,10 +54,9 @@ namespace IncredibleTextAdventure.Directives
                     _consoleWriter.WriteToConsole($"You can't use [{objectToUse.Name}] on [{objectToUseOn.Name}] !!!");
                     return;
                 }
-
-                // Add object
+                
                 objectToUseOn.InteractWith(context);
-                context.Player.UseFromInventory(objectToUse);
+                context.GetPlayer().UseFromInventory(objectToUse);
             }
         }
     }

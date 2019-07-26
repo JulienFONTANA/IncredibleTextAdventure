@@ -1,17 +1,16 @@
 ﻿using IncredibleTextAdventure.Items;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public abstract class Room : IRoom
     {
         public string Name { get; set; }
-        public string FirstDescription { get; set; }
         public string Description { get; set; }
         public bool IsAccessible { get; set; }
-        public bool IsFirstTime { get; set; }
+        public string FirstDescription { get; set; }
+
+        protected bool IsFirstTime { get; set; }
         protected List<string> LinkedRooms { get; set; }
         protected List<IItem> ItemsInRoom { get; set; }
 
@@ -32,10 +31,15 @@ namespace IncredibleTextAdventure.Rooms
         {
             if (IsFirstTime)
             {
-                IsFirstTime = false;
+                SetFirstTimeFalse();
                 return true;
             }
             return false;
+        }
+
+        public void SetFirstTimeFalse()
+        {
+            IsFirstTime = false;
         }
 
         public List<IItem> GetItemsInRoom()
@@ -43,17 +47,9 @@ namespace IncredibleTextAdventure.Rooms
             return ItemsInRoom;
         }
 
-        public void RemoveItemFromRoom(string itemName)
+        public void RemoveItemFromRoom(IItem itemToRemove)
         {
-            var itemToRemove = ItemsInRoom.FirstOrDefault(x => x.CanBePickedUp && x.Name == itemName);
-            if (true)
-            {
-                ItemsInRoom.Remove(itemToRemove);
-            }
-            else
-            {
-                throw new ArgumentException($"Cannot remove {itemName} from {Name} !");
-            }
+            ItemsInRoom.Remove(itemToRemove);
         }
     }
 }

@@ -5,15 +5,15 @@ namespace IncredibleTextAdventure.Rooms
 {
     public interface IRoom
     {
-        string Description { get; set; }
         string FirstDescription { get; set; }
+        string Description { get; set; }
         bool IsAccessible { get; set; }
-        bool IsFirstTime { get; set; }
         string Name { get; set; }
 
         List<IItem> GetItemsInRoom();
         List<string> GetLinkedRooms();
         bool IsFirstTimePlayerEntersRoom();
-        void RemoveItemFromRoom(string itemName);
+        void SetFirstTimeFalse();
+        void RemoveItemFromRoom(IItem itemToRemove);
     }
 }

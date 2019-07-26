@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Directives
     {
         private IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(use)";
-        private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(\w.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(\w.*))";
+        private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
 
         public UseDirective(IConsoleWriter consoleWriter)
         {
@@ -27,9 +27,8 @@ namespace IncredibleTextAdventure.Directives
             var match = Regex.Match(cmd, FullPattern, RegexOptions.IgnoreCase);
             if (match.Success)
             {
-                // TODO - not that great...
-                var sourceObj = match.Groups["sourceObj"]?.Value;
-                var targetObj = match.Groups["targetObj"]?.Value;
+                var sourceObj = match.Groups["sourceObj"]?.Value.Trim();
+                var targetObj = match.Groups["targetObj"]?.Value.Trim();
 
                 if (ReferenceEquals(sourceObj, null) || ReferenceEquals(targetObj, null))
                 {
@@ -43,7 +42,7 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                var objectToUseOn = context.AllItems.FirstOrDefault(i => i.Name.Equals(targetObj, StringComparison.OrdinalIgnoreCase));
+                var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(targetObj, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(objectToUseOn, null))
                 {
                     _consoleWriter.WriteToConsole($"What are you trying to use [{objectToUse.Name}] on?");
@@ -56,7 +55,8 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                objectToUseOn.InteractWith(objectToUse);
+                // Add object
+                objectToUseOn.InteractWith(context);
                 context.Player.UseFromInventory(objectToUse);
             }
         }

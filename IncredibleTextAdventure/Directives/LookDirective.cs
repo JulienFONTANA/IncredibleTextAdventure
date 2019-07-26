@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Directives
     {
         private IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(look)";
-        private const string FullPattern = @"^(look)[ \t]?(at|the)?[ \t]?(?<capture>(\w.*))";
+        private const string FullPattern = @"^(look)[ \t]?(at)?[ \t]?(the)?(?<capture>(.*))";
 
         public LookDirective(IConsoleWriter consoleWriter)
         {
@@ -27,13 +27,16 @@ namespace IncredibleTextAdventure.Directives
             var match = Regex.Match(cmd, FullPattern, RegexOptions.IgnoreCase);
             if (match.Success)
             {
-                var capture = match.Groups["capture"].Value;
-                var desc = context.AllItems.FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase))?.Description;
+                var capture = match.Groups["capture"].Value.Trim();
+                var desc = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase))?.Description;
                 if (ReferenceEquals(desc, null))
                 {
                     _consoleWriter.WriteToConsole("What are you gazing at ? Nothingness ?");
                 }
-                _consoleWriter.WriteToConsole(desc);
+                else
+                {
+                    _consoleWriter.WriteToConsole(desc);
+                }
             }
         }
     }

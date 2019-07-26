@@ -9,8 +9,8 @@ namespace IncredibleTextAdventure.Directives
     public class PickDirective : IDirective
     {
         private IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(pick|get|take)";
-        private const string FullPattern = @"^(pick|get|take)[ \t]?(the|up)?[ \t]?(?<capture>(\w.*))";
+        private const string CmdPattern = @"^(pick|get|take|grab)";
+        private const string FullPattern = @"^(pick|get|take|grab)[ \t]?(the|up)?[ \t]?(?<capture>(.*))";
 
         public PickDirective(IConsoleWriter consoleWriter)
         {
@@ -27,9 +27,9 @@ namespace IncredibleTextAdventure.Directives
             var match = Regex.Match(cmd, FullPattern, RegexOptions.IgnoreCase);
             if (match.Success)
             {
-                var capture = match.Groups["capture"].Value;
+                var capture = match.Groups["capture"].Value.Trim();
 
-                var objToPickUp = context.AllItems.FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var objToPickUp = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(objToPickUp, null))
                 {
                     _consoleWriter.WriteToConsole("What are you trying to pick up?");

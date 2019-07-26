@@ -1,4 +1,6 @@
-﻿namespace IncredibleTextAdventure.Items
+﻿using IncredibleTextAdventure.Service.Context;
+
+namespace IncredibleTextAdventure.Items
 {
     public class Table : Item, IItem
     {
@@ -14,7 +16,7 @@
             return false;
         }
 
-        public override void InteractWith(IItem objectToUse)
+        public override void InteractWith(IGameContext context)
         {
             return;
         }

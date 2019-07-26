@@ -8,16 +8,14 @@ namespace IncredibleTextAdventure.Characters
 {
     public class Player : IPlayer
     {
-        public int xCoord { get; set; }
-        public int yCoord { get; set; }
         private List<IItem> Inventory { get; set; }
+        private string Localisation { get; set; }
 
         private readonly IConsoleWriter ConsoleWriter;
 
         public Player(IConsoleWriter consoleWriter)
         {
-            xCoord = 0;
-            yCoord = 0;
+            Localisation = "cell";
             Inventory = new List<IItem>();
 
             ConsoleWriter = consoleWriter;
@@ -59,9 +57,14 @@ namespace IncredibleTextAdventure.Characters
             return Inventory.FirstOrDefault(item => item.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public void Info()
+        public string GetPlayerLocalisation()
         {
-            ConsoleWriter.WriteToConsole($"Player coordinates are {yCoord}°N - {xCoord}°E");
+            return Localisation;
+        }
+
+        public void SetPlayerLocalisation(string newLocalisation)
+        {
+            Localisation = newLocalisation;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace IncredibleTextAdventure.Items
+﻿using IncredibleTextAdventure.Service.Context;
+
+namespace IncredibleTextAdventure.Items
 {
     public interface IItem
     {
@@ -7,6 +9,6 @@
         bool CanBePickedUp { get; set; }
 
         bool CanInteractWith(string other);
-        void InteractWith(IItem objectToUse);
+        void InteractWith(IGameContext context);
     }
 }

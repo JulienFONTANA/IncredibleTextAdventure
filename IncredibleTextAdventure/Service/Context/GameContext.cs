@@ -1,44 +1,56 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
-using IncredibleTextAdventure.Items;
-using System.Collections.Generic;
+using IncredibleTextAdventure.Rooms;
+using System.Linq;
 
 namespace IncredibleTextAdventure.Service.Context
 {
     public class GameContext : IGameContext
     {
-        // TODO - Right now, Context contains all items. I'll have to introduce "rooms" or something
-        public List<IItem> AllItems { get; set; }
         public IPlayer Player { get; set; }
 
+        private readonly IConsoleWriter _console;
         private readonly IDirective[] _directives;
+        private readonly IRoom[] _rooms;
 
         public GameContext(IPlayer player,
-            IDirective[] directives)
+            IConsoleWriter console,
+            IDirective[] directives,
+            IRoom[] rooms)
         {
             Player = player;
+            _console = console;
             _directives = directives;
-
-            // TODO - rework, that's ugly
-            AllItems = new List<IItem>
-            {
-                new Key(),
-                new Door(),
-                new Table()
-            };
+            _rooms = rooms;
         }
 
         public void Command(string cmd)
         {
+            bool foundAction = false;
+
             foreach (var action in _directives)
             {
                 if (action.CanApply(cmd))
                 {
                     action.TryApply(cmd, this);
-                    //Player.Info();
+                    foundAction = true;
                 }
             }
+            if (!foundAction)
+            {
+                _console.WriteToConsole("You can't do that...");
+            }
+        }
+
+        public IRoom GetCurrentRoom()
+        {
+            return _rooms.FirstOrDefault(r => r.Name.Equals(Player.GetPlayerLocalisation(), System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        public IRoom GetRoom(string room)
+        {
+            return _rooms.FirstOrDefault(r => r.Name.Equals(room, System.StringComparison.OrdinalIgnoreCase));
         }
     }
 }

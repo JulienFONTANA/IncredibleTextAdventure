@@ -1,6 +1,7 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 using Ninject.Modules;
@@ -15,6 +16,14 @@ namespace IncredibleTextAdventure.Injection
             BindConsole();
             BindPlayer();
             BindDirectives();
+            BindRooms();
+        }
+
+        private void BindRooms()
+        {
+            Bind<IRoom>().To<Cell>();
+            Bind<IRoom>().To<Corridor>();
+            Bind<IRoom>().To<Garden>();
         }
 
         private void BindDirectives()
@@ -25,6 +34,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<PickDirective>();
             Bind<IDirective>().To<InventoryDirective>();
             Bind<IDirective>().To<UseDirective>();
+            Bind<IDirective>().To<WhereDirective>();
         }
 
         private void BindPlayer()

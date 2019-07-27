@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
@@ -8,7 +9,7 @@ using Ninject.Modules;
 
 namespace IncredibleTextAdventure.Injection
 {
-    public class ITAInjectionModule : NinjectModule
+    public class ItaInjectionModule : NinjectModule
     {
         public override void Load()
         {
@@ -35,6 +36,8 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<InventoryDirective>();
             Bind<IDirective>().To<UseDirective>();
             Bind<IDirective>().To<WhereDirective>();
+
+            Bind<IGardenDirective>().To<DrinkDirective>();
         }
 
         private void BindPlayer()
@@ -44,7 +47,7 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindService()
         {
-            Bind<IITAService>().To<ITAService>();
+            Bind<IItaService>().To<ItaService>();
             Bind<IGameContext>().To<GameContext>();
         }
 

@@ -1,8 +1,8 @@
-﻿using IncredibleTextAdventure.ITAConsole;
+﻿using System;
+using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
-using System;
 
-namespace IncredibleTextAdventure.Items
+namespace IncredibleTextAdventure.Items.CellItems
 {
     public class Door : Item, IItem
     {

@@ -13,7 +13,7 @@ namespace IncredibleTextAdventure.Rooms
 
         List<IItem> GetItemsInRoom();
         List<string> GetLinkedRooms();
-        List<IDirective> GetSpecialDirectives();
+        IDirective[] GetSpecialDirectives();
         bool IsFirstTimePlayerEntersRoom();
         void SetFirstTimeFalse();
         void RemoveItemFromRoom(IItem itemToRemove);

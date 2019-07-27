@@ -1,13 +1,14 @@
 ﻿using IncredibleTextAdventure.Directives;
-using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
+using IncredibleTextAdventure.Directives.Garden;
+using IncredibleTextAdventure.Items.GardenItems;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public class Garden : Room, IRoom
     {
-        public Garden()
+        public Garden(IGardenDirective[] specialGardenDirective)
         {
             Name = "Garden";
             FirstDescription = @"You enter a magnificent [garden]. Tall trees cast their shadow on you, allowing you " 
@@ -25,11 +26,7 @@ namespace IncredibleTextAdventure.Rooms
                 new Fountain()
             };
 
-            SpecialDirectives = new List<IDirective>
-            {
-                // TODO - rework
-                new DrinkDirective(new ConsoleWriter())
-            };
+            SpecialDirectives = specialGardenDirective;
         }
     }
 }

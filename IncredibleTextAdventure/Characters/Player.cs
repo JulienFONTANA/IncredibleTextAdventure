@@ -8,23 +8,23 @@ namespace IncredibleTextAdventure.Characters
 {
     public class Player : IPlayer
     {
-        private List<IItem> Inventory { get; set; }
+        private List<IItem> Inventory { get; }
         private string Localisation { get; set; }
 
-        private readonly IConsoleWriter ConsoleWriter;
+        private readonly IConsoleWriter _consoleWriter;
 
         public Player(IConsoleWriter consoleWriter)
         {
             Localisation = "cell";
             Inventory = new List<IItem>();
 
-            ConsoleWriter = consoleWriter;
+            _consoleWriter = consoleWriter;
         }
 
         public void AddToInventory (IItem item)
         {
             Inventory.Add(item);
-            ConsoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
+            _consoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
         }
 
         public bool UseFromInventory(IItem item)

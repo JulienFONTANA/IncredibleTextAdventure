@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
+using IncredibleTextAdventure.Items.CellItems;
 
 namespace IncredibleTextAdventure.Rooms
 {

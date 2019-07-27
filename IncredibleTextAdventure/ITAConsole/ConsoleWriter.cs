@@ -4,11 +4,11 @@ namespace IncredibleTextAdventure.ITAConsole
 {
     public class ConsoleWriter : IConsoleWriter
     {
-        const int splitLength = 80;
+        private const int SplitLength = 80;
 
         public void WriteToConsole(string text)
         {
-            if (text.Length > splitLength)
+            if (text.Length > SplitLength)
             {
                 SpliceText(text);
             }
@@ -19,19 +19,19 @@ namespace IncredibleTextAdventure.ITAConsole
             Console.WriteLine();
         }
 
-        private void SpliceText(string text)
+        private static void SpliceText(string text)
         {
-            int index = 0;
-            int lastIndex = 0;
+            var index = 0;
+            var lastIndex = 0;
             while (true)
             {
-                var split = text.Substring(index, splitLength);
+                var split = text.Substring(index, SplitLength);
                 var lastWhiteSpace = split.LastIndexOf(' ');
                 var displayText = text.Substring(index, lastWhiteSpace).Trim();
                 ColorDisplay(displayText);
                 index = lastIndex + lastWhiteSpace;
                 lastIndex = index;
-                if (index + splitLength > text.Length)
+                if (index + SplitLength > text.Length)
                 {
                     var lastDisplay = text.Substring(index).Trim();
                     ColorDisplay(lastDisplay);
@@ -40,7 +40,7 @@ namespace IncredibleTextAdventure.ITAConsole
             }
         }
 
-        private void ColorDisplay(string text)
+        private static void ColorDisplay(string text)
         {
             foreach (var c in text)
             {

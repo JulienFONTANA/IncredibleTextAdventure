@@ -2,9 +2,9 @@
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
 
-namespace IncredibleTextAdventure.Directives
+namespace IncredibleTextAdventure.Directives.Garden
 {
-    public class DrinkDirective : IDirective
+    public class DrinkDirective : IGardenDirective
     {
         private readonly IConsoleWriter _consoleWriter;
         private const string CmdPattern = @"^(Drink)[ \t]?(from fountain)?";

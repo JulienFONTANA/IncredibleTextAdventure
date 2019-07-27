@@ -6,14 +6,14 @@ namespace IncredibleTextAdventureConsole
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var kernel = new StandardKernel(new NinjectSettings
             {
                 AllowNullInjection = true
-            }, new ITAInjectionModule());
+            }, new ItaInjectionModule());
 
-            var service = kernel.Get<IITAService>();
+            var service = kernel.Get<IItaService>();
 
             service.Play();
         }

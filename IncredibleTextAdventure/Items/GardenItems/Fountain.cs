@@ -1,6 +1,6 @@
 ﻿using IncredibleTextAdventure.Service.Context;
 
-namespace IncredibleTextAdventure.Items
+namespace IncredibleTextAdventure.Items.GardenItems
 {
     public class Fountain : Item, IItem
     {

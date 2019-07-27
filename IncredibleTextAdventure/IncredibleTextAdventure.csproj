@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directives\Garden\IGardenDirective.cs" />
     <Compile Include="Directives\InventoryDirective.cs" />
     <Compile Include="Directives\HelpDirective.cs" />
     <Compile Include="Directives\UseDirective.cs" />
@@ -84,8 +85,8 @@
     <Compile Include="Rooms\Room.cs" />
     <Compile Include="Service\Context\GameContext.cs" />
     <Compile Include="Service\Context\IGameContext.cs" />
-    <Compile Include="Service\IITAService.cs" />
-    <Compile Include="Service\ITAService.cs" />
+    <Compile Include="Service\IitaService.cs" />
+    <Compile Include="Service\ItaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

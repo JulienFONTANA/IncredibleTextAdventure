@@ -1,6 +1,6 @@
 ﻿namespace IncredibleTextAdventure.Service
 {
-    public interface IITAService
+    public interface IItaService
     {
         void Play();
     }

@@ -3,13 +3,13 @@ using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Service
 {
-    public class ITAService : IITAService
+    public class ItaService : IItaService
     {
         private readonly IConsoleReader _consoleReader;
         private readonly IConsoleWriter _consoleWriter;
         private readonly IGameContext _gameContext;
 
-        public ITAService(IConsoleReader consoleReader,
+        public ItaService(IConsoleReader consoleReader,
             IConsoleWriter consoleWriter,
             IGameContext gameContext)
         {
@@ -20,7 +20,7 @@ namespace IncredibleTextAdventure.Service
 
         public void Play()
         {
-            bool inGame = true;
+            var inGame = true;
 
             InitGame();
             while (inGame)

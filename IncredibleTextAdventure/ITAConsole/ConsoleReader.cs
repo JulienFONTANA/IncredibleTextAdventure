@@ -6,10 +6,10 @@ namespace IncredibleTextAdventure.ITAConsole
     {
         public string ReadLineFromConsole()
         {
-            string line = Console.ReadLine();
+            var line = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(line))
             {
-                return "";
+                return string.Empty;
             }
             return line.Trim();
         }

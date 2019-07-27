@@ -34,7 +34,7 @@ namespace IncredibleTextAdventure.Service.Context
                 return CheckExitGame();
             }
 
-            bool foundAction = false;
+            var foundAction = false;
             foreach (var action in _directives)
             {
                 if (action.CanApply(cmd))

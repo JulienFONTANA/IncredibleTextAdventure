@@ -4,7 +4,7 @@ using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Items.CellItems
 {
-    public class Door : Item, IItem
+    public class Door : Item, ICellItem
     {
         private IConsoleWriter ConsoleWriter { get; set; }
 

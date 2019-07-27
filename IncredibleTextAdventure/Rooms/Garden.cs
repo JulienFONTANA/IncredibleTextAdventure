@@ -1,6 +1,4 @@
-﻿using IncredibleTextAdventure.Directives;
-using IncredibleTextAdventure.Items;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Items.GardenItems;
 
@@ -8,7 +6,8 @@ namespace IncredibleTextAdventure.Rooms
 {
     public class Garden : Room, IRoom
     {
-        public Garden(IGardenDirective[] specialGardenDirective)
+        public Garden(IGardenItem[] itemsInRoom,
+            IGardenDirective[] specialGardenDirective)
         {
             Name = "Garden";
             FirstDescription = @"You enter a magnificent [garden]. Tall trees cast their shadow on you, allowing you " 
@@ -20,12 +19,7 @@ namespace IncredibleTextAdventure.Rooms
 
             LinkedRooms = new List<string> { "Corridor" };
 
-            ItemsInRoom = new List<IItem>
-            {
-                new Flowers(),
-                new Fountain()
-            };
-
+            ItemsInRoom = itemsInRoom;
             SpecialDirectives = specialGardenDirective;
         }
     }

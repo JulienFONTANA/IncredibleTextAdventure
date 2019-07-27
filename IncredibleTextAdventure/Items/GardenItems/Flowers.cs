@@ -2,7 +2,7 @@
 
 namespace IncredibleTextAdventure.Items.GardenItems
 {
-    public class Flowers : Item, IItem
+    public class Flowers : Item, IGardenItem
     {
         public Flowers()
         {

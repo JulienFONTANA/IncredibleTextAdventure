@@ -1,12 +1,11 @@
-﻿using IncredibleTextAdventure.Items;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Items.CellItems;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public class Cell : Room, IRoom
     {
-        public Cell()
+        public Cell(ICellItem[] itemsInRoom)
         {
             Name = "Cell";
             FirstDescription = @"You wake up with simple clothes in a small room.The walls are grey and smooth. "
@@ -18,12 +17,7 @@ namespace IncredibleTextAdventure.Rooms
 
             IsAccessible = true;
             LinkedRooms = new List<string> { "Corridor" };
-            ItemsInRoom = new List<IItem>
-            {
-                new Door(),
-                new Key(),
-                new Table()
-            };
+            ItemsInRoom = itemsInRoom;
         }
     }
 }

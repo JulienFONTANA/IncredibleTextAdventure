@@ -71,6 +71,8 @@
     <Compile Include="Items\CellItems\Table.cs" />
     <Compile Include="Items\GardenItems\Flowers.cs" />
     <Compile Include="Items\GardenItems\Fountain.cs" />
+    <Compile Include="Items\CellItems\ICellItem.cs" />
+    <Compile Include="Items\GardenItems\IGardenItem.cs" />
     <Compile Include="Items\IItem.cs" />
     <Compile Include="Items\CellItems\Door.cs" />
     <Compile Include="Items\CellItems\Key.cs" />

@@ -2,6 +2,8 @@
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Items.CellItems;
+using IncredibleTextAdventure.Items.GardenItems;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -18,6 +20,17 @@ namespace IncredibleTextAdventure.Injection
             BindPlayer();
             BindDirectives();
             BindRooms();
+            BindObjects();
+        }
+
+        private void BindObjects()
+        {
+            Bind<ICellItem>().To<Door>();
+            Bind<ICellItem>().To<Key>();
+            Bind<ICellItem>().To<Table>();
+
+            Bind<IGardenItem>().To<Flowers>();
+            Bind<IGardenItem>().To<Fountain>();
         }
 
         private void BindRooms()

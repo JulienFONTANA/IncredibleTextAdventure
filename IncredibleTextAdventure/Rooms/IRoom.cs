@@ -11,11 +11,11 @@ namespace IncredibleTextAdventure.Rooms
         bool IsAccessible { get; set; }
         string Name { get; set; }
 
-        List<IItem> GetItemsInRoom();
+        IItem[] GetItemsInRoom();
         List<string> GetLinkedRooms();
         IDirective[] GetSpecialDirectives();
         bool IsFirstTimePlayerEntersRoom();
         void SetFirstTimeFalse();
-        void RemoveItemFromRoom(IItem itemToRemove);
+        //void RemoveItemFromRoom(IItem itemToRemove);
     }
 }

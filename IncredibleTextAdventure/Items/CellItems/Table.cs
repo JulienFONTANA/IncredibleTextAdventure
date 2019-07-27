@@ -2,7 +2,7 @@
 
 namespace IncredibleTextAdventure.Items.CellItems
 {
-    public class Table : Item, IItem
+    public class Table : Item, ICellItem
     {
         public Table()
         {

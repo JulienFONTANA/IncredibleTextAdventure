@@ -8,6 +8,7 @@ using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 using IncredibleTextAdventure.Service.RoomLinker;
+using IncredibleTextAdventure.Service.RoomStateManager;
 using Ninject.Modules;
 
 namespace IncredibleTextAdventure.Injection
@@ -64,6 +65,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<IItaService>().To<ItaService>();
             Bind<IGameContext>().To<GameContext>();
             Bind<IRoomLinker>().To<RoomLinker>();
+            Bind<IRoomStateManager>().To<RoomStateManager>();
         }
 
         private void BindConsole()

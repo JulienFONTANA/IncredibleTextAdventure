@@ -9,6 +9,7 @@ namespace IncredibleTextAdventure.Items
         bool CanBePickedUp { get; set; }
 
         bool CanInteractWith(string other);
-        void InteractWith(IGameContext context);
+        string InteractWith(IGameContext context);
+        string BlocksPathTo();
     }
 }

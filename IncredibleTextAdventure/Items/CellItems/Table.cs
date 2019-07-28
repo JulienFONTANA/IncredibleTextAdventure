@@ -1,6 +1,4 @@
-﻿using IncredibleTextAdventure.Service.Context;
-
-namespace IncredibleTextAdventure.Items.CellItems
+﻿namespace IncredibleTextAdventure.Items.CellItems
 {
     public class Table : Item, ICellItem
     {
@@ -14,11 +12,6 @@ namespace IncredibleTextAdventure.Items.CellItems
         public override bool CanInteractWith(string other)
         {
             return false;
-        }
-
-        public override void InteractWith(IGameContext context)
-        {
-            return;
         }
     }
 }

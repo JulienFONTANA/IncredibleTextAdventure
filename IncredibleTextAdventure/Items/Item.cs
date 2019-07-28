@@ -9,6 +9,15 @@ namespace IncredibleTextAdventure.Items
         public bool CanBePickedUp { get; set; }
 
         public abstract bool CanInteractWith(string other);
-        public abstract void InteractWith(IGameContext context);
+
+        public virtual string InteractWith(IGameContext context)
+        {
+            return string.Empty;
+        }
+
+        public virtual string BlocksPathTo()
+        {
+            return string.Empty;
+        }
     }
 }

@@ -91,6 +91,8 @@
     <Compile Include="Service\ItaService.cs" />
     <Compile Include="Service\RoomLinker\IRoomLinker.cs" />
     <Compile Include="Service\RoomLinker\RoomLinker.cs" />
+    <Compile Include="Service\RoomStateManager\IRoomStateManager.cs" />
+    <Compile Include="Service\RoomStateManager\RoomStateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,18 +3,22 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.RoomStateManager;
 
 namespace IncredibleTextAdventure.Directives
 {
     public class UseDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
+        private readonly IRoomStateManager _roomStateManager;
         private const string CmdPattern = @"^(use)";
         private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
 
-        public UseDirective(IConsoleWriter consoleWriter)
+        public UseDirective(IConsoleWriter consoleWriter,
+            IRoomStateManager roomStateManager)
         {
             _consoleWriter = consoleWriter;
+            _roomStateManager = roomStateManager;
         }
 
         public bool CanApply(string cmd)
@@ -33,6 +37,7 @@ namespace IncredibleTextAdventure.Directives
                 if (ReferenceEquals(sourceObj, null) || ReferenceEquals(targetObj, null))
                 {
                     _consoleWriter.WriteToConsole("What are trying to do?");
+                    return;
                 }
 
                 var objectToUse = context.GetPlayer().GetItemFromInventory(sourceObj);
@@ -54,8 +59,9 @@ namespace IncredibleTextAdventure.Directives
                     _consoleWriter.WriteToConsole($"You can't use [{objectToUse.Name}] on [{objectToUseOn.Name}] !!!");
                     return;
                 }
-                
-                objectToUseOn.InteractWith(context);
+
+                _consoleWriter.WriteToConsole(objectToUseOn.InteractWith(context));
+                _roomStateManager.OpenRoom(context.GetRoom(objectToUseOn.BlocksPathTo()));
                 context.GetPlayer().UseFromInventory(objectToUse);
             }
         }

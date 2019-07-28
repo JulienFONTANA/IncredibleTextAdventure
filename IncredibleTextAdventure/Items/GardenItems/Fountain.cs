@@ -1,6 +1,4 @@
-﻿using IncredibleTextAdventure.Service.Context;
-
-namespace IncredibleTextAdventure.Items.GardenItems
+﻿namespace IncredibleTextAdventure.Items.GardenItems
 {
     public class Fountain : Item, IGardenItem
     {
@@ -15,11 +13,6 @@ namespace IncredibleTextAdventure.Items.GardenItems
         public override bool CanInteractWith(string other)
         {
             return false;
-        }
-
-        public override void InteractWith(IGameContext context)
-        {
-            return;
         }
     }
 }

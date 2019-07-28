@@ -48,9 +48,9 @@ namespace IncredibleTextAdventure.Directives
                 {
                     _consoleWriter.WriteToConsole("You can't go there.");
                 }
-                else if (!context.GetRoom(roomToGo).IsAccessible)
+                else if (!context.GetRoom(roomToGo).GetAccessibility())
                 {
-                    _consoleWriter.WriteToConsole($"You can't access {roomToGo} !");
+                    _consoleWriter.WriteToConsole($"You can't access {roomToGo.Name} !");
                 }
                 else
                 {

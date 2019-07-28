@@ -1,6 +1,8 @@
-﻿using IncredibleTextAdventure.Directives;
+﻿using System;
+using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace IncredibleTextAdventure.Rooms
 {
@@ -8,9 +10,9 @@ namespace IncredibleTextAdventure.Rooms
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public bool IsAccessible { get; set; }
         public string FirstDescription { get; set; }
 
+        protected bool IsAccessible { get; set; }
         protected bool IsFirstTime { get; set; }
         protected List<IRoom> LinkedRooms { get; set; }
         protected List<IItem> ItemsInRoom { get; set; }
@@ -63,6 +65,21 @@ namespace IncredibleTextAdventure.Rooms
         public void SetLinkedRoom(List<IRoom> linkedRooms)
         {
             LinkedRooms = linkedRooms;
+        }
+
+        public bool GetAccessibility()
+        {
+            return IsAccessible;
+        }
+
+        public void SetAccessibility(bool accessible = true)
+        {
+            IsAccessible = accessible;
+        }
+
+        protected bool IsItemInRoom(string itemNameToLookUp)
+        {
+            return ItemsInRoom.Any(item => item.Name.Equals(itemNameToLookUp, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

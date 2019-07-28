@@ -8,7 +8,6 @@ namespace IncredibleTextAdventure.Rooms
     {
         string FirstDescription { get; set; }
         string Description { get; set; }
-        bool IsAccessible { get; set; }
         string Name { get; set; }
 
         List<IItem> GetItemsInRoom();
@@ -18,5 +17,7 @@ namespace IncredibleTextAdventure.Rooms
         void SetFirstTimeFalse();
         void RemoveItemFromRoom(IItem itemToRemove);
         void SetLinkedRoom(List<IRoom> linkedRooms);
+        bool GetAccessibility();
+        void SetAccessibility(bool accessible = true);
     }
 }

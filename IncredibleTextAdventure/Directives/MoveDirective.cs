@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
@@ -35,7 +36,7 @@ namespace IncredibleTextAdventure.Directives
                     _consoleWriter.WriteToConsole($"You are already in the {capture}.");
                 }
 
-                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
                 if (ReferenceEquals(roomToGo, null))
                 {
                     _consoleWriter.WriteToConsole("You can't go there.");
@@ -62,7 +63,7 @@ namespace IncredibleTextAdventure.Directives
             }
         }
 
-        private void MoveToRoom(GameContext context, string roomToGo)
+        private void MoveToRoom(IGameContext context, IRoom roomToGo)
         {
             var room = context.GetRoom(roomToGo);
             context.GetPlayer().SetPlayerLocalisation(roomToGo);

@@ -64,12 +64,17 @@ namespace IncredibleTextAdventure.Service.Context
 
         public IRoom GetCurrentRoom()
         {
-            return _rooms.FirstOrDefault(r => r.Name.Equals(GetPlayer().GetPlayerLocalisation(), System.StringComparison.OrdinalIgnoreCase));
+            return _rooms.FirstOrDefault(r => r.Equals(GetPlayer().GetPlayerLocalisation()));
         }
 
         public IRoom GetRoom(string room)
         {
             return _rooms.FirstOrDefault(r => r.Name.Equals(room, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        public IRoom GetRoom(IRoom room)
+        {
+            return _rooms.FirstOrDefault(r => r.Equals(room));
         }
 
         public IPlayer GetPlayer()

@@ -3,25 +3,27 @@ using IncredibleTextAdventure.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Characters
 {
     public class Player : IPlayer
     {
         private List<IItem> Inventory { get; }
-        private string Localisation { get; set; }
+        private IRoom Localisation { get; set; }
 
         private readonly IConsoleWriter _consoleWriter;
 
+        private const string StartingLocalisation = "cell";
+
         public Player(IConsoleWriter consoleWriter)
         {
-            Localisation = "cell";
             Inventory = new List<IItem>();
 
             _consoleWriter = consoleWriter;
         }
 
-        public void AddToInventory (IItem item)
+        public void AddToInventory(IItem item)
         {
             Inventory.Add(item);
             _consoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
@@ -57,14 +59,19 @@ namespace IncredibleTextAdventure.Characters
             return Inventory.FirstOrDefault(item => item.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public string GetPlayerLocalisation()
+        public IRoom GetPlayerLocalisation()
         {
             return Localisation;
         }
 
-        public void SetPlayerLocalisation(string newLocalisation)
+        public void SetPlayerLocalisation(IRoom newLocalisation)
         {
             Localisation = newLocalisation;
+        }
+
+        public string GetPlayerStartingLocalisation()
+        {
+            return StartingLocalisation;
         }
     }
 }

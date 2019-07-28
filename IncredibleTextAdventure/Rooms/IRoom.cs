@@ -12,10 +12,11 @@ namespace IncredibleTextAdventure.Rooms
         string Name { get; set; }
 
         List<IItem> GetItemsInRoom();
-        List<string> GetLinkedRooms();
+        List<IRoom> GetLinkedRooms();
         IDirective[] GetSpecialDirectives();
         bool IsFirstTimePlayerEntersRoom();
         void SetFirstTimeFalse();
         void RemoveItemFromRoom(IItem itemToRemove);
+        void SetLinkedRoom(List<IRoom> linkedRooms);
     }
 }

@@ -8,6 +8,7 @@ namespace IncredibleTextAdventure.Service.Context
         bool Command(string cmd);
         IRoom GetCurrentRoom();
         IRoom GetRoom(string room);
+        IRoom GetRoom(IRoom room);
         IPlayer GetPlayer();
     }
 }

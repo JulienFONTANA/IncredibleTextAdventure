@@ -18,8 +18,6 @@ namespace IncredibleTextAdventure.Rooms
             Description = "A magnificent [garden], with [flowers] everywhere. In the center is a waterless [fountain].";
             IsAccessible = true;
 
-            LinkedRooms = new List<string> { "Corridor" };
-
             ItemsInRoom = new List<IItem>(itemsInRoom);
             SpecialDirectives = specialGardenDirective;
         }

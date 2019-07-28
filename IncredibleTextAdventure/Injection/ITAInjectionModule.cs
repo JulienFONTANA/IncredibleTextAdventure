@@ -7,6 +7,7 @@ using IncredibleTextAdventure.Items.GardenItems;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.RoomLinker;
 using Ninject.Modules;
 
 namespace IncredibleTextAdventure.Injection
@@ -35,9 +36,9 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindRooms()
         {
-            Bind<IRoom>().To<Cell>();
-            Bind<IRoom>().To<Corridor>();
-            Bind<IRoom>().To<Garden>();
+            Bind<IRoom>().To<Cell>().InSingletonScope();
+            Bind<IRoom>().To<Corridor>().InSingletonScope();
+            Bind<IRoom>().To<Garden>().InSingletonScope();
         }
 
         private void BindDirectives()
@@ -62,6 +63,7 @@ namespace IncredibleTextAdventure.Injection
         {
             Bind<IItaService>().To<ItaService>();
             Bind<IGameContext>().To<GameContext>();
+            Bind<IRoomLinker>().To<RoomLinker>();
         }
 
         private void BindConsole()

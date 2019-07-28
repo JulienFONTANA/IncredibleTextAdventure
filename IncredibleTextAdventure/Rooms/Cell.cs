@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.CellItems;
 
@@ -17,8 +16,6 @@ namespace IncredibleTextAdventure.Rooms
             Description = @"In front of you is a closed, heavy [door]. In a corner is a small [table], made of crude wood. "
                           +"A metal [key] was put here on display, almost as if someone wants you to pick it up.";
 
-            IsAccessible = true;
-            LinkedRooms = new List<string> { "Corridor" };
             ItemsInRoom = new List<IItem>(itemsInRoom);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.RoomLinker;
 
 namespace IncredibleTextAdventure.Service
 {
@@ -8,14 +9,17 @@ namespace IncredibleTextAdventure.Service
         private readonly IConsoleReader _consoleReader;
         private readonly IConsoleWriter _consoleWriter;
         private readonly IGameContext _gameContext;
+        private readonly IRoomLinker _roomLinker;
 
         public ItaService(IConsoleReader consoleReader,
             IConsoleWriter consoleWriter,
-            IGameContext gameContext)
+            IGameContext gameContext,
+            IRoomLinker roomLinker)
         {
             _consoleReader = consoleReader;
             _consoleWriter = consoleWriter;
             _gameContext = gameContext;
+            _roomLinker = roomLinker;
         }
 
         public void Play()
@@ -35,9 +39,12 @@ namespace IncredibleTextAdventure.Service
 
         private void InitGame()
         {
-            var room = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerLocalisation());
-            room.SetFirstTimeFalse();
-            _consoleWriter.WriteToConsole(room.FirstDescription);
+            _roomLinker.InitRoomConnection();
+
+            var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocalisation());
+            _gameContext.GetPlayer().SetPlayerLocalisation(startingRoom);
+            startingRoom.SetFirstTimeFalse();
+            _consoleWriter.WriteToConsole(startingRoom.FirstDescription);
         }
     }
 }

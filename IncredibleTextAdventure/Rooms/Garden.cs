@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Directives.Garden;
+using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.GardenItems;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public class Garden : Room, IRoom
     {
-        public Garden(IGardenItem[] itemsInRoom,
+        public Garden(IEnumerable<IGardenItem> itemsInRoom,
             IGardenDirective[] specialGardenDirective)
         {
             Name = "Garden";
@@ -19,7 +20,7 @@ namespace IncredibleTextAdventure.Rooms
 
             LinkedRooms = new List<string> { "Corridor" };
 
-            ItemsInRoom = itemsInRoom;
+            ItemsInRoom = new List<IItem>(itemsInRoom);
             SpecialDirectives = specialGardenDirective;
         }
     }

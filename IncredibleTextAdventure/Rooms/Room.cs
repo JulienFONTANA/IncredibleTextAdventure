@@ -13,15 +13,15 @@ namespace IncredibleTextAdventure.Rooms
 
         protected bool IsFirstTime { get; set; }
         protected List<string> LinkedRooms { get; set; }
-        protected IItem[] ItemsInRoom { get; set; }
+        protected List<IItem> ItemsInRoom { get; set; }
         protected IDirective[] SpecialDirectives { get; set; }
 
         protected Room()
         {
             IsAccessible = false;
-            IsFirstTime = true; ;
+            IsFirstTime = true;
             LinkedRooms = new List<string>();
-            ItemsInRoom = new IItem[] {};
+            ItemsInRoom = new List<IItem>();
             SpecialDirectives = new IDirective[] {};
         }
 
@@ -45,7 +45,7 @@ namespace IncredibleTextAdventure.Rooms
             IsFirstTime = false;
         }
 
-        public IItem[] GetItemsInRoom()
+        public List<IItem> GetItemsInRoom()
         {
             return ItemsInRoom;
         }
@@ -55,9 +55,9 @@ namespace IncredibleTextAdventure.Rooms
             return SpecialDirectives;
         }
 
-        //public void RemoveItemFromRoom(IItem itemToRemove)
-        //{
-        //    ItemsInRoom.  //Remove(itemToRemove);
-        //}
+        public void RemoveItemFromRoom(IItem itemToRemove)
+        {
+            ItemsInRoom.Remove(itemToRemove);
+        }
     }
 }

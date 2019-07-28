@@ -51,6 +51,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<InventoryDirective>();
             Bind<IDirective>().To<UseDirective>();
             Bind<IDirective>().To<WhereDirective>();
+            Bind<IDirective>().To<InfoDirective>();
 
             Bind<IGardenDirective>().To<DrinkDirective>();
         }

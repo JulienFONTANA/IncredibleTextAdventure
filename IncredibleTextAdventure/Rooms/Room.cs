@@ -81,5 +81,17 @@ namespace IncredibleTextAdventure.Rooms
         {
             return ItemsInRoom.Any(item => item.Name.Equals(itemNameToLookUp, StringComparison.OrdinalIgnoreCase));
         }
+
+        protected bool IsAccessibile(string roomNameToLookUp)
+        {
+            var room = LinkedRooms.FirstOrDefault(r =>r.Name.Equals(roomNameToLookUp, StringComparison.OrdinalIgnoreCase));
+            if (ReferenceEquals(room, null))
+            {
+                return false;
+            }
+            return room.GetAccessibility();
+        }
+
+        public virtual void UpdateDescription() { }
     }
 }

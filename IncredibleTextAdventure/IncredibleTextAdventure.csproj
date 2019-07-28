@@ -61,6 +61,7 @@
     <Compile Include="Directives\LookDirective.cs" />
     <Compile Include="Directives\MoveDirective.cs" />
     <Compile Include="Directives\Garden\DrinkDirective.cs" />
+    <Compile Include="Directives\InfoDirective.cs" />
     <Compile Include="Directives\WhereDirective.cs" />
     <Compile Include="ITAConsole\ConsoleWriter.cs" />
     <Compile Include="ITAConsole\IConsoleWriter.cs" />

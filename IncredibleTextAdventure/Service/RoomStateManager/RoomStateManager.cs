@@ -18,10 +18,3 @@ namespace IncredibleTextAdventure.Service.RoomStateManager
         }
     }
 }
-
-
-
-//var room = context.GetCurrentRoom();
-//room.Description = @"In front of you is an open [door], leading to a [corridor]. " 
-//+"In a corner is a small [table], made of crude wood.";
-//context.GetRoom("corridor").SetAccessibility();

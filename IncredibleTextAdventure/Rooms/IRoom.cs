@@ -19,5 +19,6 @@ namespace IncredibleTextAdventure.Rooms
         void SetLinkedRoom(List<IRoom> linkedRooms);
         bool GetAccessibility();
         void SetAccessibility(bool accessible = true);
+        void UpdateDescription();
     }
 }

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\Constants.cs" />
     <Compile Include="Directives\Cell\ICellDirective.cs" />
     <Compile Include="Directives\Cell\BreakDirective.cs" />
     <Compile Include="Directives\Garden\IGardenDirective.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -37,18 +38,18 @@ namespace IncredibleTextAdventure.Directives.Cell
                     return;
                 }
 
-                if (item.Name.EqualsIgnoreCase("Door"))
+                if (item.Name.EqualsIgnoreCase(Constants.Items.Door))
                 {
                     _consoleWriter.WriteToConsole("You try for a while, but in the end the door didn't even move. Could there be a [key] somewhere ?");
                 }
-                if (item.Name.EqualsIgnoreCase("Table"))
+                if (item.Name.EqualsIgnoreCase(Constants.Items.Table))
                 {
                     _consoleWriter.WriteToConsole("Without too much effort, you send the table flying across the cell. " 
                                                   + "Needless to say, it [shatters into pieces].");
 
                     item.SetItemVisibility(false);
-                    context.GetCurrentRoom().GetItem("TableLeg").SetItemVisibility(true);
-                    context.GetCurrentRoom().GetItem("BrokenTable").SetItemVisibility(true);
+                    context.GetCurrentRoom().GetItem(Constants.Items.BrokenTable).SetItemVisibility(true);
+                    context.GetCurrentRoom().GetItem(Constants.Items.TableLeg).SetItemVisibility(true);
                 }
             }
         }

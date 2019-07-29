@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.GardenItems;
@@ -10,7 +11,7 @@ namespace IncredibleTextAdventure.Rooms
         public Garden(IEnumerable<IGardenItem> itemsInRoom,
             IGardenDirective[] specialGardenDirective)
         {
-            Name = "Garden";
+            Name = Constants.Rooms.Garden;
             FirstDescription = @"You enter a magnificent [garden]. Tall trees cast their shadow on you, allowing you " 
                                +"to easily get used to the sun light. [Flowers] are blooming along the walls. In the " 
                                +"center of this garden is a [fountain], but alas no water in it. How come such a garden "

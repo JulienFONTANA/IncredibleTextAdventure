@@ -1,4 +1,5 @@
 ﻿using System;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
@@ -8,13 +9,13 @@ namespace IncredibleTextAdventure.Items.CellItems
     {
         public Door()
         {
-            Name = "Door";
+            Name = Constants.Items.Door;
             Description = "It looks like a cell [door]. Through a small openning, you can see a dark [corridor].";
         }
 
         public override bool CanInteractWith(string other)
         {
-            return other.EqualsIgnoreCase("Key");
+            return other.EqualsIgnoreCase(Constants.Items.Key);
         }
 
         public override string InteractWith(IGameContext context)
@@ -26,7 +27,7 @@ namespace IncredibleTextAdventure.Items.CellItems
 
         public override string BlocksPathTo()
         {
-            return "Corridor";
+            return Constants.Rooms.Corridor;
         }
     }
 }

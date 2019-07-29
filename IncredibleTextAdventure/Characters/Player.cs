@@ -3,6 +3,7 @@ using IncredibleTextAdventure.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 
@@ -15,7 +16,7 @@ namespace IncredibleTextAdventure.Characters
 
         private readonly IConsoleWriter _consoleWriter;
 
-        private const string StartingLocalisation = "cell";
+        private const string StartingLocalisation = Constants.Rooms.Cell;
 
         public Player(IConsoleWriter consoleWriter)
         {

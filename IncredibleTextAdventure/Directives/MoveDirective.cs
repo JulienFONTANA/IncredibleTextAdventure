@@ -33,7 +33,7 @@ namespace IncredibleTextAdventure.Directives
                 var currentRoom = context.GetCurrentRoom();
                 if (capture.Equals(currentRoom.Name, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    _consoleWriter.WriteToConsole($"You are already in the {capture}.");
+                    _consoleWriter.WriteToConsole($"You are already in the [{capture}].");
                     return;
                 }
 
@@ -51,7 +51,7 @@ namespace IncredibleTextAdventure.Directives
                 }
                 else if (!context.GetRoom(roomToGo).GetAccessibility())
                 {
-                    _consoleWriter.WriteToConsole($"You can't access {roomToGo.Name} !");
+                    _consoleWriter.WriteToConsole($"You can't access [{roomToGo.Name}] !");
                 }
                 else
                 {

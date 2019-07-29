@@ -48,7 +48,7 @@ namespace IncredibleTextAdventure.Directives
                 }
 
                 var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(targetObj, StringComparison.OrdinalIgnoreCase));
-                if (ReferenceEquals(objectToUseOn, null))
+                if (ReferenceEquals(objectToUseOn, null) || !objectToUseOn.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole($"What are you trying to use [{objectToUse.Name}] on?");
                     return;

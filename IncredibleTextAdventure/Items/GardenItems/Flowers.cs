@@ -8,10 +8,5 @@
             Description = "Magnificent flowers. The petals looks almost as if made of colorfull glass...";
             CanBePickedUp = true;
         }
-
-        public override bool CanInteractWith(string other)
-        {
-            return false;
-        }
     }
 }

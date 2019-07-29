@@ -28,14 +28,14 @@ namespace IncredibleTextAdventure.Directives
             if (match.Success)
             {
                 var capture = match.Groups["capture"].Value.Trim();
-                var desc = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase))?.Description;
-                if (ReferenceEquals(desc, null))
+                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                if (ReferenceEquals(item, null) || !item.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole("What are you gazing at ? Nothingness ?");
                 }
                 else
                 {
-                    _consoleWriter.WriteToConsole(desc);
+                    _consoleWriter.WriteToConsole(item.Description);
                 }
             }
         }

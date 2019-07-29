@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items.CellItems;
@@ -30,6 +31,9 @@ namespace IncredibleTextAdventure.Injection
             Bind<ICellItem>().To<Door>();
             Bind<ICellItem>().To<Key>();
             Bind<ICellItem>().To<Table>();
+            // Hidden
+            Bind<ICellItem>().To<BrokenTable>();
+            Bind<ICellItem>().To<TableLeg>();
 
             Bind<IGardenItem>().To<Flowers>();
             Bind<IGardenItem>().To<Fountain>();
@@ -52,6 +56,8 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<UseDirective>();
             Bind<IDirective>().To<WhereDirective>();
             Bind<IDirective>().To<InfoDirective>();
+
+            Bind<ICellDirective>().To<BreakDirective>();
 
             Bind<IGardenDirective>().To<DrinkDirective>();
         }

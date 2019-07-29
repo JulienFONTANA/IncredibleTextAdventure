@@ -8,10 +8,5 @@
             Description = "A rusty copper [key], green and heavy !";
             CanBePickedUp = true;
         }
-
-        public override bool CanInteractWith(string other)
-        {
-            return false;
-        }
     }
 }

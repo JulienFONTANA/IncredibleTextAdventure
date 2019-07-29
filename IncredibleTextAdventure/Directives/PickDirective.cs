@@ -29,8 +29,14 @@ namespace IncredibleTextAdventure.Directives
             {
                 var capture = match.Groups["capture"].Value.Trim();
 
+                if (!ReferenceEquals(context.GetPlayer().GetItemFromInventory(capture), null))
+                {
+                    _consoleWriter.WriteToConsole($"The object [{capture}] is already in your inventory !");
+                    return;
+                }
+
                 var objToPickUp = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
-                if (ReferenceEquals(objToPickUp, null))
+                if (ReferenceEquals(objToPickUp, null) || !objToPickUp.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole("What are you trying to pick up?");
                     return;

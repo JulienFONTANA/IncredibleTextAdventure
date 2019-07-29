@@ -20,5 +20,6 @@ namespace IncredibleTextAdventure.Rooms
         bool GetAccessibility();
         void SetAccessibility(bool accessible = true);
         void UpdateDescription();
+        IItem GetItem(string itemName);
     }
 }

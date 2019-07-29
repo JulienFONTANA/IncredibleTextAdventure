@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directives\Cell\ICellDirective.cs" />
+    <Compile Include="Directives\Cell\BreakDirective.cs" />
     <Compile Include="Directives\Garden\IGardenDirective.cs" />
     <Compile Include="Directives\InventoryDirective.cs" />
     <Compile Include="Directives\HelpDirective.cs" />
@@ -69,7 +71,9 @@
     <Compile Include="Injection\ITAInjectionModule.cs" />
     <Compile Include="Characters\IPlayer.cs" />
     <Compile Include="Characters\Player.cs" />
+    <Compile Include="Items\CellItems\BrokenTable.cs" />
     <Compile Include="Items\CellItems\Table.cs" />
+    <Compile Include="Items\CellItems\TableLeg.cs" />
     <Compile Include="Items\GardenItems\Flowers.cs" />
     <Compile Include="Items\GardenItems\Fountain.cs" />
     <Compile Include="Items\CellItems\ICellItem.cs" />

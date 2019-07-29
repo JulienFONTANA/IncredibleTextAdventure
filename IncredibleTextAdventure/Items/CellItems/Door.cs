@@ -9,7 +9,6 @@ namespace IncredibleTextAdventure.Items.CellItems
         {
             Name = "Door";
             Description = "It looks like a cell [door]. Through a small openning, you can see a dark [corridor].";
-            CanBePickedUp = false;
         }
 
         public override bool CanInteractWith(string other)

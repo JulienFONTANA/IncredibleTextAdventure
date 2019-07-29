@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives.Garden
     public class DrinkDirective : IGardenDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(Drink)[ \t]?(from fountain)?";
+        private const string CmdPattern = @"^(drink)";
 
         public DrinkDirective(IConsoleWriter consoleWriter)
         {
@@ -21,7 +21,7 @@ namespace IncredibleTextAdventure.Directives.Garden
 
         public void TryApply(string cmd, GameContext context)
         {
-            _consoleWriter.WriteToConsole($"You try to drink from the fountain, but alas, it's empty !");
+            _consoleWriter.WriteToConsole($"You try to drink from the [fountain], but alas, it's empty !");
         }
     }
 }

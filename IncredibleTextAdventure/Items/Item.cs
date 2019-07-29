@@ -7,8 +7,18 @@ namespace IncredibleTextAdventure.Items
         public string Name { get; set; }
         public string Description { get; set; }
         public bool CanBePickedUp { get; set; }
+        protected bool IsVisible { get; set; }
 
-        public abstract bool CanInteractWith(string other);
+        protected Item()
+        {
+            CanBePickedUp = false;
+            IsVisible = true;
+        }
+
+        public virtual bool CanInteractWith(string other)
+        {
+            return false;
+        }
 
         public virtual string InteractWith(IGameContext context)
         {
@@ -18,6 +28,16 @@ namespace IncredibleTextAdventure.Items
         public virtual string BlocksPathTo()
         {
             return string.Empty;
+        }
+
+        public bool IsItemVisible()
+        {
+            return IsVisible;
+        }
+
+        public void SetItemVisibility(bool visible)
+        {
+            IsVisible = visible;
         }
     }
 }

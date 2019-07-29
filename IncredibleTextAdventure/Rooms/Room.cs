@@ -52,6 +52,11 @@ namespace IncredibleTextAdventure.Rooms
             return ItemsInRoom;
         }
 
+        public IItem GetItem(string itemName)
+        {
+            return ItemsInRoom.FirstOrDefault(item => item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase));
+        }
+
         public IDirective[] GetSpecialDirectives()
         {
             return SpecialDirectives;
@@ -79,7 +84,7 @@ namespace IncredibleTextAdventure.Rooms
 
         protected bool IsItemInRoom(string itemNameToLookUp)
         {
-            return ItemsInRoom.Any(item => item.Name.Equals(itemNameToLookUp, StringComparison.OrdinalIgnoreCase));
+            return ItemsInRoom.Any(item => item.Name.Equals(itemNameToLookUp, StringComparison.OrdinalIgnoreCase) && item.IsItemVisible());
         }
 
         protected bool IsAccessibile(string roomNameToLookUp)

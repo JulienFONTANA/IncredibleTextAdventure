@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives
     public class HelpDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(Help)";
+        private const string CmdPattern = @"^(help)";
 
         public HelpDirective(IConsoleWriter consoleWriter)
         {

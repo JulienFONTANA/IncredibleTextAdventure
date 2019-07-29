@@ -14,7 +14,7 @@ namespace IncredibleTextAdventure.Service.RoomStateManager
 
         public void OpenRoom(IRoom roomToOpen)
         {
-            _rooms.FirstOrDefault(r => r.Equals(roomToOpen))?.SetAccessibility();
+            _rooms.FirstOrDefault(r => r.Equals(roomToOpen))?.SetAccessibility(true);
         }
     }
 }

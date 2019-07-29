@@ -31,9 +31,10 @@ namespace IncredibleTextAdventure.Directives
                 var capture = match.Groups["capture"].Value.Trim();
 
                 var currentRoom = context.GetCurrentRoom();
-                if (capture.Equals(currentRoom.Name))
+                if (capture.Equals(currentRoom.Name, StringComparison.CurrentCultureIgnoreCase))
                 {
                     _consoleWriter.WriteToConsole($"You are already in the {capture}.");
+                    return;
                 }
 
                 var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));

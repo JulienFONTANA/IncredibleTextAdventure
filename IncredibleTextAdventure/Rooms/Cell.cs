@@ -16,7 +16,7 @@ namespace IncredibleTextAdventure.Rooms
             Description = "In front of you is a closed, heavy [door]. "
                           + "In a corner is a small [table], made of crude wood. "
                           + "A metal [key] was put here on display, almost as if someone wanted you to [pick] it up.";
-
+            IsAccessible = true;
             ItemsInRoom = new List<IItem>(itemsInRoom);
         }
 

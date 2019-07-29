@@ -67,6 +67,7 @@ namespace IncredibleTextAdventure.Characters
         public void SetPlayerLocalisation(IRoom newLocalisation)
         {
             Localisation = newLocalisation;
+            Localisation.UpdateDescription();
         }
 
         public string GetPlayerStartingLocalisation()

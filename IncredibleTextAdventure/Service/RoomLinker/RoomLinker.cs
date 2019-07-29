@@ -24,7 +24,7 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         {
             foreach (var roomName in _linkedRoomList.Keys)
             {
-                var room = _rooms.FirstOrDefault(r => r.Name.Equals(roomName, StringComparison.OrdinalIgnoreCase));
+                var room = _rooms.FirstOrDefault(r => r.Name.EqualsIgnoreCase(roomName));
 
                 if (ReferenceEquals(room, null))
                 {
@@ -34,7 +34,7 @@ namespace IncredibleTextAdventure.Service.RoomLinker
                 var linkedRooms = new List<IRoom>();
                 foreach (var roomToLink in _linkedRoomList[roomName])
                 {
-                    linkedRooms.Add(_rooms.FirstOrDefault(r => r.Name.Equals(roomToLink, StringComparison.OrdinalIgnoreCase)));
+                    linkedRooms.Add(_rooms.FirstOrDefault(r => r.Name.EqualsIgnoreCase(roomToLink)));
                 }
 
                 room.SetLinkedRoom(linkedRooms);

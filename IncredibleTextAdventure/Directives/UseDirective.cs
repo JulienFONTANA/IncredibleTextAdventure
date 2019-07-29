@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 using IncredibleTextAdventure.Service.RoomStateManager;
 
@@ -47,7 +48,7 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(targetObj, StringComparison.OrdinalIgnoreCase));
+                var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(targetObj));
                 if (ReferenceEquals(objectToUseOn, null) || !objectToUseOn.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole($"What are you trying to use [{objectToUse.Name}] on?");

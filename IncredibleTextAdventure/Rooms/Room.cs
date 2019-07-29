@@ -3,6 +3,7 @@ using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
 using System.Linq;
+using IncredibleTextAdventure.Service;
 
 namespace IncredibleTextAdventure.Rooms
 {
@@ -54,7 +55,7 @@ namespace IncredibleTextAdventure.Rooms
 
         public IItem GetItem(string itemName)
         {
-            return ItemsInRoom.FirstOrDefault(item => item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase));
+            return ItemsInRoom.FirstOrDefault(item => item.Name.EqualsIgnoreCase(itemName));
         }
 
         public IDirective[] GetSpecialDirectives()
@@ -84,12 +85,12 @@ namespace IncredibleTextAdventure.Rooms
 
         protected bool IsItemInRoom(string itemNameToLookUp)
         {
-            return ItemsInRoom.Any(item => item.Name.Equals(itemNameToLookUp, StringComparison.OrdinalIgnoreCase) && item.IsItemVisible());
+            return ItemsInRoom.Any(item => item.Name.EqualsIgnoreCase(itemNameToLookUp) && item.IsItemVisible());
         }
 
         protected bool IsAccessibile(string roomNameToLookUp)
         {
-            var room = LinkedRooms.FirstOrDefault(r =>r.Name.Equals(roomNameToLookUp, StringComparison.OrdinalIgnoreCase));
+            var room = LinkedRooms.FirstOrDefault(r =>r.Name.EqualsIgnoreCase(roomNameToLookUp));
             if (ReferenceEquals(room, null))
             {
                 return false;

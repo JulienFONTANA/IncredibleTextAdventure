@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
@@ -28,7 +29,7 @@ namespace IncredibleTextAdventure.Directives
             if (match.Success)
             {
                 var capture = match.Groups["capture"].Value.Trim();
-                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(item, null) || !item.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole("What are you gazing at ? Nothingness ?");

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives.Cell
@@ -28,7 +29,7 @@ namespace IncredibleTextAdventure.Directives.Cell
             if (match.Success)
             {
                 var capture = match.Groups["capture"].Value.Trim();
-                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(capture));
 
                 if (ReferenceEquals(item, null))
                 {
@@ -36,11 +37,11 @@ namespace IncredibleTextAdventure.Directives.Cell
                     return;
                 }
 
-                if (item.Name.Equals("Door", StringComparison.OrdinalIgnoreCase))
+                if (item.Name.EqualsIgnoreCase("Door"))
                 {
                     _consoleWriter.WriteToConsole("You try for a while, but in the end the door didn't even move. Could there be a [key] somewhere ?");
                 }
-                if (item.Name.Equals("Table", StringComparison.OrdinalIgnoreCase))
+                if (item.Name.EqualsIgnoreCase("Table"))
                 {
                     _consoleWriter.WriteToConsole("Without too much effort, you send the table flying across the cell. " 
                                                   + "Needless to say, it [shatters into pieces].");

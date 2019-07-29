@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using IncredibleTextAdventure.Rooms;
+using IncredibleTextAdventure.Service;
 
 namespace IncredibleTextAdventure.Characters
 {
@@ -56,7 +57,7 @@ namespace IncredibleTextAdventure.Characters
 
         public IItem GetItemFromInventory(string name)
         {
-            return Inventory.FirstOrDefault(item => item.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+            return Inventory.FirstOrDefault(item => item.Name.EqualsIgnoreCase(name));
         }
 
         public IRoom GetPlayerLocalisation()

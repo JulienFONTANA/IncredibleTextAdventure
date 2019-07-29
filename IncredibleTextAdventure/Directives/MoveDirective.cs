@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
@@ -31,13 +32,13 @@ namespace IncredibleTextAdventure.Directives
                 var capture = match.Groups["capture"].Value.Trim();
 
                 var currentRoom = context.GetCurrentRoom();
-                if (capture.Equals(currentRoom.Name, StringComparison.CurrentCultureIgnoreCase))
+                if (capture.EqualsIgnoreCase(currentRoom.Name))
                 {
                     _consoleWriter.WriteToConsole($"You are already in the [{capture}].");
                     return;
                 }
 
-                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(roomToGo, null))
                 {
                     _consoleWriter.WriteToConsole("You can't go there.");

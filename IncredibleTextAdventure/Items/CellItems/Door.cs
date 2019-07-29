@@ -1,4 +1,5 @@
 ﻿using System;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Items.CellItems
@@ -13,7 +14,7 @@ namespace IncredibleTextAdventure.Items.CellItems
 
         public override bool CanInteractWith(string other)
         {
-            return other.Equals("key", StringComparison.OrdinalIgnoreCase);
+            return other.EqualsIgnoreCase("Key");
         }
 
         public override string InteractWith(IGameContext context)

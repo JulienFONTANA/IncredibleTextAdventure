@@ -29,7 +29,7 @@ namespace IncredibleTextAdventure.Service.Context
 
         public bool Command(string cmd)
         {
-            if (cmd.Equals("exit", System.StringComparison.OrdinalIgnoreCase))
+            if (cmd.EqualsIgnoreCase("Exit"))
             {
                 return CheckExitGame();
             }
@@ -69,7 +69,7 @@ namespace IncredibleTextAdventure.Service.Context
 
         public IRoom GetRoom(string room)
         {
-            return _rooms.FirstOrDefault(r => r.Name.Equals(room, System.StringComparison.OrdinalIgnoreCase));
+            return _rooms.FirstOrDefault(r => r.Name.EqualsIgnoreCase(room));
         }
 
         public IRoom GetRoom(IRoom room)
@@ -87,7 +87,7 @@ namespace IncredibleTextAdventure.Service.Context
             _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? Exit is not a valid in game command. "
                                         + "If you want to exit the game, press 'Y'");
             var answer = _consoleReader.ReadLineFromConsole();
-            if (answer.Trim().Equals("Y", System.StringComparison.OrdinalIgnoreCase))
+            if (answer.Trim().EqualsIgnoreCase("Y"))
             {
                 return true;
             }

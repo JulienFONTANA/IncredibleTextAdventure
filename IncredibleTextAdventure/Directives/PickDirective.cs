@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Directives
@@ -35,7 +36,7 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                var objToPickUp = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.Equals(capture, StringComparison.OrdinalIgnoreCase));
+                var objToPickUp = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(objToPickUp, null) || !objToPickUp.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole("What are you trying to pick up?");

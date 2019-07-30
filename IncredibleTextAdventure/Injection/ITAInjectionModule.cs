@@ -3,9 +3,11 @@ using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Items.BarItems;
+using IncredibleTextAdventure.Items.BasementItems;
 using IncredibleTextAdventure.Items.CellItems;
+using IncredibleTextAdventure.Items.CorridorItems;
 using IncredibleTextAdventure.Items.GardenItems;
-using IncredibleTextAdventure.Items.StairsItem;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -29,16 +31,20 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindObjects()
         {
+            Bind<IBarItem>().To<EmptyBottle>();
+
+            Bind<IBasementItem>().To<WeirdTools>();
+
             Bind<ICellItem>().To<Door>();
             Bind<ICellItem>().To<Key>();
             Bind<ICellItem>().To<Table>();
             Bind<ICellItem>().To<BrokenTable>();
             Bind<ICellItem>().To<TableLeg>();
 
+            Bind<ICorridorItem>().To<Signs>();
+
             Bind<IGardenItem>().To<Flowers>();
             Bind<IGardenItem>().To<Fountain>();
-
-            Bind<IStairsItem>().To<Bust>();
         }
 
         private void BindRooms()

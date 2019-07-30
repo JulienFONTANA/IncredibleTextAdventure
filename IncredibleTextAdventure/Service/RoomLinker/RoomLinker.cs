@@ -1,8 +1,8 @@
-﻿using System;
+﻿using IncredibleTextAdventure.Constant;
+using IncredibleTextAdventure.Rooms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using IncredibleTextAdventure.Constant;
-using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Service.RoomLinker
 {
@@ -11,10 +11,9 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         private readonly List<IRoom> _rooms;
         private readonly Dictionary<string, List<string>> _linkedRoomList = new Dictionary<string, List<string>>
         {
-            {Constants.Rooms.Cell, new List<string> { Constants.Rooms.Corridor }},
-            {Constants.Rooms.Corridor, new List<string> { Constants.Rooms.Cell, Constants.Rooms.Garden }},
-            {Constants.Rooms.Garden, new List<string> { Constants.Rooms.Corridor, Constants.Rooms.Stairs }},
-            {Constants.Rooms.Stairs, new List<string> { Constants.Rooms.Garden }}
+            {Constants.Rooms.Cell, new List<string> {Constants.Rooms.Corridor}},
+            {Constants.Rooms.Corridor, new List<string> { Constants.Rooms.Cell, Constants.Rooms.Garden}},
+            {Constants.Rooms.Garden, new List<string> {Constants.Rooms.Corridor}}
         };
 
         public RoomLinker(IEnumerable<IRoom> rooms)

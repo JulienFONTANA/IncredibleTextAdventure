@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
@@ -12,8 +11,8 @@ namespace IncredibleTextAdventure.Directives
     {
         private readonly IConsoleWriter _consoleWriter;
         private readonly IRoomStateManager _roomStateManager;
-        private const string CmdPattern = @"^(use)";
-        private const string FullPattern = @"^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
+        private const string CmdPattern = "^(use)";
+        private const string FullPattern = "^(use)[ \t]?(the)?[ \t]?(?<sourceObj>(.*))(on)[ \t]?(the)?[ \t]?(?<targetObj>(.*))";
 
         public UseDirective(IConsoleWriter consoleWriter,
             IRoomStateManager roomStateManager)

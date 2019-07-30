@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives
     public class WhereDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(where)";
+        private const string CmdPattern = "^(where)";
 
         public WhereDirective(IConsoleWriter consoleWriter)
         {

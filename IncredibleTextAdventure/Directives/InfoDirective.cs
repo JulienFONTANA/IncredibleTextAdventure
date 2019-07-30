@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives
     public class InfoDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(info)";
+        private const string CmdPattern = "^(info)";
 
         public InfoDirective(IConsoleWriter consoleWriter)
         {

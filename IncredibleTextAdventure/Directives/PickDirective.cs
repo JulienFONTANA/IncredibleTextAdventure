@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
@@ -10,8 +9,8 @@ namespace IncredibleTextAdventure.Directives
     public class PickDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(pick|get|take|grab)";
-        private const string FullPattern = @"^(pick|get|take|grab)[ \t]?(the|up)?[ \t]?(?<capture>(.*))";
+        private const string CmdPattern = "^(pick|get|take|grab)";
+        private const string FullPattern = "^(pick|get|take|grab)[ \t]?(the|up)?[ \t]?(?<capture>(.*))";
 
         public PickDirective(IConsoleWriter consoleWriter)
         {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
@@ -11,8 +10,8 @@ namespace IncredibleTextAdventure.Directives
     public class MoveDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(move|go)";
-        private const string FullPattern = @"^(move|go)[ \t]?(to)?[ \t]?(?<capture>(.*))";
+        private const string CmdPattern = "^(move|go)";
+        private const string FullPattern = "^(move|go)[ \t]?(to)?[ \t]?(?<capture>(.*))";
 
         public MoveDirective(IConsoleWriter consoleWriter)
         {

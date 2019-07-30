@@ -11,9 +11,10 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         private readonly List<IRoom> _rooms;
         private readonly Dictionary<string, List<string>> _linkedRoomList = new Dictionary<string, List<string>>
         {
-            {Constants.Rooms.Cell, new List<string> {Constants.Rooms.Corridor}},
-            {Constants.Rooms.Corridor, new List<string> { Constants.Rooms.Cell, Constants.Rooms.Garden}},
-            {Constants.Rooms.Garden, new List<string> {Constants.Rooms.Corridor}}
+            {Constants.Rooms.Cell, new List<string> { Constants.Rooms.Corridor }},
+            {Constants.Rooms.Corridor, new List<string> { Constants.Rooms.Cell, Constants.Rooms.Garden }},
+            {Constants.Rooms.Garden, new List<string> { Constants.Rooms.Corridor, Constants.Rooms.Stairs }},
+            {Constants.Rooms.Stairs, new List<string> { Constants.Rooms.Garden }}
         };
 
         public RoomLinker(IEnumerable<IRoom> rooms)
@@ -29,7 +30,7 @@ namespace IncredibleTextAdventure.Service.RoomLinker
 
                 if (ReferenceEquals(room, null))
                 {
-                    throw  new ArgumentNullException($"Unable to find room named {roomName}.");
+                    throw new ArgumentNullException($"Unable to find room named {roomName}.");
                 }
 
                 var linkedRooms = new List<IRoom>();

@@ -1,5 +1,4 @@
-﻿using System;
-using IncredibleTextAdventure.Constant;
+﻿using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 

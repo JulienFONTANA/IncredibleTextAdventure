@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service;
@@ -10,8 +9,8 @@ namespace IncredibleTextAdventure.Directives
     public class LookDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(look)";
-        private const string FullPattern = @"^(look)[ \t]?(at)?[ \t]?(the)?(?<capture>(.*))";
+        private const string CmdPattern = "^(look)";
+        private const string FullPattern = "^(look)[ \t]?(at)?[ \t]?(the)?(?<capture>(.*))";
 
         public LookDirective(IConsoleWriter consoleWriter)
         {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.ITAConsole;
@@ -11,8 +10,8 @@ namespace IncredibleTextAdventure.Directives.Cell
     public class BreakDirective : ICellDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(break)";
-        private const string FullPattern = @"^(break)[ \t]?(the)?(?<capture>(.*))";
+        private const string CmdPattern = "^(break)";
+        private const string FullPattern = "^(break)[ \t]?(the)?(?<capture>(.*))";
 
         public BreakDirective(IConsoleWriter consoleWriter)
         {
@@ -45,7 +44,7 @@ namespace IncredibleTextAdventure.Directives.Cell
                 if (item.Name.EqualsIgnoreCase(Constants.Items.Table))
                 {
                     _consoleWriter.WriteToConsole("Without too much effort, you send the table flying across the cell. " 
-                                                  + "Needless to say, it [shatters into pieces].");
+                                                  + "Needless to say, it shatters into pieces. From the [broken table], a [table leg] seems salvagable.");
 
                     item.SetItemVisibility(false);
                     context.GetCurrentRoom().GetItem(Constants.Items.BrokenTable).SetItemVisibility(true);

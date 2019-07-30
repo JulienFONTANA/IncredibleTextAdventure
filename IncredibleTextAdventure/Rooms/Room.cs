@@ -1,5 +1,4 @@
-﻿using System;
-using IncredibleTextAdventure.Directives;
+﻿using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Items;
 using System.Collections.Generic;
 using System.Linq;

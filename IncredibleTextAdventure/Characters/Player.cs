@@ -48,7 +48,7 @@ namespace IncredibleTextAdventure.Characters
             }
             else if (Inventory.Count == 1)
             {
-                return "Your have a " + string.Join(", ", Inventory.FirstOrDefault().Name);
+                return "Your have a " + string.Join(", ", Inventory.First().Name);
             }
             else
             {

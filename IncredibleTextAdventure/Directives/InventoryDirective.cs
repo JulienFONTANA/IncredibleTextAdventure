@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives
     public class InventoryDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(inventory)";
+        private const string CmdPattern = "^(inventory)";
 
         public InventoryDirective(IConsoleWriter consoleWriter)
         {

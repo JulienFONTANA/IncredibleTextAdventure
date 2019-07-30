@@ -5,6 +5,7 @@ using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items.CellItems;
 using IncredibleTextAdventure.Items.GardenItems;
+using IncredibleTextAdventure.Items.StairsItem;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -31,12 +32,13 @@ namespace IncredibleTextAdventure.Injection
             Bind<ICellItem>().To<Door>();
             Bind<ICellItem>().To<Key>();
             Bind<ICellItem>().To<Table>();
-            // Hidden
             Bind<ICellItem>().To<BrokenTable>();
             Bind<ICellItem>().To<TableLeg>();
 
             Bind<IGardenItem>().To<Flowers>();
             Bind<IGardenItem>().To<Fountain>();
+
+            Bind<IStairsItem>().To<Bust>();
         }
 
         private void BindRooms()
@@ -44,6 +46,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<IRoom>().To<Cell>().InSingletonScope();
             Bind<IRoom>().To<Corridor>().InSingletonScope();
             Bind<IRoom>().To<Garden>().InSingletonScope();
+            Bind<IRoom>().To<Stairs>().InSingletonScope();
         }
 
         private void BindDirectives()

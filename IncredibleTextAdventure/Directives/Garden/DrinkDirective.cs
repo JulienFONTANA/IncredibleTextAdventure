@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Directives.Garden
     public class DrinkDirective : IGardenDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = @"^(drink)";
+        private const string CmdPattern = "^(drink)";
 
         public DrinkDirective(IConsoleWriter consoleWriter)
         {

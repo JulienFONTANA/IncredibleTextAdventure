@@ -1,8 +1,8 @@
-﻿using System;
+﻿using IncredibleTextAdventure.Constant;
+using IncredibleTextAdventure.Rooms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using IncredibleTextAdventure.Constant;
-using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Service.RoomLinker
 {
@@ -11,9 +11,40 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         private readonly List<IRoom> _rooms;
         private readonly Dictionary<string, List<string>> _linkedRoomList = new Dictionary<string, List<string>>
         {
-            {Constants.Rooms.Cell, new List<string> {Constants.Rooms.Corridor}},
-            {Constants.Rooms.Corridor, new List<string> { Constants.Rooms.Cell, Constants.Rooms.Garden}},
-            {Constants.Rooms.Garden, new List<string> {Constants.Rooms.Corridor}}
+            {
+                Constants.Rooms.Cell, new List<string> {
+                Constants.Rooms.Corridor
+            } },
+            {
+                Constants.Rooms.Corridor, new List<string> {
+                Constants.Rooms.Cell,
+                Constants.Rooms.Garden,
+                //Constants.Rooms.Basement
+            } },
+            {
+                Constants.Rooms.Garden, new List<string> {
+                Constants.Rooms.Corridor,
+                //Constants.Rooms.Stairs,
+                //Constants.Rooms.Lounge,
+                //Constants.Rooms.Bar
+            } },
+            //{
+            //    Constants.Rooms.Stairs, new List<string> {
+            //    Constants.Rooms.Garden,
+            //    Constants.Rooms.GardenShed
+            //} },
+            //{
+            //    Constants.Rooms.GardenShed, new List<string> {
+            //    Constants.Rooms.Stairs
+            //} },
+            //{
+            //    Constants.Rooms.Bar, new List<string> {
+            //    Constants.Rooms.Garden
+            //} },
+            //{
+            //    Constants.Rooms.Lounge, new List<string> {
+            //    Constants.Rooms.Garden
+            //} }
         };
 
         public RoomLinker(IEnumerable<IRoom> rooms)
@@ -29,7 +60,7 @@ namespace IncredibleTextAdventure.Service.RoomLinker
 
                 if (ReferenceEquals(room, null))
                 {
-                    throw  new ArgumentNullException($"Unable to find room named {roomName}.");
+                    throw new ArgumentNullException($"Unable to find room named {roomName}.");
                 }
 
                 var linkedRooms = new List<IRoom>();

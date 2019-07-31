@@ -1,4 +1,5 @@
-﻿using IncredibleTextAdventure.Characters;
+﻿using System.Collections.Generic;
+using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
@@ -84,7 +85,7 @@ namespace IncredibleTextAdventure.Service.Context
 
         private bool CheckExitGame()
         {
-            _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? Exit is not a valid in game command. "
+            _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? [Exit] is not a valid in game command. "
                                         + "If you want to exit the game, press 'Y'");
             var answer = _consoleReader.ReadLineFromConsole();
             if (answer.Trim().EqualsIgnoreCase("Y"))

@@ -7,8 +7,9 @@ namespace IncredibleTextAdventure.Items.StairsItem
         public Bust()
         {
             Name = Constants.Items.Bust;
-            Description = "WIP";
-            CanBePickedUp = false;
+            Description = "The crystal [bust] of a woman. It is not polished nor realistic, yet " 
+                          + "you stop at the impression of intelligence and grace that emanates from it. " 
+                          + "You suddenly notice a [note] behind it.";
         }
     }
 }

@@ -17,32 +17,33 @@
         public static class Items
         {
             // Bar
-            public const string Alcool = "Alcool";
+            public const string AlcoholDispenser = "Alcohol Dispenser";
             public const string EmptyBottle = "Empty Bottle";
-            public const string LeatherChairs = "Leather Chairs";
             public const string Lantern = "Lantern";
+            public const string LeatherChairs = "Leather Chairs";
 
             // Basement
             public const string WeirdTools = "Weird Tools";
             public const string RubyRing = "Ruby Ring";
 
             // Cell
+            public const string BrokenTable = "Broken Table";
             public const string Door = "Door";
             public const string Key = "Key";
             public const string Table = "Table";
             public const string TableLeg = "Table Leg";
-            public const string BrokenTable = "Broken Table";
 
             // Corridor
             public const string Signs = "Signs";
 
             // Garden
-            public const string Flower = "Flower";
+            public const string Flowers = "Flowers";
             public const string Fountain = "Fountain";
+            public const string WaterlessFountain = "Fountain";
 
             // Garden Shed
             public const string Windows = "Windows";
-            public const string LanternWithoutAlcool = "Lantern";
+            public const string LanternWithoutAlcohol = "Lantern";
             public const string Mechanism = "Mechanism";
 
             // Lounge

@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.CorridorItems
         public Signs()
         {
             Name = Constants.Items.Signs;
-            Description = "Weird luminescent signs covers the walls now in an electric blue color. "
+            Description = "Weird luminescent [signs] covers the walls now in an electric blue color. "
                          +"The path to the [basement] is now illuminated...";
             IsVisible = false;
         }

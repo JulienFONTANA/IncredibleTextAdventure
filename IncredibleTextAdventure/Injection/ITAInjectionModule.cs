@@ -8,6 +8,9 @@ using IncredibleTextAdventure.Items.BasementItems;
 using IncredibleTextAdventure.Items.CellItems;
 using IncredibleTextAdventure.Items.CorridorItems;
 using IncredibleTextAdventure.Items.GardenItems;
+using IncredibleTextAdventure.Items.GardenShedItems;
+using IncredibleTextAdventure.Items.LoungeItems;
+using IncredibleTextAdventure.Items.StairsItem;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
@@ -31,8 +34,12 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindObjects()
         {
+            Bind<IBarItem>().To<AlcoholDispenser>();
             Bind<IBarItem>().To<EmptyBottle>();
+            Bind<IBarItem>().To<Lantern>();
+            Bind<IBarItem>().To<LeatherChairs>();
 
+            Bind<IBasementItem>().To<RubyRing>();
             Bind<IBasementItem>().To<WeirdTools>();
 
             Bind<ICellItem>().To<Door>();
@@ -45,6 +52,19 @@ namespace IncredibleTextAdventure.Injection
 
             Bind<IGardenItem>().To<Flowers>();
             Bind<IGardenItem>().To<Fountain>();
+            Bind<IGardenItem>().To<WaterlessFountain>();
+
+            Bind<IGardenShedItem>().To<LanternWithoutAlcohol>();
+            Bind<IGardenShedItem>().To<Mechanism>();
+            Bind<IGardenShedItem>().To<Windows>();
+
+            Bind<ILoungeItem>().To<Altar>();
+            Bind<ILoungeItem>().To<Bookshelves>();
+            Bind<ILoungeItem>().To<Chimney>();
+            Bind<ILoungeItem>().To<Paintings>();
+
+            Bind<IStairsItem>().To<Bust>();
+            Bind<IStairsItem>().To<Note>();
         }
 
         private void BindRooms()

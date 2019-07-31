@@ -100,7 +100,7 @@ namespace IncredibleTextAdventure.Injection
         private void BindGodMode()
         {
             Bind<IDirective>().To<TeleportDirective>();
-            Bind<IDirective>().To<HaveDirective>();
+            Bind<IDirective>().To<GiveMeDirective>();
         }
 
         private void BindPlayer()

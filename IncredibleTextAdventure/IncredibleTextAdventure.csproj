@@ -110,6 +110,7 @@
     <Compile Include="ITAConsole\IConsoleReader.cs" />
     <Compile Include="ITAConsole\ConsoleReader.cs" />
     <Compile Include="Rooms\Cell.cs" />
+    <Compile Include="Rooms\GardenShed.cs" />
     <Compile Include="Rooms\Stairs.cs" />
     <Compile Include="Rooms\Corridor.cs" />
     <Compile Include="Rooms\Garden.cs" />

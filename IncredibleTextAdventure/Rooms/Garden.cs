@@ -19,7 +19,7 @@ namespace IncredibleTextAdventure.Rooms
 
             Description = "A magnificent [garden], with [flowers] everywhere. In the center is a waterless [fountain]. " 
                           +"A pathway leads back to the [corridor], and on yout left [stairs] goes to an overlooking room.";
-            IsAccessible = true;
+            IsRoomAccessible = true;
 
             ItemsInRoom = new List<IItem>(itemsInRoom);
             SpecialDirectives = specialGardenDirective;

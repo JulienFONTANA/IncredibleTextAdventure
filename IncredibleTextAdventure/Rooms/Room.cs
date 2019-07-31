@@ -12,7 +12,7 @@ namespace IncredibleTextAdventure.Rooms
         public string Description { get; set; }
         public string FirstDescription { get; set; }
 
-        protected bool IsAccessible { get; set; }
+        protected bool IsRoomAccessible { get; set; }
         protected bool IsFirstTime { get; set; }
         protected List<IRoom> LinkedRooms { get; set; }
         protected List<IItem> ItemsInRoom { get; set; }
@@ -20,7 +20,7 @@ namespace IncredibleTextAdventure.Rooms
 
         protected Room()
         {
-            IsAccessible = false;
+            IsRoomAccessible = false;
             IsFirstTime = true;
             LinkedRooms = new List<IRoom>();
             ItemsInRoom = new List<IItem>();
@@ -74,12 +74,12 @@ namespace IncredibleTextAdventure.Rooms
 
         public bool GetAccessibility()
         {
-            return IsAccessible;
+            return IsRoomAccessible;
         }
 
         public void SetAccessibility(bool accessible = true)
         {
-            IsAccessible = accessible;
+            IsRoomAccessible = accessible;
         }
 
         protected bool IsItemInRoom(string itemNameToLookUp)
@@ -87,7 +87,7 @@ namespace IncredibleTextAdventure.Rooms
             return ItemsInRoom.Any(item => item.Name.EqualsIgnoreCase(itemNameToLookUp) && item.IsItemVisible());
         }
 
-        protected bool IsAccessibile(string roomNameToLookUp)
+        protected bool IsAccessible(string roomNameToLookUp)
         {
             var room = LinkedRooms.FirstOrDefault(r =>r.Name.EqualsIgnoreCase(roomNameToLookUp));
             if (ReferenceEquals(room, null))

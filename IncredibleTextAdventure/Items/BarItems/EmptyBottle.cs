@@ -7,8 +7,10 @@ namespace IncredibleTextAdventure.Items.BarItems
         public EmptyBottle()
         {
             Name = Constants.Items.EmptyBottle;
-            Description = "An old whiskey, [bottle], but it's empty. And clean !";
+            Description = "An old whiskey [bottle], that used to be filled with putrid liquid, but it's empty now. " +
+                          "A [golden key] fell from it.";
             CanBePickedUp = true;
+            IsVisible = false;
         }
     }
 }

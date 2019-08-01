@@ -17,12 +17,19 @@ namespace IncredibleTextAdventure.Rooms
                                +"center of this garden is a [fountain], but alas no water in it. How come such a garden "
                                +"exists without water ? On your left are [stairs] seems up go to a room that overlooks the garden";
 
-            Description = "A magnificent [garden], with [flowers] everywhere. In the center is a waterless [fountain]. " 
-                          +"A pathway leads back to the [corridor], and on yout left [stairs] goes to an overlooking room.";
             IsRoomAccessible = true;
 
             ItemsInRoom = new List<IItem>(itemsInRoom);
             SpecialDirectives = specialGardenDirective;
+        }
+
+        public override void UpdateDescription()
+        {
+            Description = "A magnificent [garden], with [flowers] everywhere. " +
+                          (IsItemInRoom(Constants.Items.WaterlessFountain) ? 
+                              "In the center is a waterless [fountain]. " :
+                              "The water from the [fountain] is clear and cold. It irrigates the place, and opened the path to the [bar]") +
+                          "A pathway leads back to the [corridor], and on your left [stairs] goes to an overlooking room.";
         }
     }
 }

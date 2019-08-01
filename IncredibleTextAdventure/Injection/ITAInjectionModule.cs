@@ -36,9 +36,11 @@ namespace IncredibleTextAdventure.Injection
         private void BindObjects()
         {
             Bind<IBarItem>().To<AlcoholDispenser>();
+            Bind<IBarItem>().To<Bottle>();
             Bind<IBarItem>().To<EmptyBottle>();
             Bind<IBarItem>().To<Lantern>();
             Bind<IBarItem>().To<LeatherChairs>();
+            Bind<IBarItem>().To<GoldenKey>();
 
             Bind<IBasementItem>().To<RubyRing>();
             Bind<IBasementItem>().To<WeirdTools>();
@@ -70,11 +72,14 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindRooms()
         {
+            Bind<IRoom>().To<Bar>().InSingletonScope();
+            Bind<IRoom>().To<Basement>().InSingletonScope();
             Bind<IRoom>().To<Cell>().InSingletonScope();
             Bind<IRoom>().To<Corridor>().InSingletonScope();
             Bind<IRoom>().To<Garden>().InSingletonScope();
-            Bind<IRoom>().To<Stairs>().InSingletonScope();
             Bind<IRoom>().To<GardenShed>().InSingletonScope();
+            Bind<IRoom>().To<Lounge>().InSingletonScope();
+            Bind<IRoom>().To<Stairs>().InSingletonScope();
         }
 
         private void BindDirectives()

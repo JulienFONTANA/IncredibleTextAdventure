@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.CellItems
         public Key()
         {
             Name = Constants.Items.Key;
-            Description = "A rusty copper [key], green and heavy !";
+            Description = "A rusty copper [key], green and heavy.";
             CanBePickedUp = true;
         }
     }

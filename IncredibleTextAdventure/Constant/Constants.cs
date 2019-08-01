@@ -18,9 +18,11 @@
         {
             // Bar
             public const string AlcoholDispenser = "Alcohol Dispenser";
+            public const string Bottle = "Bottle";
             public const string EmptyBottle = "Empty Bottle";
             public const string Lantern = "Lantern";
             public const string LeatherChairs = "Leather Chairs";
+            public const string GoldenKey = "Golden Key";
 
             // Basement
             public const string WeirdTools = "Weird Tools";

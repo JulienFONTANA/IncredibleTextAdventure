@@ -75,6 +75,8 @@
     <Compile Include="Characters\IPlayer.cs" />
     <Compile Include="Characters\Player.cs" />
     <Compile Include="Items\BarItems\AlcoholDispenser.cs" />
+    <Compile Include="Items\BarItems\Bottle.cs" />
+    <Compile Include="Items\BarItems\GoldenKey.cs" />
     <Compile Include="Items\BarItems\Lantern.cs" />
     <Compile Include="Items\BarItems\EmptyBottle.cs" />
     <Compile Include="Items\BarItems\LeatherChairs.cs" />
@@ -111,8 +113,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITAConsole\IConsoleReader.cs" />
     <Compile Include="ITAConsole\ConsoleReader.cs" />
+    <Compile Include="Rooms\Bar.cs" />
+    <Compile Include="Rooms\Basement.cs" />
     <Compile Include="Rooms\Cell.cs" />
     <Compile Include="Rooms\GardenShed.cs" />
+    <Compile Include="Rooms\Lounge.cs" />
     <Compile Include="Rooms\Stairs.cs" />
     <Compile Include="Rooms\Corridor.cs" />
     <Compile Include="Rooms\Garden.cs" />

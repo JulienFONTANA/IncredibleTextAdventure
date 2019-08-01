@@ -24,10 +24,15 @@ namespace IncredibleTextAdventure.Rooms
 
         public override void UpdateDescription()
         {
-            Description = (IsAccessible(Constants.Rooms.Corridor) ? "In front of you, the doors to the [corridor] lies open. " : "In front of you is a closed, heavy [door]. ")
-                          + (IsItemInRoom(Constants.Items.Table) ? "In a corner is a small [table], made of crude wood. Doesn't seem very solid. " 
-                              : "The [broken table] pieces are everywhere... The only complete part left is a [table leg]. ")
-                          + (IsItemInRoom(Constants.Items.Key) ? "A metal [key] was put here on display, almost as if someone wanted you to [pick] it up." : string.Empty);
+            Description = (IsAccessible(Constants.Rooms.Corridor) ?
+                              "In front of you, the doors to the [corridor] lies open. " :
+                              "In front of you is a closed, heavy [door]. ")
+                          + (IsItemInRoom(Constants.Items.Table) ? 
+                              "In a corner is a small [table], made of crude wood. Doesn't seem very solid. " :
+                              "The [broken table] pieces are everywhere... The only complete part left is a [table leg]. ")
+                          + (IsItemInRoom(Constants.Items.Key) ? 
+                              "A metal [key] was put here on display, almost as if someone wanted you to [pick] it up." :
+                              string.Empty);
         }
     }
 }

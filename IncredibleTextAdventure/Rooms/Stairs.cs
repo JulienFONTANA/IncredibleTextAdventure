@@ -14,16 +14,16 @@ namespace IncredibleTextAdventure.Rooms
                                + "Each step, while well maintained, start to be smooth and slippery, as if well used. "
                                + "As you climb up, you come across a marble [bust], but can't say from whom. "
                                + "Climbing is made easy by a small wind, coming from the Garden";
-            Description = "[Stairs], from the [garden] to the [garden shed]";
             IsRoomAccessible = true;
             ItemsInRoom = new List<IItem>(itemsInRoom);
         }
 
         public override void UpdateDescription()
         {
-            Description = "[Stairs], from the [garden] to the [garden shed]. A marble [bust] greets you half-way from the top. ";
-            // TODO - write dynamic info
-            //+ (IsItemInRoom(Constants.Items.Note) ? "The [note] is " : string.Empty);
+            Description = "[Stairs], from the [garden] to the [garden shed]. A marble [bust] greets you half-way from the top. " + 
+                          (IsItemInRoom(Constants.Items.Note) ?
+                              "The [note] is still behind the sculpture. " :
+                              string.Empty);
         }
     }
 }

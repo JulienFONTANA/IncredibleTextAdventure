@@ -12,6 +12,18 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         private readonly Dictionary<string, List<string>> _linkedRoomList = new Dictionary<string, List<string>>
         {
             {
+                Constants.Rooms.Bar, new List<string>
+                {
+                    Constants.Rooms.Garden
+                }
+            },
+            {
+                Constants.Rooms.Basement, new List<string>
+                {
+                    Constants.Rooms.Corridor
+                }
+            },
+            {
                 Constants.Rooms.Cell, new List<string>
                 {
                     Constants.Rooms.Corridor
@@ -21,14 +33,29 @@ namespace IncredibleTextAdventure.Service.RoomLinker
                 Constants.Rooms.Corridor, new List<string>
                 {
                     Constants.Rooms.Cell,
-                    Constants.Rooms.Garden
+                    Constants.Rooms.Garden,
+                    Constants.Rooms.Basement
                 }
             },
             {
                 Constants.Rooms.Garden, new List<string>
                 {
                     Constants.Rooms.Corridor,
+                    Constants.Rooms.Stairs,
+                    Constants.Rooms.Bar,
+                    Constants.Rooms.Lounge
+                }
+            },
+            {
+                Constants.Rooms.GardenShed, new List<string>
+                {
                     Constants.Rooms.Stairs
+                }
+            },
+            {
+                Constants.Rooms.Lounge, new List<string>
+                {
+                    Constants.Rooms.Garden
                 }
             },
             {

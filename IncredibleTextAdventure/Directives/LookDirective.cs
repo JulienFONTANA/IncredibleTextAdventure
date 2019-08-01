@@ -28,9 +28,9 @@ namespace IncredibleTextAdventure.Directives
             if (match.Success)
             {
                 var capture = match.Groups["capture"].Value.Trim();
-                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(capture)) ?? 
+                var item = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(capture) && i.IsItemVisible()) ?? 
                     context.GetPlayer().GetItemFromInventory(capture);
-                if (ReferenceEquals(item, null) || !item.IsItemVisible())
+                if (ReferenceEquals(item, null))
                 {
                     _consoleWriter.WriteToConsole("What are you gazing at ? Nothingness ?");
                 }

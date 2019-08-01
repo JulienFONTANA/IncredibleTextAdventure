@@ -21,5 +21,7 @@ namespace IncredibleTextAdventure.Rooms
         void SetAccessibility(bool accessible = true);
         void UpdateDescription();
         IItem GetItem(string itemName);
+        bool IsItemInRoom(string itemNameToLookUp);
+        bool IsLinkedRoomAccessible(string roomNameToLookUp);
     }
 }

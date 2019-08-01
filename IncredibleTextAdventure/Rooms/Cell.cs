@@ -24,7 +24,7 @@ namespace IncredibleTextAdventure.Rooms
 
         public override void UpdateDescription()
         {
-            Description = (IsAccessible(Constants.Rooms.Corridor) ?
+            Description = (IsLinkedRoomAccessible(Constants.Rooms.Corridor) ?
                               "In front of you, the doors to the [corridor] lies open. " :
                               "In front of you is a closed, heavy [door]. ")
                           + (IsItemInRoom(Constants.Items.Table) ? 

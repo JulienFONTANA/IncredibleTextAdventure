@@ -82,19 +82,15 @@ namespace IncredibleTextAdventure.Rooms
             IsRoomAccessible = accessible;
         }
 
-        protected bool IsItemInRoom(string itemNameToLookUp)
+        public bool IsItemInRoom(string itemNameToLookUp)
         {
             return ItemsInRoom.Any(item => item.Name.EqualsIgnoreCase(itemNameToLookUp) && item.IsItemVisible());
         }
 
-        protected bool IsAccessible(string roomNameToLookUp)
+        public bool IsLinkedRoomAccessible(string roomNameToLookUp)
         {
             var room = LinkedRooms.FirstOrDefault(r =>r.Name.EqualsIgnoreCase(roomNameToLookUp));
-            if (ReferenceEquals(room, null))
-            {
-                return false;
-            }
-            return room.GetAccessibility();
+            return !ReferenceEquals(room, null) && room.GetAccessibility();
         }
 
         public virtual void UpdateDescription() { }

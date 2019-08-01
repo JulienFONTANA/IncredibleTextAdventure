@@ -106,6 +106,7 @@ namespace IncredibleTextAdventure.Injection
         {
             Bind<IDirective>().To<TeleportDirective>();
             Bind<IDirective>().To<GiveMeDirective>();
+            Bind<IDirective>().To<FullInfoDirective>();
         }
 
         private void BindPlayer()

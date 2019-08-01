@@ -58,6 +58,7 @@
     <Compile Include="Directives\Cell\BreakDirective.cs" />
     <Compile Include="Directives\Garden\IGardenDirective.cs" />
     <Compile Include="Directives\GodMode\GiveMeDirective.cs" />
+    <Compile Include="Directives\GodMode\FullInfoDirective.cs" />
     <Compile Include="Directives\GodMode\TeleportDirective.cs" />
     <Compile Include="Directives\InventoryDirective.cs" />
     <Compile Include="Directives\HelpDirective.cs" />

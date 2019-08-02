@@ -13,10 +13,10 @@ namespace IncredibleTextAdventure.Rooms
         {
             Name = Constants.Rooms.Garden;
             FirstDescription = "You exit the [corridor] and enter a magnificent [garden]. Tall trees cast their shadow on you, allowing you " 
-                               +"to easily get used to the sun light. Strange [flowers] are blooming along the walls. In the " 
+                               +"to easily get use to the sun light. Strange [flowers] are blooming along the walls. In the " 
                                +"center of this garden is a [waterless fountain]. How come such a garden "
                                +"exists without water ? On your left are [stairs] seems up go to a room that overlooks the garden. "
-                               +"In front of you, a [golden door] blocks the way.";
+                               +"In front of you, a [golden door] blocks the way. ";
 
             IsRoomAccessible = true;
 
@@ -35,9 +35,9 @@ namespace IncredibleTextAdventure.Rooms
                               "water. The door must have been made of the same things that made the walls ! " 
                               : string.Empty) +
                           (IsLinkedRoomAccessible(Constants.Rooms.Lounge) ?
-                              "The [golden door] is now unlocked, opening the luxurious [lounge]."
-                              : "In front of you, a [golden door] blocks the way.") +
-                          "A pathway leads back to the [corridor], and on your left [stairs] goes to an overlooking room.";
+                              "The [golden door] is now unlocked, opening the luxurious [lounge]. "
+                              : "In front of you, a [golden door] blocks the way. ") +
+                          "A pathway leads back to the [corridor], and on your left [stairs] goes to an overlooking room. ";
         }
     }
 }

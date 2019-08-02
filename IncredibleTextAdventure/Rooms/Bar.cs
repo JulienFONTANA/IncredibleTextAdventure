@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.BarItems;

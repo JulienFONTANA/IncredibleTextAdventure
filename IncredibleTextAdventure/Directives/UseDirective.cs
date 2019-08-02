@@ -64,6 +64,10 @@ namespace IncredibleTextAdventure.Directives
                 _roomStateManager.OpenRoom(context.GetRoom(objectToUseOn.BlocksPathTo()));
                 context.GetPlayer().UseFromInventory(objectToUse);
             }
+            else
+            {
+                _consoleWriter.WriteToConsole("What are trying to do?");
+            }
         }
     }
 }

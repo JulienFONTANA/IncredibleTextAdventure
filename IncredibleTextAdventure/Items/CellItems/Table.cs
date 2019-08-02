@@ -7,7 +7,8 @@ namespace IncredibleTextAdventure.Items.CellItems
         public Table()
         {
             Name = Constants.Items.Table;
-            Description = "A crude wooden [table]. Of course, one of the legs is shorter. It doesn't look very solid.";
+            Description = "A crude wooden [table]. Of course, one of the legs is shorter. It doesn't look very solid, " +
+                          "and could easily be [broken].";
         }
     }
 }

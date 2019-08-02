@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using IncredibleTextAdventure.Characters;
+﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using System.Linq;
+using IncredibleTextAdventure.Service.SpecialEventManager;
 
 namespace IncredibleTextAdventure.Service.Context
 {
@@ -14,18 +14,22 @@ namespace IncredibleTextAdventure.Service.Context
         private readonly IConsoleReader _consoleReader;
         private readonly IDirective[] _directives;
         private readonly IRoom[] _rooms;
+        private readonly ISpecialEventManager _specialEventManager;
+
 
         public GameContext(IPlayer player,
             IConsoleWriter consoleWriter,
             IConsoleReader consoleReader,
             IDirective[] directives,
-            IRoom[] rooms)
+            IRoom[] rooms,
+            ISpecialEventManager specialEventManager)
         {
             _player = player;
             _consoleWriter = consoleWriter;
             _consoleReader = consoleReader;
             _directives = directives;
             _rooms = rooms;
+            _specialEventManager = specialEventManager;
         }
 
         public bool Command(string cmd)
@@ -81,6 +85,11 @@ namespace IncredibleTextAdventure.Service.Context
         public IPlayer GetPlayer()
         {
             return _player;
+        }
+
+        public void TriggerSpecialEvent(string eventName)
+        {
+            _specialEventManager.SpecialEvent(eventName);
         }
 
         private bool CheckExitGame()

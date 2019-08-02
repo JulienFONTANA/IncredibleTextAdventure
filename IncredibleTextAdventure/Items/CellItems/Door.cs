@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Items.CellItems
         public Door()
         {
             Name = Constants.Items.Door;
-            Description = "It looks like a cell [door]. Through a small openning, you can see a dark [corridor].";
+            Description = "It looks like a cell [door]. Through a small opening, you can see a dark [corridor].";
         }
 
         public override bool CanInteractWith(string other)

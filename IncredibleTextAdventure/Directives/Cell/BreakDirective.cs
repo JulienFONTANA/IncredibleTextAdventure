@@ -46,9 +46,7 @@ namespace IncredibleTextAdventure.Directives.Cell
                     _consoleWriter.WriteToConsole("Without too much effort, you send the table flying across the cell. " 
                                                   + "Needless to say, it shatters into pieces. From the [broken table], a [table leg] seems salvagable.");
 
-                    item.SetItemVisibility(false);
-                    context.GetCurrentRoom().GetItem(Constants.Items.BrokenTable).SetItemVisibility(true);
-                    context.GetCurrentRoom().GetItem(Constants.Items.TableLeg).SetItemVisibility(true);
+                    context.TriggerSpecialEvent(Constants.Events.BreakTable);
                 }
             }
         }

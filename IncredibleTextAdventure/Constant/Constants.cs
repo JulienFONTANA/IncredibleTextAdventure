@@ -41,7 +41,7 @@
             // Garden
             public const string Flowers = "Flowers";
             public const string Fountain = "Fountain";
-            public const string WaterlessFountain = "Fountain";
+            public const string WaterlessFountain = "Waterless Fountain";
 
             // Garden Shed
             public const string Windows = "Windows";
@@ -57,6 +57,12 @@
             // Stairs
             public const string Bust = "Bust";
             public const string Note = "Note";
+        }
+
+        public static class Events
+        {
+            public const string BreakTable = "Break Table";
+            public const string RunningWater = "Running Water";
         }
     }
 }

@@ -29,7 +29,7 @@ namespace IncredibleTextAdventure.Rooms
                               ? "On an empty rack is a [lantern]. "
                               : "You took the [lantern] with you. ") +
                           // TODO - change this when mechanism is activated ?
-                          "Out of the wall, copper pipes and silent gears form a [mechanism] that lies still.";
+                          "Out of the wall, copper pipes form a complex [mechanism].";
         }
     }
 }

@@ -132,6 +132,8 @@
     <Compile Include="Service\RoomLinker\RoomLinker.cs" />
     <Compile Include="Service\RoomStateManager\IRoomStateManager.cs" />
     <Compile Include="Service\RoomStateManager\RoomStateManager.cs" />
+    <Compile Include="Service\SpecialEventManager\ISpecialEventManager.cs" />
+    <Compile Include="Service\SpecialEventManager\SpecialEventManager.cs" />
     <Compile Include="Service\StringExtention.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Directives;
+using IncredibleTextAdventure.Directives.Bar;
 using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Directives.GodMode;
@@ -97,8 +98,8 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<InfoDirective>();
 
             Bind<ICellDirective>().To<BreakDirective>();
-
             Bind<IGardenDirective>().To<DrinkDirective>();
+            Bind<IBarDirective>().To<EmptyBottleDirective>();
 
             #if DEBUG
             BindGodMode();

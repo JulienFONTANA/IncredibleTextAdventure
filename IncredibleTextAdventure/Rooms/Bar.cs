@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Constant;
+using IncredibleTextAdventure.Directives.Bar;
+using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.BarItems;
 
@@ -7,7 +9,8 @@ namespace IncredibleTextAdventure.Rooms
 {
     public class Bar : Room, IRoom
     {
-        public Bar(IEnumerable<IBarItem> itemsInRoom)
+        public Bar(IEnumerable<IBarItem> itemsInRoom,
+            IBarDirective[] specialBarDirectives)
         {
             Name = Constants.Rooms.Bar;
             FirstDescription = "As you step into the room, you're surprised by its ambiance. " +
@@ -18,6 +21,7 @@ namespace IncredibleTextAdventure.Rooms
                                "you can still smell the [garden] and hear the water drizzle. ";
 
             ItemsInRoom = new List<IItem>(itemsInRoom);
+            SpecialDirectives = specialBarDirectives;
         }
 
         public override void UpdateDescription()

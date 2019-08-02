@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using IncredibleTextAdventure.Constant;
+using IncredibleTextAdventure.Items.BarItems;
 using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Service.SpecialEventManager
@@ -18,11 +19,14 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
         {
             switch (eventName)
             {
+                case Constants.Events.BreakTable:
+                    BreakTable();
+                    break;
                 case Constants.Events.RunningWater:
                     RunningWater();
                     break;
-                case Constants.Events.BreakTable:
-                    BreakTable();
+                case Constants.Events.EmptyBottle:
+                    EmptyBottle();
                     break;
                 default:
                     break;
@@ -45,7 +49,7 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
         }
 
         /*
-         * In case the mechanism is activated in the Garden Shed,
+         * When the mechanism is activated in the Garden Shed,
          * the waterless fountain is replaced by the fountain
          */
         private void RunningWater()
@@ -55,6 +59,21 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
             {
                 room.GetItem(Constants.Items.WaterlessFountain).SetItemVisibility(false);
                 room.GetItem(Constants.Items.Fountain).SetItemVisibility(true);
+            }
+        }
+
+        /*
+         * When the bottle is emptied in the bar, the bottle becomes
+         * empty and the golden key falls out.
+         */
+        public void EmptyBottle()
+        {
+            var room = _rooms.FirstOrDefault(r => r.Name.EqualsIgnoreCase(Constants.Rooms.Bar));
+            if (!ReferenceEquals(room, null))
+            {
+                room.GetItem(Constants.Items.Bottle).SetItemVisibility(false);
+                room.GetItem(Constants.Items.EmptyBottle).SetItemVisibility(true);
+                room.GetItem(Constants.Items.GoldenKey).SetItemVisibility(true);
             }
         }
     }

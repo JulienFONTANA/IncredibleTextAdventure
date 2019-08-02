@@ -42,11 +42,13 @@
             public const string Flowers = "Flowers";
             public const string Fountain = "Fountain";
             public const string WaterlessFountain = "Waterless Fountain";
+            public const string GoldenDoor = "Golden Door";
 
             // Garden Shed
             public const string Windows = "Windows";
             public const string LanternWithoutAlcohol = "Lantern";
             public const string Mechanism = "Mechanism";
+            public const string ActivatedMechanism = "Activated Mechanism";
 
             // Lounge
             public const string Paintings = "Paintings";

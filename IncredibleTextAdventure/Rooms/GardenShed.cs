@@ -14,7 +14,7 @@ namespace IncredibleTextAdventure.Rooms
                                "room that looks like a [garden shed]. The room overlooks the [garden], which " +
                                "you can see through the [windows]. Most of the room is filled with empty rack, " +
                                "where gardening tools used to be. The only thing left is a [lantern]. " +
-                               "Out of the wall, copper pipes and silent gears form a [mechanism] that lies still.";
+                               "Out of the wall, copper pipes and silent gears form a [mechanism] that lies still. ";
 
             IsRoomAccessible = true;
 
@@ -28,8 +28,9 @@ namespace IncredibleTextAdventure.Rooms
                           (IsItemInRoom(Constants.Items.LanternWithoutAlcohol)
                               ? "On an empty rack is a [lantern]. "
                               : "You took the [lantern] with you. ") +
-                          // TODO - change this when mechanism is activated ?
-                          "Out of the wall, copper pipes form a complex [mechanism].";
+                          (IsItemInRoom(Constants.Items.ActivatedMechanism) ?
+                              "The soft sound of [running water] that comes out of the [activated mechanism] relaxes you. " : 
+                              "Out of the wall, copper pipes form a complex [mechanism]. Its gears and pipes lie still. ");
         }
     }
 }

@@ -92,9 +92,11 @@
     <Compile Include="Items\CorridorItems\Signs.cs" />
     <Compile Include="Items\GardenItems\Flowers.cs" />
     <Compile Include="Items\GardenItems\Fountain.cs" />
+    <Compile Include="Items\GardenItems\GoldenDoor.cs" />
     <Compile Include="Items\GardenItems\WaterlessFountain.cs" />
     <Compile Include="Items\CellItems\ICellItem.cs" />
     <Compile Include="Items\GardenItems\IGardenItem.cs" />
+    <Compile Include="Items\GardenShedItems\ActivatedMechanism.cs" />
     <Compile Include="Items\GardenShedItems\IGardenItem.cs" />
     <Compile Include="Items\GardenShedItems\Mechanism.cs" />
     <Compile Include="Items\GardenShedItems\LanternWithoutAlcohol.cs" />

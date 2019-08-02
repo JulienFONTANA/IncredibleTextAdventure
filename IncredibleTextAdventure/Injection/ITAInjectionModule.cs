@@ -56,8 +56,10 @@ namespace IncredibleTextAdventure.Injection
 
             Bind<IGardenItem>().To<Flowers>();
             Bind<IGardenItem>().To<Fountain>();
+            Bind<IGardenItem>().To<GoldenDoor>();
             Bind<IGardenItem>().To<WaterlessFountain>();
 
+            Bind<IGardenShedItem>().To<ActivatedMechanism>();
             Bind<IGardenShedItem>().To<LanternWithoutAlcohol>();
             Bind<IGardenShedItem>().To<Mechanism>();
             Bind<IGardenShedItem>().To<Windows>();

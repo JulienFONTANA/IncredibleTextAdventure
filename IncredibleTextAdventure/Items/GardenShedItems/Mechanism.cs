@@ -21,8 +21,6 @@ namespace IncredibleTextAdventure.Items.GardenShedItems
 
         public override string InteractWith(IGameContext context)
         {
-            Description = "A complex copper [mechanism]. You used the [table leg] on mechanism, and now the " +
-                          "water is running again !";
             const string result = "The [mechanism] clicks, steams comes out of pipes, the whole machinery starts " +
                                   "to tremble, the sound become more and more deafening... And suddenly it stops. " +
                                   "All is left is the nice, relaxing sound of [running water] !";

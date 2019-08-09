@@ -2,6 +2,7 @@
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Directives.Bar;
 using IncredibleTextAdventure.Directives.Cell;
+using IncredibleTextAdventure.Directives.Corridor;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Directives.GodMode;
 using IncredibleTextAdventure.ITAConsole;
@@ -98,9 +99,10 @@ namespace IncredibleTextAdventure.Injection
             Bind<IDirective>().To<InfoDirective>();
             Bind<IDirective>().To<OpenDirective>();
 
-            Bind<ICellDirective>().To<BreakDirective>();
-            Bind<IGardenDirective>().To<DrinkDirective>();
             Bind<IBarDirective>().To<EmptyBottleDirective>();
+            Bind<ICellDirective>().To<BreakDirective>();
+            Bind<ICorridorDirective>().To<UseLanternDirective>();
+            Bind<IGardenDirective>().To<DrinkDirective>();
 
             #if DEBUG
             BindGodMode();

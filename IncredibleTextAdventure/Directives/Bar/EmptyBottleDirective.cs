@@ -1,6 +1,5 @@
 ﻿using System.Text.RegularExpressions;
 using IncredibleTextAdventure.Constant;
-using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
 

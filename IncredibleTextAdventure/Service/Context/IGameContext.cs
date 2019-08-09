@@ -11,5 +11,6 @@ namespace IncredibleTextAdventure.Service.Context
         IRoom GetRoom(IRoom room);
         IPlayer GetPlayer();
         void TriggerSpecialEvent(string eventName);
+        void OpenRoom(IRoom room);
     }
 }

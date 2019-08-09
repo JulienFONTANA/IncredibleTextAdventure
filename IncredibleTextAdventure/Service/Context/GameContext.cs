@@ -3,6 +3,7 @@ using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using System.Linq;
+using IncredibleTextAdventure.Service.RoomStateManager;
 using IncredibleTextAdventure.Service.SpecialEventManager;
 
 namespace IncredibleTextAdventure.Service.Context
@@ -15,14 +16,15 @@ namespace IncredibleTextAdventure.Service.Context
         private readonly IDirective[] _directives;
         private readonly IRoom[] _rooms;
         private readonly ISpecialEventManager _specialEventManager;
-
+        private readonly IRoomStateManager _roomStateManager;
 
         public GameContext(IPlayer player,
             IConsoleWriter consoleWriter,
             IConsoleReader consoleReader,
             IDirective[] directives,
             IRoom[] rooms,
-            ISpecialEventManager specialEventManager)
+            ISpecialEventManager specialEventManager,
+            IRoomStateManager roomStateManager)
         {
             _player = player;
             _consoleWriter = consoleWriter;
@@ -30,6 +32,7 @@ namespace IncredibleTextAdventure.Service.Context
             _directives = directives;
             _rooms = rooms;
             _specialEventManager = specialEventManager;
+            _roomStateManager = roomStateManager;
         }
 
         public bool Command(string cmd)
@@ -40,14 +43,6 @@ namespace IncredibleTextAdventure.Service.Context
             }
 
             var foundAction = false;
-            foreach (var action in _directives)
-            {
-                if (action.CanApply(cmd))
-                {
-                    action.TryApply(cmd, this);
-                    foundAction = true;
-                }
-            }
             var specialDirectives = GetCurrentRoom().GetSpecialDirectives();
             if (specialDirectives.Any())
             {
@@ -57,6 +52,19 @@ namespace IncredibleTextAdventure.Service.Context
                     {
                         action.TryApply(cmd, this);
                         foundAction = true;
+                        break;
+                    }
+                }
+            }
+            if (!foundAction)
+            {
+                foreach (var action in _directives)
+                {
+                    if (action.CanApply(cmd))
+                    {
+                        action.TryApply(cmd, this);
+                        foundAction = true;
+                        break;
                     }
                 }
             }
@@ -90,6 +98,11 @@ namespace IncredibleTextAdventure.Service.Context
         public void TriggerSpecialEvent(string eventName)
         {
             _specialEventManager.SpecialEvent(eventName, _player);
+        }
+
+        public void OpenRoom(IRoom room)
+        {
+            _roomStateManager.OpenRoom(room);
         }
 
         private bool CheckExitGame()

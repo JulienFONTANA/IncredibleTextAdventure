@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.BasementItems
         public RubyRing()
         {
             Name = Constants.Items.RubyRing;
-            Description = "A [ruby ​​ring], which hypnotizes you with it's fiery red hues. What a wonder !";
+            Description = "An expensive looking [ruby ring], which hypnotizes you with its fiery red hues. What a wonder !";
             CanBePickedUp = true;
         }
     }

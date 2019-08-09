@@ -66,6 +66,7 @@
             public const string BreakTable = "Break Table";
             public const string RunningWater = "Running Water";
             public const string EmptyBottle = "Empty Bottle";
+            public const string FilledLantern = "Filled Lantern";
         }
     }
 }

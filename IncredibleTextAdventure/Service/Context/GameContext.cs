@@ -34,7 +34,7 @@ namespace IncredibleTextAdventure.Service.Context
 
         public bool Command(string cmd)
         {
-            if (cmd.EqualsIgnoreCase("Exit"))
+            if (cmd.EqualsIgnoreCase("Exit") || cmd.EqualsIgnoreCase("Quit"))
             {
                 return CheckExitGame();
             }
@@ -89,12 +89,12 @@ namespace IncredibleTextAdventure.Service.Context
 
         public void TriggerSpecialEvent(string eventName)
         {
-            _specialEventManager.SpecialEvent(eventName);
+            _specialEventManager.SpecialEvent(eventName, _player);
         }
 
         private bool CheckExitGame()
         {
-            _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? [Exit] is not a valid in game command. "
+            _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? [Exit / Quit] is not a valid in game command. "
                                         + "If you want to exit the game, press 'Y'");
             var answer = _consoleReader.ReadLineFromConsole();
             if (answer.Trim().EqualsIgnoreCase("Y"))

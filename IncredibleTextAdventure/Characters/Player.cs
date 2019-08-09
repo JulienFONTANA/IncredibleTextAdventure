@@ -27,10 +27,13 @@ namespace IncredibleTextAdventure.Characters
             _consoleWriter = consoleWriter;
         }
 
-        public void AddToInventory(IItem item)
+        public void AddToInventory(IItem item, bool verbose = true)
         {
             Inventory.Add(item);
-            _consoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
+            if (verbose)
+            {
+                _consoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
+            }
         }
 
         public bool UseFromInventory(IItem item)

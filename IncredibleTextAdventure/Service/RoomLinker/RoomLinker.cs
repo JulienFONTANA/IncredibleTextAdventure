@@ -55,7 +55,14 @@ namespace IncredibleTextAdventure.Service.RoomLinker
             {
                 Constants.Rooms.Lounge, new List<string>
                 {
-                    Constants.Rooms.Garden
+                    Constants.Rooms.Garden,
+                    Constants.Rooms.Outside
+                }
+            },
+            {
+                Constants.Rooms.Outside, new List<string>
+                {
+                    Constants.Rooms.Lounge
                 }
             },
             {

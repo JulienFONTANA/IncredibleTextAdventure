@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
@@ -67,6 +68,11 @@ namespace IncredibleTextAdventure.Directives
 
         private void MoveToRoom(IGameContext context, IRoom roomToGo)
         {
+            if (roomToGo.Name.EqualsIgnoreCase(Constants.Rooms.Outside))
+            {
+                context.EndGame();
+            }
+
             var room = context.GetRoom(roomToGo);
             context.GetPlayer().SetPlayerLocation(roomToGo);
             if (room.IsFirstTimePlayerEntersRoom())

@@ -1,10 +1,12 @@
 ﻿using IncredibleTextAdventure.Characters;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
-using System.Linq;
 using IncredibleTextAdventure.Service.RoomStateManager;
 using IncredibleTextAdventure.Service.SpecialEventManager;
+using System;
+using System.Linq;
 
 namespace IncredibleTextAdventure.Service.Context
 {
@@ -17,6 +19,8 @@ namespace IncredibleTextAdventure.Service.Context
         private readonly IRoom[] _rooms;
         private readonly ISpecialEventManager _specialEventManager;
         private readonly IRoomStateManager _roomStateManager;
+
+        private bool _IsGameOver;
 
         public GameContext(IPlayer player,
             IConsoleWriter consoleWriter,
@@ -33,13 +37,15 @@ namespace IncredibleTextAdventure.Service.Context
             _rooms = rooms;
             _specialEventManager = specialEventManager;
             _roomStateManager = roomStateManager;
+
+            _IsGameOver = false;
         }
 
         public bool Command(string cmd)
         {
             if (cmd.EqualsIgnoreCase("Exit") || cmd.EqualsIgnoreCase("Quit"))
             {
-                return CheckExitGame();
+                CheckExitGame();
             }
 
             var foundAction = false;
@@ -72,7 +78,18 @@ namespace IncredibleTextAdventure.Service.Context
             {
                 _consoleWriter.WriteToConsole("You can't do that... ");
             }
-            return false;
+
+            if (_IsGameOver)
+            {
+                CheckScore();
+            }
+
+            return _IsGameOver;
+        }
+
+        public void EndGame()
+        {
+            _IsGameOver = true;
         }
 
         public IRoom GetCurrentRoom()
@@ -105,16 +122,36 @@ namespace IncredibleTextAdventure.Service.Context
             _roomStateManager.OpenRoom(room);
         }
 
-        private bool CheckExitGame()
+        private void CheckExitGame()
         {
             _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? [Exit / Quit] is not a valid in game command. "
                                         + "If you want to exit the game, press 'Y'");
             var answer = _consoleReader.ReadLineFromConsole();
             if (answer.Trim().EqualsIgnoreCase("Y"))
             {
-                return true;
+                _IsGameOver = true;
             }
-            return false;
+        }
+
+        private void CheckScore()
+        {
+            _consoleWriter.WriteToConsole("You exit the house through the painting and come back to the material world. " +
+                                          "You need some time to understand what happened... ");
+
+            if (!ReferenceEquals(_player.GetItemFromInventory(Constants.Items.RubyRing), null))
+            {
+                _consoleWriter.WriteToConsole("You check your pocket, and the [ruby ring] is here ! It must have been " +
+                                              "a farewell gift from emily. ");
+                _consoleWriter.WriteToConsole("[Thanks for playing !] You discovered everything inside the wizard's house ! ");
+            }
+            else
+            {
+                _consoleWriter.WriteToConsole("You feel somewhat lost. You must have missed something. There is no other explanation... ");
+                _consoleWriter.WriteToConsole("[Thanks for playing !] You might want to come back, as you forgot some secrets during " +
+                                              "your adventure. Maybe use the [lantern] to lighten you path in dark places next time ?");
+            }
+
+            _IsGameOver = true;
         }
     }
 }

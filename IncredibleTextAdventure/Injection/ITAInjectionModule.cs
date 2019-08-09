@@ -89,6 +89,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<IRoom>().To<Garden>().InSingletonScope();
             Bind<IRoom>().To<GardenShed>().InSingletonScope();
             Bind<IRoom>().To<Lounge>().InSingletonScope();
+            Bind<IRoom>().To<Outside>().InSingletonScope();
             Bind<IRoom>().To<Stairs>().InSingletonScope();
         }
 

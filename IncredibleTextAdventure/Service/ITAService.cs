@@ -35,6 +35,8 @@ namespace IncredibleTextAdventure.Service
 
                 inGame = !_gameContext.Command(cmd);
             }
+
+            _consoleReader.ReadLineFromConsole();
         }
 
         private void InitGame()

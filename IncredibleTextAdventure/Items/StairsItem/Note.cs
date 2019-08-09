@@ -14,5 +14,7 @@ namespace IncredibleTextAdventure.Items.StairsItem
             CanBePickedUp = true;
             IsVisible = false;
         }
+
+        // TODO - make note accessible
     }
 }

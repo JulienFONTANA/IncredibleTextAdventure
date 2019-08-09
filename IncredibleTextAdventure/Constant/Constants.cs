@@ -12,6 +12,7 @@
             public const string GardenShed = "Garden Shed";
             public const string Lounge = "Lounge";
             public const string Stairs = "Stairs";
+            public const string Outside = "Outside";
         }
 
         public static class Items

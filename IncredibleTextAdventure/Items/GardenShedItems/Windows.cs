@@ -8,8 +8,8 @@ namespace IncredibleTextAdventure.Items.GardenShedItems
         {
             Name = Constants.Items.Windows;
             Description = "The view is blocked by trees, yet you can see part the [garden], " 
-                          + "and the [fountain] within it."
-                          + "There are obviously other rooms linked to the garden, you're sure of it now.";
+                          + "and the [fountain] within it. "
+                          + "There are obviously other rooms linked to the garden, you're sure of it now. ";
         }
     }
 }

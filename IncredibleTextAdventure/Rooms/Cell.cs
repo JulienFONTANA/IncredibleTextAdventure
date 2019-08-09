@@ -15,7 +15,7 @@ namespace IncredibleTextAdventure.Rooms
             FirstDescription = "You wake up with simple clothes in a small room. The walls are grey and smooth. "
                               + "Your eyes slowly gets used to darkness, and the shape of a [door] starts to form in front of you. In a corner "
                               + "is a small [table], made of crude wood, that doesn't seem very solid. A metal [key] was put here on display, " 
-                              + "almost as if someone wanted you to [pick] it up.";
+                              + "almost as if someone wanted you to [pick] it up. ";
 
             IsRoomAccessible = true;
             ItemsInRoom = new List<IItem>(itemsInRoom);
@@ -31,7 +31,7 @@ namespace IncredibleTextAdventure.Rooms
                               "In a corner is a small [table], made of crude wood. Doesn't seem very solid. " :
                               "The [broken table] pieces are everywhere... The only complete part left is a [table leg]. ")
                           + (IsItemInRoom(Constants.Items.Key) ? 
-                              "A metal [key] was put here on display, almost as if someone wanted you to [pick] it up." :
+                              "A metal [key] was put here on display, almost as if someone wanted you to [pick] it up. " :
                               string.Empty);
         }
     }

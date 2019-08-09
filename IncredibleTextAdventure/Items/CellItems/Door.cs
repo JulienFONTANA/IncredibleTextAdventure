@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Items.CellItems
         public Door()
         {
             Name = Constants.Items.Door;
-            Description = "It looks like a cell [door]. Through a small opening, you can see a dark [corridor].";
+            Description = "It looks like a cell [door]. Through a small opening, you can see a dark [corridor]. ";
         }
 
         public override bool CanInteractWith(string other)
@@ -19,8 +19,8 @@ namespace IncredibleTextAdventure.Items.CellItems
 
         public override string InteractWith(IGameContext context)
         {
-            Description = "An open cell door, which opens on a [corridor]. Doesn't looks that heavy now...";
-            const string result = "The doors [unlocks], and opens on a dark [corridor]...";
+            Description = "An open cell door, which opens on a [corridor]. Doesn't looks that heavy now... ";
+            const string result = "The doors [unlocks], and opens on a dark [corridor]... ";
             return result;
         }
 

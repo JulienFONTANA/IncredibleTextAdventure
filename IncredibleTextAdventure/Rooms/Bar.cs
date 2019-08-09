@@ -26,7 +26,7 @@ namespace IncredibleTextAdventure.Rooms
 
         public override void UpdateDescription()
         {
-            Description = "The [bar] seems to await someone still. The [garden] is behind you." +
+            Description = "The [bar] seems to await someone still. The [garden] is behind you. " +
                           (IsItemInRoom(Constants.Items.Bottle) ? 
                               "Behind the counter is a lone [bottle] and glasses. " :
                               "Behind the counter is a clean spot where the [bottle] used to be. ") +

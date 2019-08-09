@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Items.GardenItems
         {
             Name = Constants.Items.Fountain;
             Description = "A huge [fountain], depicting gods and demons dancing together... "
-                        + "The battle is even more epic as the water flows freely, cooling the air.";
+                        + "The battle is even more epic as the water flows freely, cooling the air. ";
             IsVisible = false;
         }
     }

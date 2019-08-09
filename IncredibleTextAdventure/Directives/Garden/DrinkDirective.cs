@@ -22,7 +22,7 @@ namespace IncredibleTextAdventure.Directives.Garden
         public void TryApply(string cmd, GameContext context)
         {
             _consoleWriter.WriteToConsole("You put your hands together to drink from the [fountain]. The cold " +
-                                          "water cleans your spirit and you feel calm, rested.");
+                                          "water cleans your spirit and you feel calm, rested. ");
         }
     }
 }

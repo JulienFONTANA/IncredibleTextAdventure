@@ -37,7 +37,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
                 var roomToGo = _allRooms.FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(roomToGo, null))
                 {
-                    _consoleWriter.WriteToConsole("You can't go there.");
+                    _consoleWriter.WriteToConsole("You can't go there. ");
                     return;
                 }
 

@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.BarItems
         public GoldenKey()
         {
             Name = Constants.Items.GoldenKey;
-            Description = "A small golden [key], masterfully crafted.";
+            Description = "A small golden [key], masterfully crafted. ";
             CanBePickedUp = true;
             IsVisible = false;
         }

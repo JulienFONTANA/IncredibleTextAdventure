@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Items.StairsItem
             Description = "A hand-written [note] in coal on a thick piece of paper. It is hard to understand, "
                           + "but you manage to read : 'Watch out for hidden places, with a new eye and a new light, " +
                           "such as the [basement]. ** ****** be found by one who doesn't ****. Even if you wanted to, "
-                          +"don't keep the ***** ***** inside'. Some words are wiped off.";
+                          +"don't keep the ***** ***** inside'. Some words are wiped off. ";
             CanBePickedUp = true;
             IsVisible = false;
         }

@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Items.LoungeItems
         {
             Name = Constants.Items.Paintings;
             Description = "Sad [paintings], almost only of a very young child. " 
-                        + "The description reads : 'To my sweet [Emily]', gone too early.";
+                        + "The description reads : 'To my sweet [Emily]', gone too early. ";
         }
     }
 }

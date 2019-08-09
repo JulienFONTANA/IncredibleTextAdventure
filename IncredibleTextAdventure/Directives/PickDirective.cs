@@ -44,7 +44,7 @@ namespace IncredibleTextAdventure.Directives
 
                 if (!objToPickUp.CanBePickedUp)
                 {
-                    _consoleWriter.WriteToConsole($"There's no way you can pick up [{objToPickUp.Name}]...");
+                    _consoleWriter.WriteToConsole($"There's no way you can pick up [{objToPickUp.Name}]... ");
                     return;
                 }
 

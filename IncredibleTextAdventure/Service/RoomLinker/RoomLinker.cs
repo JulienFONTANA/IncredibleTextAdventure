@@ -80,7 +80,7 @@ namespace IncredibleTextAdventure.Service.RoomLinker
 
                 if (ReferenceEquals(room, null))
                 {
-                    throw new ArgumentNullException($"Unable to find room named {roomName}.");
+                    throw new ArgumentNullException($"Unable to find room named {roomName}. ");
                 }
 
                 var linkedRooms = new List<IRoom>();

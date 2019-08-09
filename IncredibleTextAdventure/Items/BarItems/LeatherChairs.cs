@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.BarItems
         public LeatherChairs()
         {
             Name = Constants.Items.LeatherChairs;
-            Description = "Very comfy looking [leather chairs], made of robust yet torn leather.";
+            Description = "Very comfy looking [leather chairs], made of robust yet torn leather. ";
         }
     }
 }

@@ -33,21 +33,21 @@ namespace IncredibleTextAdventure.Directives
                 var currentRoom = context.GetCurrentRoom();
                 if (capture.EqualsIgnoreCase(currentRoom.Name))
                 {
-                    _consoleWriter.WriteToConsole($"You are already in the [{capture}].");
+                    _consoleWriter.WriteToConsole($"You are already in the [{capture}]. ");
                     return;
                 }
 
                 var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(roomToGo, null))
                 {
-                    _consoleWriter.WriteToConsole("You can't go there.");
+                    _consoleWriter.WriteToConsole("You can't go there. ");
                     return;
                 }
 
                 var nextRoom = context.GetRoom(roomToGo);
                 if (ReferenceEquals(nextRoom, null))
                 {
-                    _consoleWriter.WriteToConsole("You can't go there.");
+                    _consoleWriter.WriteToConsole("You can't go there. ");
                 }
                 else if (!context.GetRoom(roomToGo).GetAccessibility())
                 {
@@ -60,7 +60,7 @@ namespace IncredibleTextAdventure.Directives
             }
             else
             {
-                _consoleWriter.WriteToConsole("You can't go there.");
+                _consoleWriter.WriteToConsole("You can't go there. ");
             }
         }
 

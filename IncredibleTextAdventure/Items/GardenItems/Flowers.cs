@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.GardenItems
         public Flowers()
         {
             Name = Constants.Items.Flowers;
-            Description = "Magnificent [flowers]. The petals looks almost as if made of colorful glass...";
+            Description = "Magnificent [flowers]. The petals looks almost as if made of colorful glass... ";
             CanBePickedUp = true;
         }
     }

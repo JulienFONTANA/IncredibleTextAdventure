@@ -44,7 +44,7 @@ namespace IncredibleTextAdventure.Characters
         {
             if (Inventory.Count == 0)
             {
-                return "Your inventory is empty...";
+                return "Your inventory is empty... ";
             }
             else if (Inventory.Count == 1)
             {

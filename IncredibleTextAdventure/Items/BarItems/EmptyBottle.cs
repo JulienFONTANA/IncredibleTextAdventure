@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Items.BarItems
         {
             Name = Constants.Items.EmptyBottle;
             Description = "An old whiskey [bottle], that used to be filled with putrid liquid, but it's empty now. " +
-                          "A [golden key] fell from it.";
+                          "A [golden key] fell from it. ";
             CanBePickedUp = true;
             IsVisible = false;
         }

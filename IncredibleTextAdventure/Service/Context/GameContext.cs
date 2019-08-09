@@ -62,7 +62,7 @@ namespace IncredibleTextAdventure.Service.Context
             }
             if (!foundAction)
             {
-                _consoleWriter.WriteToConsole("You can't do that...");
+                _consoleWriter.WriteToConsole("You can't do that... ");
             }
             return false;
         }

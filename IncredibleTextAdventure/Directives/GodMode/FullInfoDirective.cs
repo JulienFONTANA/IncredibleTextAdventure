@@ -38,7 +38,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
                 var roomToGetInfoFrom = _allRooms.FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(roomToGetInfoFrom, null))
                 {
-                    _consoleWriter.WriteToConsole($"No room named {capture}.");
+                    _consoleWriter.WriteToConsole($"No room named {capture}. ");
                     return;
                 }
 

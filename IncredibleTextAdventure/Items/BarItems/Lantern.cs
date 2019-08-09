@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Items.BarItems
             Name = Constants.Items.Lantern;
             Description = "A tempest [lantern]. Great to use in dark places. "
                           + "Filled with enough alcohol to last for hours ! "
-                          + "It produces enough light to see tens of meter away.";
+                          + "It produces enough light to see tens of meter away. ";
             CanBePickedUp = true;
             IsVisible = false;
         }

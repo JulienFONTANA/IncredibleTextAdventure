@@ -44,7 +44,7 @@ namespace IncredibleTextAdventure.Directives.Cell
                 if (item.Name.EqualsIgnoreCase(Constants.Items.Table))
                 {
                     _consoleWriter.WriteToConsole("Without too much effort, you send the table flying across the cell. " 
-                                                  + "Needless to say, it shatters into pieces. From the [broken table], a [table leg] seems salvagable.");
+                                                  + "Needless to say, it shatters into pieces. From the [broken table], a [table leg] seems salvagable. ");
 
                     context.TriggerSpecialEvent(Constants.Events.BreakTable);
                 }

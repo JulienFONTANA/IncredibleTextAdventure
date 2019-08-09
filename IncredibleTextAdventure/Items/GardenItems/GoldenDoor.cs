@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Items.GardenItems
         public GoldenDoor()
         {
             Name = Constants.Items.GoldenDoor;
-            Description = "A richly ornamented [golden door]. Beside the keyhole, you can't find a way to open it.";
+            Description = "A richly ornamented [golden door]. Beside the keyhole, you can't find a way to open it. ";
         }
 
         public override bool CanInteractWith(string other)
@@ -19,8 +19,8 @@ namespace IncredibleTextAdventure.Items.GardenItems
 
         public override string InteractWith(IGameContext context)
         {
-            Description = "A richly ornamented door. It opened effortlessly without sound on the [lounge].";
-            const string result = "The doors [unlocks], and opens on a dark [corridor]...";
+            Description = "A richly ornamented door. It opened effortlessly without sound on the [lounge]. ";
+            const string result = "The doors [unlocks], and opens on a dark [corridor]... ";
             return result;
         }
 

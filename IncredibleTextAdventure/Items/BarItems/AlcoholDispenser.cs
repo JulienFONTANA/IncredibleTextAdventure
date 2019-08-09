@@ -8,7 +8,7 @@ namespace IncredibleTextAdventure.Items.BarItems
         {
             Name = Constants.Items.AlcoholDispenser;
             Description = "An weird looking machinery, in a corner. Through a tube, one can fill a recipient with alcohol. " 
-                + "It smells more like [flammable oil] than drinkable spirit.";
+                + "It smells more like [flammable oil] than drinkable spirit. ";
         }
     }
 }

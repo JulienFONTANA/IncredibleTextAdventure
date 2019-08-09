@@ -10,7 +10,7 @@ namespace IncredibleTextAdventure.Items.LoungeItems
             Description = "A small table, richly decorated with gold and precious stones. " 
                           +"Words engraved in stone reads : 'To [Emily], who loved nothing " 
                           +"more than playing in the garden, bathing in the sun, tending to [flowers]'. " 
-                          +"You notice a place on the [altar], as if a piece was missing.";
+                          +"You notice a place on the [altar], as if a piece was missing. ";
         }
     }
 }

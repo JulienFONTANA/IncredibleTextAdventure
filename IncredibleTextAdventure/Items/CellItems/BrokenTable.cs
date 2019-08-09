@@ -7,7 +7,7 @@ namespace IncredibleTextAdventure.Items.CellItems
         public BrokenTable()
         {
             Name = Constants.Items.BrokenTable;
-            Description = "A [broken table]. There are some pieces of wood everywhere now. One of the square [table leg] is still intact though.";
+            Description = "A [broken table]. There are some pieces of wood everywhere now. One of the square [table leg] is still intact though. ";
             IsVisible = false;
         }
     }

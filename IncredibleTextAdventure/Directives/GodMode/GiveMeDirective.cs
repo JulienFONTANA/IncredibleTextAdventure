@@ -91,14 +91,14 @@ namespace IncredibleTextAdventure.Directives.GodMode
                     objToPickUp = context.GetRoom(roomItem).GetItem(objToGet);
                     if (ReferenceEquals(objToPickUp, null))
                     {
-                        _consoleWriter.WriteToConsole($"Object [{objToGet}] doesn't belong in room [{roomItem}].");
+                        _consoleWriter.WriteToConsole($"Object [{objToGet}] doesn't belong in room [{roomItem}]. ");
                         return;
                     }
                 }
 
                 if (ReferenceEquals(objToPickUp, null))
                 {
-                    _consoleWriter.WriteToConsole($"Object [{objToGet}] not found in item list.");
+                    _consoleWriter.WriteToConsole($"Object [{objToGet}] not found in item list. ");
                     return;
                 }
 

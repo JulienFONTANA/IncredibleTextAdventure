@@ -24,7 +24,7 @@ namespace IncredibleTextAdventure.Rooms
                           "What looks like [weird tools] are hanging from walls and ceiling. " +
                           (IsItemInRoom(Constants.Items.RubyRing) ? 
                               "A splendid [ruby ring] is on display on a table. " :
-                              "You start to feel like you shouldn't be here anymore...");
+                              "You start to feel like you shouldn't be here anymore... ");
         }
     }
 }

@@ -9,7 +9,7 @@ namespace IncredibleTextAdventure.Items.StairsItem
             Name = Constants.Items.Bust;
             Description = "The crystal [bust] of a woman. It is not polished nor realistic, yet " 
                           + "you stop at the impression of intelligence and grace that emanates from it. " 
-                          + "You suddenly notice a [note] behind it.";
+                          + "You suddenly notice a [note] behind it. ";
         }
     }
 }

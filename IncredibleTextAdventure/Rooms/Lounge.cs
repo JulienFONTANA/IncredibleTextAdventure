@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using IncredibleTextAdventure.Constant;
+﻿using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.LoungeItems;
+using System.Collections.Generic;
 
 namespace IncredibleTextAdventure.Rooms
 {
@@ -10,17 +10,20 @@ namespace IncredibleTextAdventure.Rooms
         public Lounge(IEnumerable<ILoungeItem> itemsInRoom)
         {
             Name = Constants.Rooms.Lounge;
-            FirstDescription = "";
-            IsRoomAccessible = true;
+            FirstDescription = "A cozy [lounge]. Dim light from the [garden] give the room a unique, out-of-time " +
+                               "atmosphere. The walls are filled with [bookshelves], some fire crackles in a [chimney]... " +
+                               "Here and there, huge oil [paintings] give the room a sad vibe. On the other side of the wall, " +
+                               "a marble [altar] suddenly draws all of your attention. What is this place ? ";
             ItemsInRoom = new List<IItem>(itemsInRoom);
         }
 
-        public override void UpdateDescription()
-        {
-            Description = "[Stairs], from the [garden] to the [garden shed]. A marble [bust] greets you half-way from the top. " +
-                          (IsItemInRoom(Constants.Items.Note) ?
-                              "The [note] is still behind the sculpture. " :
-                              string.Empty);
-        }
+        // TODO - update Lounge description
+        //public override void UpdateDescription()
+        //{
+        //    Description = "A cozy [lounge]. Dim light from the [garden] give the room a unique, out-of-time " +
+        //                  "atmosphere. The walls are filled with [bookshelves], some fire crackles in a [chimney]... " +
+        //                  "Here and there, huge oil [paintings] give the room a sad vibe. On the other side of the wall, " +
+        //                  "a marble [altar] suddenly draws all of your attention. What is this place ? ";
+        //}
     }
 }

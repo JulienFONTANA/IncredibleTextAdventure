@@ -20,7 +20,7 @@ namespace IncredibleTextAdventure.Items.GardenItems
         public override string InteractWith(IGameContext context)
         {
             Description = "A richly ornamented door. It opened effortlessly without sound on the [lounge]. ";
-            const string result = "The doors [unlocks], and opens on a dark [corridor]... ";
+            const string result = "The golden door [unlocks], light as a feather, and the [lounge] is now accessible. ";
             return result;
         }
 

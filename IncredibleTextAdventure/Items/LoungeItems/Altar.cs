@@ -1,4 +1,6 @@
 ﻿using IncredibleTextAdventure.Constant;
+using IncredibleTextAdventure.Service;
+using IncredibleTextAdventure.Service.Context;
 
 namespace IncredibleTextAdventure.Items.LoungeItems
 {

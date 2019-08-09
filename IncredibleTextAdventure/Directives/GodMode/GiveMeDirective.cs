@@ -33,7 +33,8 @@ namespace IncredibleTextAdventure.Directives.GodMode
             IEnumerable<IGardenItem> gardenItems,
             IEnumerable<IGardenShedItem> gardenShedItems,
             IEnumerable<ILoungeItem> loungeItems,
-            IEnumerable<IStairsItem> stairsItems)
+            IEnumerable<IStairsItem> stairsItems,
+            IEnumerable<IItem> otherItems)
         {
             _consoleWriter = consoleWriter;
             _allItems = new List<IItem>();
@@ -46,6 +47,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
             _allItems.AddRange(gardenShedItems);
             _allItems.AddRange(loungeItems);
             _allItems.AddRange(stairsItems);
+            _allItems.AddRange(otherItems);
         }
 
         public bool CanApply(string cmd)

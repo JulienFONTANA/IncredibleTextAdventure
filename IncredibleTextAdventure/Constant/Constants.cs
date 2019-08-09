@@ -62,6 +62,7 @@
             // Other
             public const string Vase = "Vase";
             public const string Lantern = "Lantern";
+            public const string Bouquet = "Bouquet";
         }
 
         public static class Events

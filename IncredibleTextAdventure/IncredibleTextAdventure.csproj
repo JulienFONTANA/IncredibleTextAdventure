@@ -84,6 +84,7 @@
     <Compile Include="Items\BarItems\AlcoholDispenser.cs" />
     <Compile Include="Items\BarItems\Bottle.cs" />
     <Compile Include="Items\BarItems\GoldenKey.cs" />
+    <Compile Include="Items\OtherItems\Bouquet.cs" />
     <Compile Include="Items\OtherItems\Vase.cs" />
     <Compile Include="Items\OtherItems\Lantern.cs" />
     <Compile Include="Items\BarItems\EmptyBottle.cs" />

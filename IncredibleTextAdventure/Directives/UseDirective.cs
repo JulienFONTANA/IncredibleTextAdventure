@@ -43,7 +43,8 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(targetObj));
+                var objectToUseOn = context.GetCurrentRoom().GetItemsInRoom().FirstOrDefault(i => i.Name.EqualsIgnoreCase(targetObj)) ?? 
+                    context.GetPlayer().GetItemFromInventory(targetObj);
                 if (ReferenceEquals(objectToUseOn, null) || !objectToUseOn.IsItemVisible())
                 {
                     _consoleWriter.WriteToConsole($"What are you trying to use [{objectToUse.Name}] on?");

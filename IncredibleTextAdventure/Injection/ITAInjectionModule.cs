@@ -77,6 +77,7 @@ namespace IncredibleTextAdventure.Injection
 
             Bind<IItem>().To<Lantern>();
             Bind<IItem>().To<Vase>();
+            Bind<IItem>().To<Bouquet>();
         }
 
         private void BindRooms()

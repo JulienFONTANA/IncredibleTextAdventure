@@ -59,6 +59,7 @@
     <Compile Include="Directives\Corridor\ICorridorDirective.cs" />
     <Compile Include="Directives\Cell\ICellDirective.cs" />
     <Compile Include="Directives\Cell\BreakDirective.cs" />
+    <Compile Include="Directives\Garden\FillBottleDirective.cs" />
     <Compile Include="Directives\Garden\IGardenDirective.cs" />
     <Compile Include="Directives\GodMode\GiveMeDirective.cs" />
     <Compile Include="Directives\GodMode\FullInfoDirective.cs" />
@@ -83,7 +84,8 @@
     <Compile Include="Items\BarItems\AlcoholDispenser.cs" />
     <Compile Include="Items\BarItems\Bottle.cs" />
     <Compile Include="Items\BarItems\GoldenKey.cs" />
-    <Compile Include="Items\BarItems\Lantern.cs" />
+    <Compile Include="Items\OtherItems\Vase.cs" />
+    <Compile Include="Items\OtherItems\Lantern.cs" />
     <Compile Include="Items\BarItems\EmptyBottle.cs" />
     <Compile Include="Items\BarItems\LeatherChairs.cs" />
     <Compile Include="Items\BasementItems\RubyRing.cs" />

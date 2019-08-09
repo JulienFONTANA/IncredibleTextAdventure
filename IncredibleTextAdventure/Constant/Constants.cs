@@ -20,7 +20,6 @@
             public const string AlcoholDispenser = "Alcohol Dispenser";
             public const string Bottle = "Bottle";
             public const string EmptyBottle = "Empty Bottle";
-            public const string Lantern = "Lantern";
             public const string LeatherChairs = "Leather Chairs";
             public const string GoldenKey = "Golden Key";
 
@@ -59,6 +58,10 @@
             // Stairs
             public const string Bust = "Bust";
             public const string Note = "Note";
+
+            // Other
+            public const string Vase = "Vase";
+            public const string Lantern = "Lantern";
         }
 
         public static class Events
@@ -66,7 +69,6 @@
             public const string BreakTable = "Break Table";
             public const string RunningWater = "Running Water";
             public const string EmptyBottle = "Empty Bottle";
-            public const string FilledLantern = "Filled Lantern";
         }
     }
 }

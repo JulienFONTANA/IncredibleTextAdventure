@@ -23,7 +23,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
 
         private const string CmdPattern = "^(give me)";
         private const string FullPattern = "^(give me)[ \t]?(?<object>(.*))";
-        private const string FullPatternExtended = "^(give me)[ \t]?(?<object>(.*))[ \t]?(in)[ \t]?(?<room>(.*))";
+        private const string FullPatternExtended = "^(give me)[ \t]?(?<object>(.*))[ \t]?(from)[ \t]?(?<room>(.*))";
 
         public GiveMeDirective(IConsoleWriter consoleWriter,
             IEnumerable<IBarItem> barItems,

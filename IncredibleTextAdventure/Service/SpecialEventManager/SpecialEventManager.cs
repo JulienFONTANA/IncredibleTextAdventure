@@ -29,9 +29,6 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
                 case Constants.Events.EmptyBottle:
                     EmptyBottle();
                     break;
-                case Constants.Events.FilledLantern:
-                    FilledLantern(player);
-                    break;
                 default:
                     break;
             }
@@ -79,14 +76,6 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
                 room.GetItem(Constants.Items.EmptyBottle).SetItemVisibility(true);
                 room.GetItem(Constants.Items.GoldenKey).SetItemVisibility(true);
             }
-        }
-
-        /*
-         * When the empty lantern is filled in the bar, the lantern is filled with alcohol
-         */
-        private static void FilledLantern(IPlayer player)
-        {
-            player.AddToInventory(new Lantern(), false);
         }
     }
 }

@@ -6,6 +6,7 @@ using IncredibleTextAdventure.Directives.Corridor;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Directives.GodMode;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.BarItems;
 using IncredibleTextAdventure.Items.BasementItems;
 using IncredibleTextAdventure.Items.CellItems;
@@ -13,6 +14,7 @@ using IncredibleTextAdventure.Items.CorridorItems;
 using IncredibleTextAdventure.Items.GardenItems;
 using IncredibleTextAdventure.Items.GardenShedItems;
 using IncredibleTextAdventure.Items.LoungeItems;
+using IncredibleTextAdventure.Items.OtherItems;
 using IncredibleTextAdventure.Items.StairsItem;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
@@ -41,7 +43,6 @@ namespace IncredibleTextAdventure.Injection
             Bind<IBarItem>().To<AlcoholDispenser>();
             Bind<IBarItem>().To<Bottle>();
             Bind<IBarItem>().To<EmptyBottle>();
-            Bind<IBarItem>().To<Lantern>();
             Bind<IBarItem>().To<LeatherChairs>();
             Bind<IBarItem>().To<GoldenKey>();
 
@@ -73,6 +74,9 @@ namespace IncredibleTextAdventure.Injection
 
             Bind<IStairsItem>().To<Bust>();
             Bind<IStairsItem>().To<Note>();
+
+            Bind<IItem>().To<Lantern>();
+            Bind<IItem>().To<Vase>();
         }
 
         private void BindRooms()
@@ -103,6 +107,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<ICellDirective>().To<BreakDirective>();
             Bind<ICorridorDirective>().To<UseLanternDirective>();
             Bind<IGardenDirective>().To<DrinkDirective>();
+            Bind<IGardenDirective>().To<FillBottleDirective>();
 
             #if DEBUG
             BindGodMode();

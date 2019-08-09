@@ -64,6 +64,7 @@
     <Compile Include="Directives\GodMode\TeleportDirective.cs" />
     <Compile Include="Directives\InventoryDirective.cs" />
     <Compile Include="Directives\HelpDirective.cs" />
+    <Compile Include="Directives\OpenDirective.cs" />
     <Compile Include="Directives\UseDirective.cs" />
     <Compile Include="Directives\PickDirective.cs" />
     <Compile Include="Directives\LookDirective.cs" />

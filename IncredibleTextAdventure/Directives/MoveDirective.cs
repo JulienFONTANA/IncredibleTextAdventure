@@ -37,7 +37,8 @@ namespace IncredibleTextAdventure.Directives
                     return;
                 }
 
-                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
+                var roomToGo = currentRoom.GetLinkedRooms().FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture)) ?? 
+                    context.GetPlayer().GetPlayerVisitedRooms().FirstOrDefault(x => x.Name.EqualsIgnoreCase(capture));
                 if (ReferenceEquals(roomToGo, null))
                 {
                     _consoleWriter.WriteToConsole("You can't go there. ");
@@ -67,7 +68,7 @@ namespace IncredibleTextAdventure.Directives
         private void MoveToRoom(IGameContext context, IRoom roomToGo)
         {
             var room = context.GetRoom(roomToGo);
-            context.GetPlayer().SetPlayerLocalisation(roomToGo);
+            context.GetPlayer().SetPlayerLocation(roomToGo);
             if (room.IsFirstTimePlayerEntersRoom())
             {
                 _consoleWriter.WriteToConsole(room.FirstDescription);

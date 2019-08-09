@@ -1,4 +1,5 @@
-﻿using IncredibleTextAdventure.Items;
+﻿using System.Collections.Generic;
+using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Characters
@@ -10,8 +11,9 @@ namespace IncredibleTextAdventure.Characters
         string DisplayInventory();
         IItem GetItemFromInventory(string name);
 
-        IRoom GetPlayerLocalisation();
-        void SetPlayerLocalisation(IRoom newLocalisation);
-        string GetPlayerStartingLocalisation();
+        IRoom GetPlayerLocation();
+        void SetPlayerLocation(IRoom newLocation);
+        string GetPlayerStartingLocation();
+        HashSet<IRoom> GetPlayerVisitedRooms();
     }
 }

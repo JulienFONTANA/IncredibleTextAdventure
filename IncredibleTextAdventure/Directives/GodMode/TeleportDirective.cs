@@ -41,7 +41,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
                     return;
                 }
 
-                context.GetPlayer().SetPlayerLocalisation(roomToGo);
+                context.GetPlayer().SetPlayerLocation(roomToGo);
                 if (roomToGo.IsFirstTimePlayerEntersRoom())
                 {
                     _consoleWriter.WriteToConsole(roomToGo.FirstDescription);

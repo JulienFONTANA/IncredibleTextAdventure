@@ -69,7 +69,7 @@ namespace IncredibleTextAdventure.Service.Context
 
         public IRoom GetCurrentRoom()
         {
-            return _rooms.FirstOrDefault(r => r.Equals(GetPlayer().GetPlayerLocalisation()));
+            return _rooms.FirstOrDefault(r => r.Equals(GetPlayer().GetPlayerLocation()));
         }
 
         public IRoom GetRoom(string room)

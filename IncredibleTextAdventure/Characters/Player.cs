@@ -12,15 +12,17 @@ namespace IncredibleTextAdventure.Characters
     public class Player : IPlayer
     {
         private List<IItem> Inventory { get; }
-        private IRoom Localisation { get; set; }
+        private IRoom Location { get; set; }
+        private HashSet<IRoom> VisitedRooms { get; set; }
 
         private readonly IConsoleWriter _consoleWriter;
 
-        private const string StartingLocalisation = Constants.Rooms.Cell;
+        private const string StartingLocation = Constants.Rooms.Cell;
 
         public Player(IConsoleWriter consoleWriter)
         {
             Inventory = new List<IItem>();
+            VisitedRooms = new HashSet<IRoom>();
 
             _consoleWriter = consoleWriter;
         }
@@ -46,14 +48,7 @@ namespace IncredibleTextAdventure.Characters
             {
                 return "Your inventory is empty... ";
             }
-            else if (Inventory.Count == 1)
-            {
-                return "Your have a " + string.Join(", ", Inventory.First().Name);
-            }
-            else
-            {
-                return "Your have : " + string.Join(", ", Inventory.Select(x => x.Name));
-            }
+            return "Your have : " + string.Join(", ", Inventory.Select(x => x.Name));
         }
 
         public IItem GetItemFromInventory(string name)
@@ -61,20 +56,26 @@ namespace IncredibleTextAdventure.Characters
             return Inventory.FirstOrDefault(item => item.Name.EqualsIgnoreCase(name));
         }
 
-        public IRoom GetPlayerLocalisation()
+        public IRoom GetPlayerLocation()
         {
-            return Localisation;
+            return Location;
         }
 
-        public void SetPlayerLocalisation(IRoom newLocalisation)
+        public void SetPlayerLocation(IRoom newLocation)
         {
-            Localisation = newLocalisation;
-            Localisation.UpdateDescription();
+            Location = newLocation;
+            VisitedRooms.Add(newLocation);
+            Location.UpdateDescription();
         }
 
-        public string GetPlayerStartingLocalisation()
+        public string GetPlayerStartingLocation()
         {
-            return StartingLocalisation;
+            return StartingLocation;
+        }
+
+        public HashSet<IRoom> GetPlayerVisitedRooms()
+        {
+            return VisitedRooms;
         }
     }
 }

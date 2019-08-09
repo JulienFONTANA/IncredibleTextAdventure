@@ -41,8 +41,8 @@ namespace IncredibleTextAdventure.Service
         {
             _roomLinker.InitRoomConnection();
 
-            var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocalisation());
-            _gameContext.GetPlayer().SetPlayerLocalisation(startingRoom);
+            var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocation());
+            _gameContext.GetPlayer().SetPlayerLocation(startingRoom);
             startingRoom.SetFirstTimeFalse();
             _consoleWriter.WriteToConsole(startingRoom.FirstDescription);
         }

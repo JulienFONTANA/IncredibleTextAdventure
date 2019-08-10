@@ -24,6 +24,7 @@ Another Wikipedia link: https://en.wikipedia.org/wiki/Dependency_injection
 ## What is "clean-code" ? What are the SOLID principles ?
 I'm a craftsman. I take pride in my work, I do my best to have accessible, readable, maintainable code that always compile. \
 Function names are to be unique, property are to be protected accordingly, everything have to be interfaced, but in the end this code is easy to get into! \
-Yet another Wikipedia link: https://fr.wikipedia.org/wiki/Software_craftsmanship
+Yet another Wikipedia link: https://en.wikipedia.org/wiki/Software_craftsmanship
+And for the SOLID principles: https://en.wikipedia.org/wiki/SOLID
 
 Have fun !

@@ -32,6 +32,13 @@ namespace IncredibleTextAdventure.Directives
                     context.GetPlayer().GetItemFromInventory(capture);
                 if (ReferenceEquals(item, null))
                 {
+                    if (context.GetCurrentRoom().Name.EqualsIgnoreCase(capture))
+                    {
+                        // TODO - Same as Info Directive, how to move this ?
+                        context.GetCurrentRoom().UpdateDescription();
+                        _consoleWriter.WriteToConsole($"{context.GetCurrentRoom().Description}");
+                    }
+
                     _consoleWriter.WriteToConsole("What are you gazing at ? Nothingness ?");
                 }
                 else

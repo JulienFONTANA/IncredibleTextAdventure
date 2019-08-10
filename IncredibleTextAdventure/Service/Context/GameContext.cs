@@ -1,4 +1,5 @@
-﻿using IncredibleTextAdventure.Characters;
+﻿using System.Collections.Generic;
+using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
@@ -51,39 +52,36 @@ namespace IncredibleTextAdventure.Service.Context
             var specialDirectives = GetCurrentRoom().GetSpecialDirectives();
             if (specialDirectives.Any())
             {
-                foreach (var action in specialDirectives)
-                {
-                    if (action.CanApply(cmd))
-                    {
-                        action.TryApply(cmd, this);
-                        foundAction = true;
-                        break;
-                    }
-                }
+                foundAction = TryActionFromDirectiveList(cmd, specialDirectives);
             }
             if (!foundAction)
             {
-                foreach (var action in _directives)
-                {
-                    if (action.CanApply(cmd))
-                    {
-                        action.TryApply(cmd, this);
-                        foundAction = true;
-                        break;
-                    }
-                }
+                foundAction = TryActionFromDirectiveList(cmd, _directives);
             }
             if (!foundAction)
             {
                 _consoleWriter.WriteToConsole("You can't do that... ");
             }
-
             if (_isGameOver)
             {
                 CheckScore();
             }
 
             return _isGameOver;
+        }
+
+        private bool TryActionFromDirectiveList(string cmd, IEnumerable<IDirective> specialDirectives)
+        {
+            foreach (var action in specialDirectives)
+            {
+                if (action.CanApply(cmd))
+                {
+                    action.TryApply(cmd, this);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void EndGame()

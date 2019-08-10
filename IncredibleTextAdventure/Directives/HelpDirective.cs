@@ -31,7 +31,7 @@ namespace IncredibleTextAdventure.Directives
             }
 
             _consoleWriter.WriteToLine("These are some commands you could try :");
-            _consoleWriter.WriteToLine("[go] to <place>");
+            _consoleWriter.WriteToLine("[go] to <place> - go to any visited place");
             _consoleWriter.WriteToLine("[pick] <object>");
             _consoleWriter.WriteToLine("[open] <door>");
             _consoleWriter.WriteToLine("[look] at <element>");

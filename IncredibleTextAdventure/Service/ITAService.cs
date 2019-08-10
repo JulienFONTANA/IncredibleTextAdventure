@@ -48,6 +48,9 @@ namespace IncredibleTextAdventure.Service
             startingRoom.SetFirstTimeFalse();
             _consoleWriter.WriteToConsole("Welcome to Incredible Text Adventure ! This is the [wizard's house]. If you're stuck, ask" +
                                           " for [help]. Good luck !");
+            #if DEBUG
+            _consoleWriter.WriteToConsole("!!! You are in [DEBUG MODE] - To experience the game as expected, you should play on [RELEASE MODE]. !!!");
+            #endif
             _consoleWriter.WriteToConsole(startingRoom.FirstDescription);
         }
     }

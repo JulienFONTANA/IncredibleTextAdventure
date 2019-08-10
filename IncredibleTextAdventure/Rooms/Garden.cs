@@ -14,8 +14,8 @@ namespace IncredibleTextAdventure.Rooms
             Name = Constants.Rooms.Garden;
             FirstDescription = "You exit the [corridor] and enter a magnificent [garden]. Tall trees cast their shadow on you, allowing you " 
                                +"to easily get use to the sun light. Strange [flowers] are blooming along the walls. In the " 
-                               +"center of this garden is a [waterless fountain]. How come such a garden "
-                               +"exists without water ? On your left are [stairs] seems up go to a room that overlooks the garden. "
+                               +"center of this garden is a [waterless fountain]. How come such a place "
+                               +"exists without water ? On your left are [stairs] seems to go up, in a room that overlooks the garden. "
                                +"In front of you, a [golden door] blocks the way. ";
 
             IsRoomAccessible = true;

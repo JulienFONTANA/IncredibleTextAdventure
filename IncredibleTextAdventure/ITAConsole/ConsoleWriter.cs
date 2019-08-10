@@ -60,5 +60,10 @@ namespace IncredibleTextAdventure.ITAConsole
 
             Console.WriteLine();
         }
+
+        public void WriteToLine(string text)
+        {
+            ColorDisplay(text);
+        }
     }
 }

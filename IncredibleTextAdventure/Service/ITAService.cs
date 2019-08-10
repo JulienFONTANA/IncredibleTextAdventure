@@ -46,6 +46,8 @@ namespace IncredibleTextAdventure.Service
             var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocation());
             _gameContext.GetPlayer().SetPlayerLocation(startingRoom);
             startingRoom.SetFirstTimeFalse();
+            _consoleWriter.WriteToConsole("Welcome to Incredible Text Adventure ! This is the [wizard's house]. If you're stuck, ask" +
+                                          " for [help]. Good luck !");
             _consoleWriter.WriteToConsole(startingRoom.FirstDescription);
         }
     }

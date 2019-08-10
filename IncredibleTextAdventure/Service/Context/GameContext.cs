@@ -19,7 +19,7 @@ namespace IncredibleTextAdventure.Service.Context
         private readonly ISpecialEventManager _specialEventManager;
         private readonly IRoomStateManager _roomStateManager;
 
-        private bool _IsGameOver;
+        private bool _isGameOver;
 
         public GameContext(IPlayer player,
             IConsoleWriter consoleWriter,
@@ -37,7 +37,7 @@ namespace IncredibleTextAdventure.Service.Context
             _specialEventManager = specialEventManager;
             _roomStateManager = roomStateManager;
 
-            _IsGameOver = false;
+            _isGameOver = false;
         }
 
         public bool Command(string cmd)
@@ -78,17 +78,17 @@ namespace IncredibleTextAdventure.Service.Context
                 _consoleWriter.WriteToConsole("You can't do that... ");
             }
 
-            if (_IsGameOver)
+            if (_isGameOver)
             {
                 CheckScore();
             }
 
-            return _IsGameOver;
+            return _isGameOver;
         }
 
         public void EndGame()
         {
-            _IsGameOver = true;
+            _isGameOver = true;
         }
 
         public IRoom GetCurrentRoom()
@@ -128,7 +128,7 @@ namespace IncredibleTextAdventure.Service.Context
             var answer = _consoleReader.ReadLineFromConsole();
             if (answer.Trim().EqualsIgnoreCase("Y"))
             {
-                _IsGameOver = true;
+                _isGameOver = true;
             }
         }
 
@@ -150,7 +150,7 @@ namespace IncredibleTextAdventure.Service.Context
                                               "your adventure. Maybe use the [lantern] to lighten you path in dark places next time ?");
             }
 
-            _IsGameOver = true;
+            _isGameOver = true;
         }
     }
 }

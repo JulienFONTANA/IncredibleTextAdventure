@@ -19,7 +19,7 @@ namespace IncredibleTextAdventure.Directives.Garden
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             _consoleWriter.WriteToConsole("You put your hands together to drink from the [fountain]. The cold " +
                                           "water cleans your spirit and you feel calm, rested. ");

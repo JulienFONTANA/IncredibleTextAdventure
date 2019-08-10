@@ -19,7 +19,7 @@ namespace IncredibleTextAdventure.Directives
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             context.GetCurrentRoom().UpdateDescription();
             _consoleWriter.WriteToConsole($"{context.GetCurrentRoom().Description}");

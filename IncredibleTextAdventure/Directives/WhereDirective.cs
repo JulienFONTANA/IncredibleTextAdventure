@@ -19,9 +19,9 @@ namespace IncredibleTextAdventure.Directives
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
-            _consoleWriter.WriteToConsole($"You are in a {context.GetCurrentRoom().Name}");
+            _consoleWriter.WriteToConsole($"You are in : [{context.GetCurrentRoom().Name}]");
         }
     }
 }

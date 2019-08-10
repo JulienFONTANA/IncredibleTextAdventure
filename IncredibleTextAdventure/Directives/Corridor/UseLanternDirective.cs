@@ -1,6 +1,5 @@
 ﻿using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
-using IncredibleTextAdventure.Service.RoomStateManager;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.Constant;
 
@@ -21,7 +20,7 @@ namespace IncredibleTextAdventure.Directives.Corridor
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             var lantern = context.GetPlayer().GetItemFromInventory(Constants.Items.Lantern);
 

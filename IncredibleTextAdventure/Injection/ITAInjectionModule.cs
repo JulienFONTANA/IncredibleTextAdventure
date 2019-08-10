@@ -5,6 +5,7 @@ using IncredibleTextAdventure.Directives.Cell;
 using IncredibleTextAdventure.Directives.Corridor;
 using IncredibleTextAdventure.Directives.Garden;
 using IncredibleTextAdventure.Directives.GodMode;
+using IncredibleTextAdventure.Directives.Stairs;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.BarItems;
@@ -110,6 +111,7 @@ namespace IncredibleTextAdventure.Injection
             Bind<ICorridorDirective>().To<UseLanternDirective>();
             Bind<IGardenDirective>().To<DrinkDirective>();
             Bind<IGardenDirective>().To<FillBottleDirective>();
+            Bind<IStairsDirective>().To<LookOverridesDirective>();
 
             #if DEBUG
             BindGodMode();

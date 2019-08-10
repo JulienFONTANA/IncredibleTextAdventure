@@ -55,7 +55,7 @@ namespace IncredibleTextAdventure.Directives.GodMode
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             Match match;
             if (Regex.IsMatch(cmd, FullPatternExtended, RegexOptions.IgnoreCase))

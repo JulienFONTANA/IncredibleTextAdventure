@@ -2,7 +2,6 @@
 using System.Linq;
 using IncredibleTextAdventure.Characters;
 using IncredibleTextAdventure.Constant;
-using IncredibleTextAdventure.Items.BarItems;
 using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Service.SpecialEventManager

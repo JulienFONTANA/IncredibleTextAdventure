@@ -5,7 +5,6 @@ using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service.RoomStateManager;
 using IncredibleTextAdventure.Service.SpecialEventManager;
-using System;
 using System.Linq;
 
 namespace IncredibleTextAdventure.Service.Context

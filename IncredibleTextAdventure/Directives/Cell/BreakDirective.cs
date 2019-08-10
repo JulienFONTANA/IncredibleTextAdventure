@@ -23,7 +23,7 @@ namespace IncredibleTextAdventure.Directives.Cell
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             var match = Regex.Match(cmd, FullPattern, RegexOptions.IgnoreCase);
             if (match.Success)

@@ -21,7 +21,7 @@ namespace IncredibleTextAdventure.Directives.Garden
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             var lantern = context.GetPlayer().GetItemFromInventory(Constants.Items.EmptyBottle);
 

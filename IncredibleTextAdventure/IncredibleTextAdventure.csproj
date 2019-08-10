@@ -68,6 +68,8 @@
     <Compile Include="Directives\HelpDirective.cs" />
     <Compile Include="Directives\OpenDirective.cs" />
     <Compile Include="Directives\Corridor\UseLanternDirective.cs" />
+    <Compile Include="Directives\Stairs\IStairsDirective.cs" />
+    <Compile Include="Directives\Stairs\LookOverridesDirective.cs" />
     <Compile Include="Directives\UseDirective.cs" />
     <Compile Include="Directives\PickDirective.cs" />
     <Compile Include="Directives\LookDirective.cs" />

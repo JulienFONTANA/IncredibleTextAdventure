@@ -5,6 +5,6 @@ namespace IncredibleTextAdventure.Directives
     public interface IDirective
     {
         bool CanApply(string cmd);
-        void TryApply(string cmd, GameContext context);
+        void TryApply(string cmd, IGameContext context);
     }
 }

@@ -20,7 +20,7 @@ namespace IncredibleTextAdventure.Directives.Bar
             return Regex.IsMatch(cmd, CmdPattern, RegexOptions.IgnoreCase);
         }
 
-        public void TryApply(string cmd, GameContext context)
+        public void TryApply(string cmd, IGameContext context)
         {
             if (context.GetCurrentRoom().IsItemInRoom(Constants.Items.Bottle))
             {

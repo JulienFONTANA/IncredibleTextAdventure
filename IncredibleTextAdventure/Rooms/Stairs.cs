@@ -2,12 +2,14 @@
 using IncredibleTextAdventure.Items;
 using IncredibleTextAdventure.Items.StairsItem;
 using System.Collections.Generic;
+using IncredibleTextAdventure.Directives.Stairs;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public class Stairs : Room, IRoom
     {
-        public Stairs(IEnumerable<IStairsItem> itemsInRoom)
+        public Stairs(IEnumerable<IStairsItem> itemsInRoom,
+            IStairsDirective[] specialCellDirectives)
         {
             Name = Constants.Rooms.Stairs;
             FirstDescription = "A long, narrow and steep flight of [stairs], lit by small windows, led up to a [garden shed]. "
@@ -16,6 +18,7 @@ namespace IncredibleTextAdventure.Rooms
                                + "Climbing is made easy by a small wind, coming from the Garden";
             IsRoomAccessible = true;
             ItemsInRoom = new List<IItem>(itemsInRoom);
+            SpecialDirectives = specialCellDirectives;
         }
 
         public override void UpdateDescription()

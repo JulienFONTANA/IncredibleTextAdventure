@@ -27,4 +27,6 @@ Function names are to be unique, property are to be protected accordingly, every
 Yet another Wikipedia link: https://en.wikipedia.org/wiki/Software_craftsmanship \
 And for the SOLID principles: https://en.wikipedia.org/wiki/SOLID
 
+Posted on Reddit on r/csharp on 10 Aug 2019 : https://www.reddit.com/r/csharp/comments/cofsja/textbased_game_with_dependency_injection/
+
 Have fun !

@@ -24,8 +24,9 @@ namespace IncredibleTextAdventure.Items.LoungeItems
         {
             Description = "The [bouquet], surrounded by candles, looks really nice. The [altar] has come to life once more, ";
             const string result = "As you place the [bouquet] on the altar, candles lit up, and one of the painting start to move. " +
-                                  "The little girl on it start smiling for a few seconds, then walk away. The painting is now depicts " +
+                                  "The little girl on it start smiling for a few seconds, then walk away. The painting now depicts " +
                                   "an open door, leading [outside]... Free, at last ? ";
+            context.TriggerSpecialEvent(Constants.Events.EndIsNear);
             return result;
         }
 

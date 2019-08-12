@@ -28,6 +28,9 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
                 case Constants.Events.EmptyBottle:
                     EmptyBottle();
                     break;
+                case Constants.Events.EndIsNear:
+                    EndIsNear();
+                    break;
                 default:
                     break;
             }
@@ -74,6 +77,18 @@ namespace IncredibleTextAdventure.Service.SpecialEventManager
                 room.GetItem(Constants.Items.Bottle).SetItemVisibility(false);
                 room.GetItem(Constants.Items.EmptyBottle).SetItemVisibility(true);
                 room.GetItem(Constants.Items.GoldenKey).SetItemVisibility(true);
+            }
+        }
+
+        /*
+         * Bouquet is put on the altar. Painting description change.
+         */
+        private void EndIsNear()
+        {
+            var room = _rooms.FirstOrDefault(r => r.Name.EqualsIgnoreCase(Constants.Rooms.Lounge));
+            if (!ReferenceEquals(room, null))
+            {
+                room.GetItem(Constants.Items.Paintings).Description = "The girl is gone, all is left is an open door, leading [outside]... Free, at last ? ";
             }
         }
     }

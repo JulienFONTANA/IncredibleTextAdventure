@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
 
@@ -8,7 +7,7 @@ namespace IncredibleTextAdventure.Directives
     public class HelpDirective : IDirective
     {
         private readonly IConsoleWriter _consoleWriter;
-        private const string CmdPattern = "^(help|\\?)";
+        private const string CmdPattern = @"^(help|\?)";
 
         private static bool _firstTime = true;
 

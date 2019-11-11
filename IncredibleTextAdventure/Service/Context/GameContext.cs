@@ -130,23 +130,24 @@ namespace IncredibleTextAdventure.Service.Context
             }
         }
 
+        // TODO - VOVF
         private void CheckScore()
         {
-            _consoleWriter.WriteToConsole("You exit the house through the painting and come back to the material world. " +
-                                          "You need some time to understand what happened... ");
+            //_consoleWriter.WriteToConsole("You exit the house through the painting and come back to the material world. " +
+            //                              "You need some time to understand what happened... ");
 
-            if (!ReferenceEquals(_player.GetItemFromInventory(Constants.Items.RubyRing), null))
-            {
-                _consoleWriter.WriteToConsole("You check your pocket, and the [ruby ring] is here ! It must have been " +
-                                              "a farewell gift from emily. ");
-                _consoleWriter.WriteToConsole("[Thanks for playing !] You discovered everything inside the wizard's house ! ");
-            }
-            else
-            {
-                _consoleWriter.WriteToConsole("You feel somewhat lost. You must have missed something. There is no other explanation... ");
-                _consoleWriter.WriteToConsole("[Thanks for playing !] You might want to come back, as you forgot some secrets during " +
-                                              "your adventure. Maybe use the [lantern] to lighten you path in dark places next time ?");
-            }
+            //if (!ReferenceEquals(_player.GetItemFromInventory(Constants.Items.RubyRing), null))
+            //{
+            //    _consoleWriter.WriteToConsole("You check your pocket, and the [ruby ring] is here ! It must have been " +
+            //                                  "a farewell gift from emily. ");
+            //    _consoleWriter.WriteToConsole("[Thanks for playing !] You discovered everything inside the wizard's house ! ");
+            //}
+            //else
+            //{
+            //    _consoleWriter.WriteToConsole("You feel somewhat lost. You must have missed something. There is no other explanation... ");
+            //    _consoleWriter.WriteToConsole("[Thanks for playing !] You might want to come back, as you forgot some secrets during " +
+            //                                  "your adventure. Maybe use the [lantern] to lighten you path in dark places next time ?");
+            //}
 
             _isGameOver = true;
         }

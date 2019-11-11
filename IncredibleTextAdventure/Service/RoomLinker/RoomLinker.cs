@@ -12,66 +12,60 @@ namespace IncredibleTextAdventure.Service.RoomLinker
         private readonly Dictionary<string, List<string>> _linkedRoomList = new Dictionary<string, List<string>>
         {
             {
-                Constants.Rooms.Bar, new List<string>
+                Constants.Rooms.OpenSpace, new List<string>
                 {
-                    Constants.Rooms.Garden
+                    Constants.Rooms.DeskOne,
+                    Constants.Rooms.DeskTwo,
+                    Constants.Rooms.DeskThree,
+                    Constants.Rooms.DeskFour,
+                    Constants.Rooms.ServerRoom,
+                    Constants.Rooms.RestingRoom
                 }
             },
             {
-                Constants.Rooms.Basement, new List<string>
+                Constants.Rooms.DeskOne, new List<string>
                 {
-                    Constants.Rooms.Corridor
+                    Constants.Rooms.OpenSpace
                 }
             },
             {
-                Constants.Rooms.Cell, new List<string>
+                Constants.Rooms.DeskTwo, new List<string>
                 {
-                    Constants.Rooms.Corridor
+                    Constants.Rooms.OpenSpace
                 }
             },
             {
-                Constants.Rooms.Corridor, new List<string>
+                Constants.Rooms.DeskThree, new List<string>
                 {
-                    Constants.Rooms.Cell,
-                    Constants.Rooms.Garden,
-                    Constants.Rooms.Basement
+                    Constants.Rooms.OpenSpace
                 }
             },
             {
-                Constants.Rooms.Garden, new List<string>
+                Constants.Rooms.DeskFour, new List<string>
                 {
-                    Constants.Rooms.Corridor,
-                    Constants.Rooms.Stairs,
-                    Constants.Rooms.Bar,
-                    Constants.Rooms.Lounge
+                    Constants.Rooms.OpenSpace
                 }
             },
             {
-                Constants.Rooms.GardenShed, new List<string>
+                Constants.Rooms.RestingRoom, new List<string>
                 {
-                    Constants.Rooms.Stairs
+                    Constants.Rooms.OpenSpace
                 }
             },
             {
-                Constants.Rooms.Lounge, new List<string>
+                Constants.Rooms.ServerRoom, new List<string>
                 {
-                    Constants.Rooms.Garden,
-                    Constants.Rooms.Outside
+                    Constants.Rooms.ComputerRoom,
+                    Constants.Rooms.OpenSpace
                 }
             },
+
             {
-                Constants.Rooms.Outside, new List<string>
+                Constants.Rooms.ComputerRoom, new List<string>
                 {
-                    Constants.Rooms.Lounge
+                    Constants.Rooms.ServerRoom
                 }
-            },
-            {
-                Constants.Rooms.Stairs, new List<string>
-                {
-                    Constants.Rooms.Garden,
-                    Constants.Rooms.GardenShed
-                }
-            },
+            }
         };
 
         public RoomLinker(IEnumerable<IRoom> rooms)

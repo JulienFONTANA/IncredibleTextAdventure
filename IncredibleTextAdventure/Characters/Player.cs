@@ -17,7 +17,7 @@ namespace IncredibleTextAdventure.Characters
 
         private readonly IConsoleWriter _consoleWriter;
 
-        private const string StartingLocation = Constants.Rooms.Cell;
+        private const string StartingLocation = Constants.Rooms.OpenSpace;
 
         public Player(IConsoleWriter consoleWriter)
         {
@@ -32,6 +32,7 @@ namespace IncredibleTextAdventure.Characters
             Inventory.Add(item);
             if (verbose)
             {
+                // TODO - VOVF
                 _consoleWriter.WriteToConsole($"Added [{item.Name}] to your inventory !");
             }
         }
@@ -42,6 +43,7 @@ namespace IncredibleTextAdventure.Characters
             {
                 return Inventory.Remove(item);
             }
+            // TODO - VOVF
             throw new ArgumentException($"Item [{item.Name}] doesn't belong to player inventory !");
         }
 
@@ -49,8 +51,10 @@ namespace IncredibleTextAdventure.Characters
         {
             if (Inventory.Count == 0)
             {
+                // TODO - VOVF
                 return "Your inventory is empty... ";
             }
+            // TODO - VOVF
             return "Your have : " + string.Join(", ", Inventory.Select(x => x.Name));
         }
 

@@ -11,7 +11,6 @@ namespace IncredibleTextAdventure.Rooms
         public string Name { get; set; }
         public string Description { get; set; }
         public string FirstDescription { get; set; }
-
         protected bool IsRoomAccessible { get; set; }
         protected bool IsFirstTime { get; set; }
         protected List<IRoom> LinkedRooms { get; set; }

@@ -68,10 +68,11 @@ namespace IncredibleTextAdventure.Directives
 
         private void MoveToRoom(IGameContext context, IRoom roomToGo)
         {
-            if (roomToGo.Name.EqualsIgnoreCase(Constants.Rooms.Outside))
-            {
-                context.EndGame();
-            }
+            // TODO - How to win game ?
+            //if (roomToGo.Name.EqualsIgnoreCase(Constants.Rooms.Outside))
+            //{
+            //    context.EndGame();
+            //}
 
             var room = context.GetRoom(roomToGo);
             context.GetPlayer().SetPlayerLocation(roomToGo);

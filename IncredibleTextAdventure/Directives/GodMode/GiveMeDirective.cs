@@ -3,14 +3,14 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items;
-using IncredibleTextAdventure.Items.BarItems;
-using IncredibleTextAdventure.Items.BasementItems;
-using IncredibleTextAdventure.Items.CellItems;
-using IncredibleTextAdventure.Items.CorridorItems;
-using IncredibleTextAdventure.Items.GardenItems;
-using IncredibleTextAdventure.Items.GardenShedItems;
-using IncredibleTextAdventure.Items.LoungeItems;
-using IncredibleTextAdventure.Items.StairsItem;
+//using IncredibleTextAdventure.Items.BarItems;
+//using IncredibleTextAdventure.Items.BasementItems;
+//using IncredibleTextAdventure.Items.CellItems;
+//using IncredibleTextAdventure.Items.CorridorItems;
+//using IncredibleTextAdventure.Items.GardenItems;
+//using IncredibleTextAdventure.Items.GardenShedItems;
+//using IncredibleTextAdventure.Items.LoungeItems;
+//using IncredibleTextAdventure.Items.StairsItem;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 
@@ -25,29 +25,32 @@ namespace IncredibleTextAdventure.Directives.GodMode
         private const string FullPattern = "^(give me)[ \t]?(?<object>(.*))";
         private const string FullPatternExtended = "^(give me)[ \t]?(?<object>(.*))[ \t]?(from)[ \t]?(?<room>(.*))";
 
-        public GiveMeDirective(IConsoleWriter consoleWriter,
-            IEnumerable<IBarItem> barItems,
-            IEnumerable<IBasementItem> basementItems,
-            IEnumerable<ICellItem> cellItems,
-            IEnumerable<ICorridorItem> corridorItems,
-            IEnumerable<IGardenItem> gardenItems,
-            IEnumerable<IGardenShedItem> gardenShedItems,
-            IEnumerable<ILoungeItem> loungeItems,
-            IEnumerable<IStairsItem> stairsItems,
-            IEnumerable<IItem> otherItems)
+        // TODO - Give me god mode command
+        public GiveMeDirective(IConsoleWriter consoleWriter
+            //,
+            //IEnumerable<IBarItem> barItems,
+            //IEnumerable<IBasementItem> basementItems,
+            //IEnumerable<ICellItem> cellItems,
+            //IEnumerable<ICorridorItem> corridorItems,
+            //IEnumerable<IGardenItem> gardenItems,
+            //IEnumerable<IGardenShedItem> gardenShedItems,
+            //IEnumerable<ILoungeItem> loungeItems,
+            //IEnumerable<IStairsItem> stairsItems,
+            //IEnumerable<IItem> otherItems
+            )
         {
             _consoleWriter = consoleWriter;
             _allItems = new List<IItem>();
 
-            _allItems.AddRange(barItems);
-            _allItems.AddRange(basementItems);
-            _allItems.AddRange(cellItems);
-            _allItems.AddRange(corridorItems);
-            _allItems.AddRange(gardenItems);
-            _allItems.AddRange(gardenShedItems);
-            _allItems.AddRange(loungeItems);
-            _allItems.AddRange(stairsItems);
-            _allItems.AddRange(otherItems);
+            //_allItems.AddRange(barItems);
+            //_allItems.AddRange(basementItems);
+            //_allItems.AddRange(cellItems);
+            //_allItems.AddRange(corridorItems);
+            //_allItems.AddRange(gardenItems);
+            //_allItems.AddRange(gardenShedItems);
+            //_allItems.AddRange(loungeItems);
+            //_allItems.AddRange(stairsItems);
+            //_allItems.AddRange(otherItems);
         }
 
         public bool CanApply(string cmd)

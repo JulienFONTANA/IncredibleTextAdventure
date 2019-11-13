@@ -4,11 +4,11 @@ using IncredibleTextAdventure.Items;
 
 namespace IncredibleTextAdventure.Rooms
 {
-    public class OpenSpace : Room, IRoom
+    public class Desk4 : Room, IRoom
     {
-        public OpenSpace()
+        public Desk4()
         {
-            Name = Constants.Rooms.OpenSpace;
+            Name = Constants.Rooms.DeskFour;
             FirstDescription = "";
             ItemsInRoom = new List<IItem>();
         }

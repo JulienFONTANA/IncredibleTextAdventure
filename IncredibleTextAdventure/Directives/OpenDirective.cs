@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Text.RegularExpressions;
-using IncredibleTextAdventure.Constant;
+﻿using System.Text.RegularExpressions;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Items;
-using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 using IncredibleTextAdventure.Service.RoomStateManager;
 

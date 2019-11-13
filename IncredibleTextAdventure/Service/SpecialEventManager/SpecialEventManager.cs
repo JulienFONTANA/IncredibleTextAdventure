@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using IncredibleTextAdventure.Characters;
-using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Rooms;
 
 namespace IncredibleTextAdventure.Service.SpecialEventManager

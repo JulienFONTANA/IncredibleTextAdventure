@@ -2,6 +2,14 @@
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.Directives.GodMode;
 using IncredibleTextAdventure.ITAConsole;
+using IncredibleTextAdventure.Items.ComputerRoomItems;
+using IncredibleTextAdventure.Items.Desk1Items;
+using IncredibleTextAdventure.Items.Desk2Items;
+using IncredibleTextAdventure.Items.Desk3Items;
+using IncredibleTextAdventure.Items.Desk4Items;
+using IncredibleTextAdventure.Items.RestingRoomItems;
+using IncredibleTextAdventure.Items.ServerRoomItems;
+using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
 using IncredibleTextAdventure.Service.RoomLinker;
@@ -25,12 +33,40 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindObjects()
         {
-            //Bind<IBarItem>().To<AlcoholDispenser>();
+            Bind<IComputerRoomItem>().To<EmptyDesk>();
+            Bind<IComputerRoomItem>().To<NotesAboutAUsbKey>();
+            Bind<IComputerRoomItem>().To<WeirdLookingWorkingStation>();
+
+            Bind<IDesk1Item>().To<FlowerInPot>();
+            Bind<IDesk1Item>().To<RubiksCube>();
+
+            Bind<IDesk2Item>().To<ConcertPhoto>();
+            Bind<IDesk2Item>().To<PileOfStickyNotes>();
+
+            Bind<IDesk3Item>().To<ChildsDrawing>();
+            Bind<IDesk3Item>().To<DeskFan>();
+            Bind<IDesk3Item>().To<PenHolder>();
+
+            Bind<IDesk4Item>().To<CoffeeMachineCoins>();
+            Bind<IDesk4Item>().To<TravelBug>();
+
+            Bind<IRestingRoomItem>().To<CoffeeMachine>();
+            Bind<IRestingRoomItem>().To<ComfyChairs>();
+
+            Bind<IServerRoomItem>().To<OpenTerminal>();
+            Bind<IServerRoomItem>().To<Server>();
         }
 
         private void BindRooms()
         {
-            //Bind<IRoom>().To<Bar>().InSingletonScope();
+            Bind<IRoom>().To<ComputerRoom>().InSingletonScope();
+            Bind<IRoom>().To<Desk1>().InSingletonScope();
+            Bind<IRoom>().To<Desk2>().InSingletonScope();
+            Bind<IRoom>().To<Desk3>().InSingletonScope();
+            Bind<IRoom>().To<Desk4>().InSingletonScope();
+            Bind<IRoom>().To<OpenSpace>().InSingletonScope();
+            Bind<IRoom>().To<RestingRoom>().InSingletonScope();
+            Bind<IRoom>().To<ServerRoom>().InSingletonScope();
         }
 
         private void BindDirectives()

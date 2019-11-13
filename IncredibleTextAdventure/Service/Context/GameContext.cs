@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Characters;
-using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Directives;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;

@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
-using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;

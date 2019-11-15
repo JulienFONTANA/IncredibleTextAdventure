@@ -118,6 +118,7 @@ namespace IncredibleTextAdventure.Service.Context
             _roomStateManager.OpenRoom(room);
         }
 
+        // TODO - VOVF
         private void CheckExitGame()
         {
             _consoleWriter.WriteToConsole("Are you sure you want to exit the game ? [Exit / Quit] is not a valid in game command. "

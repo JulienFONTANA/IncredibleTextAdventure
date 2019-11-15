@@ -12,6 +12,7 @@ using IncredibleTextAdventure.Items.ServerRoomItems;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
 using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.LanguageModule;
 using IncredibleTextAdventure.Service.RoomLinker;
 using IncredibleTextAdventure.Service.RoomStateManager;
 using IncredibleTextAdventure.Service.SpecialEventManager;
@@ -21,9 +22,15 @@ namespace IncredibleTextAdventure.Injection
 {
     public class ItaInjectionModule : NinjectModule
     {
+        private readonly char _language;
+        public ItaInjectionModule(char language)
+        {
+            _language = language;
+        }
+
         public override void Load()
         {
-            BindService();
+            BindService(_language);
             BindConsole();
             BindPlayer();
             BindDirectives();
@@ -71,11 +78,19 @@ namespace IncredibleTextAdventure.Injection
 
         private void BindDirectives()
         {
-            //Bind<IDirective>().To<LookDirective>();
+            Bind<IDirective>().To<LookDirective>();
+            Bind<IDirective>().To<MoveDirective>();
+            Bind<IDirective>().To<HelpDirective>();
+            Bind<IDirective>().To<PickDirective>();
+            Bind<IDirective>().To<InventoryDirective>();
+            Bind<IDirective>().To<UseDirective>();
+            Bind<IDirective>().To<WhereDirective>();
+            Bind<IDirective>().To<InfoDirective>();
+            Bind<IDirective>().To<OpenDirective>();
 
-            #if DEBUG
+#if DEBUG
             BindGodMode();
-            #endif
+#endif
         }
 
         private void BindGodMode()
@@ -90,13 +105,22 @@ namespace IncredibleTextAdventure.Injection
             Bind<IPlayer>().To<Player>();
         }
 
-        private void BindService()
+        private void BindService(char language)
         {
             Bind<IItaService>().To<ItaService>();
             Bind<IGameContext>().To<GameContext>();
             Bind<IRoomLinker>().To<RoomLinker>();
             Bind<IRoomStateManager>().To<RoomStateManager>();
             Bind<ISpecialEventManager>().To<SpecialEventManager>();
+
+            if (_language == 'e')
+            {
+                Bind<ILanguageConst>().To<LanguageConstEn>();
+            }
+            else if (language == 'f')
+            {
+                Bind<ILanguageConst>().To<LanguageConstFr>();
+            }
         }
 
         private void BindConsole()

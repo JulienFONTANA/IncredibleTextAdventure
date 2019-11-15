@@ -1,5 +1,6 @@
 ﻿using IncredibleTextAdventure.ITAConsole;
 using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.LanguageModule;
 using IncredibleTextAdventure.Service.RoomLinker;
 
 namespace IncredibleTextAdventure.Service
@@ -10,16 +11,19 @@ namespace IncredibleTextAdventure.Service
         private readonly IConsoleWriter _consoleWriter;
         private readonly IGameContext _gameContext;
         private readonly IRoomLinker _roomLinker;
+        private readonly ILanguageConst _languageConst;
 
         public ItaService(IConsoleReader consoleReader,
             IConsoleWriter consoleWriter,
             IGameContext gameContext,
-            IRoomLinker roomLinker)
+            IRoomLinker roomLinker,
+            ILanguageConst languageConst)
         {
             _consoleReader = consoleReader;
             _consoleWriter = consoleWriter;
             _gameContext = gameContext;
             _roomLinker = roomLinker;
+            _languageConst = languageConst;
         }
 
         public void Play()
@@ -46,11 +50,10 @@ namespace IncredibleTextAdventure.Service
             var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocation());
             _gameContext.GetPlayer().SetPlayerLocation(startingRoom);
             startingRoom.SetFirstTimeFalse();
-            //_consoleWriter.WriteToConsole("Welcome to Incredible Text Adventure ! This is the [wizard's house]. If you're stuck, ask " +
-            //                              "for [help]. Good luck !");
-            //#if DEBUG
-            //_consoleWriter.WriteToConsole("!!! You are in [DEBUG MODE] - To experience the game as expected, you should play on [RELEASE MODE]. !!!");
-            //#endif
+            _consoleWriter.WriteToConsole(_languageConst.Hello);
+#if DEBUG
+            _consoleWriter.WriteToConsole("!!! You are in [DEBUG MODE] - To experience the game as expected, you should play on [RELEASE MODE]. !!!");
+#endif
             _consoleWriter.WriteToConsole(startingRoom.FirstDescription);
         }
     }

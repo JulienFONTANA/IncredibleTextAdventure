@@ -9,13 +9,13 @@ namespace IncredibleTextAdventure.Rooms
         public Desk1()
         {
             Name = Constants.Rooms.DeskOne;
-            FirstDescription = "";
+            FirstDescription = "Desk One";
             ItemsInRoom = new List<IItem>();
         }
 
         public override void UpdateDescription()
         {
-            Description = "";
+            Description = "Desk One";
         }
     }
 }

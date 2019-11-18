@@ -25,25 +25,38 @@ namespace IncredibleTextAdventure.Service.RoomLinker
             {
                 Constants.Rooms.DeskOne, new List<string>
                 {
-                    Constants.Rooms.OpenSpace
+                    Constants.Rooms.OpenSpace,
+                    Constants.Rooms.DeskTwo,
+                    Constants.Rooms.DeskThree,
+                    Constants.Rooms.DeskFour
                 }
             },
             {
                 Constants.Rooms.DeskTwo, new List<string>
                 {
-                    Constants.Rooms.OpenSpace
+                    Constants.Rooms.OpenSpace,
+                    Constants.Rooms.DeskOne,
+                    Constants.Rooms.DeskThree,
+                    Constants.Rooms.DeskFour
                 }
             },
             {
                 Constants.Rooms.DeskThree, new List<string>
                 {
-                    Constants.Rooms.OpenSpace
+                    Constants.Rooms.OpenSpace,
+                    Constants.Rooms.DeskOne,
+                    Constants.Rooms.DeskTwo,
+                    Constants.Rooms.DeskFour
                 }
             },
             {
                 Constants.Rooms.DeskFour, new List<string>
                 {
-                    Constants.Rooms.OpenSpace
+                    Constants.Rooms.OpenSpace,
+                    Constants.Rooms.DeskOne,
+                    Constants.Rooms.DeskTwo,
+                    Constants.Rooms.DeskThree,
+                    Constants.Rooms.DeskFour
                 }
             },
             {

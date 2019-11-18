@@ -6,7 +6,7 @@ namespace IncredibleTextAdventure.Items.ServerRoomItems
     {
         public OpenTerminal()
         {
-            Name = Constants.Items.OpenTerminal;
+            Name = LanguageConst.OpenTerminalObjectName;
             Description = "";
         }
     }

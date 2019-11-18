@@ -1,21 +1,25 @@
 ﻿using System.Collections.Generic;
 using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Items;
+using IncredibleTextAdventure.Service.LanguageModule;
 
 namespace IncredibleTextAdventure.Rooms
 {
     public class Desk3 : Room, IRoom
     {
-        public Desk3()
+        private readonly ILanguageConst _languageConst;
+
+        public Desk3(ILanguageConst languageConst)
         {
-            Name = Constants.Rooms.DeskThree;
-            FirstDescription = "";
+            _languageConst = languageConst;
+            Name = _languageConst.DeskThreeName;
+            FirstDescription = _languageConst.DeskThreeFirstDescription;
             ItemsInRoom = new List<IItem>();
         }
 
         public override void UpdateDescription()
         {
-            Description = "";
+            Description = _languageConst.DeskThreeDescription;
         }
     }
 }

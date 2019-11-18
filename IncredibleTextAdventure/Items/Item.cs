@@ -1,4 +1,6 @@
-﻿using IncredibleTextAdventure.Service.Context;
+﻿using System;
+using IncredibleTextAdventure.Service.Context;
+using IncredibleTextAdventure.Service.LanguageModule;
 
 namespace IncredibleTextAdventure.Items
 {
@@ -8,9 +10,11 @@ namespace IncredibleTextAdventure.Items
         public string Description { get; set; }
         public bool CanBePickedUp { get; set; }
         protected bool IsVisible { get; set; }
+        protected ILanguageConst LanguageConst { get; set; }
 
         protected Item()
         {
+            LanguageConst = Activator.CreateInstance<ILanguageConst>();
             CanBePickedUp = false;
             IsVisible = true;
         }

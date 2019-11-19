@@ -1,6 +1,4 @@
-﻿using IncredibleTextAdventure.Constant;
-
-namespace IncredibleTextAdventure.Items.ServerRoomItems
+﻿namespace IncredibleTextAdventure.Items.ServerRoomItems
 {
     public class OpenTerminal : Item, IServerRoomItem
     {

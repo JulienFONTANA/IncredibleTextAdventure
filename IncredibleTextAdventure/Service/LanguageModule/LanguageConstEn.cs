@@ -11,37 +11,54 @@
         public string ServerRoomName { get; }
         public string ComputerRoomName { get; }
         public string RestingRoomName { get; }
-        public string OpenSpaceFirstDescription => "";
-        public string DeskOneFirstDescription => "";
-        public string DeskTwoFirstDescription => "";
-        public string DeskThreeFirstDescription => "";
-        public string DeskFourFirstDescription => "";
-        public string ServerRoomFirstDescription => "";
-        public string ComputerRoomFirstDescription => "";
-        public string RestingRoomFirstDescription => "";
-        public string OpenSpaceDescription => "";
-        public string DeskOneDescription => "";
-        public string DeskTwoDescription => "";
-        public string DeskThreeDescription => "";
-        public string DeskFourDescription => "";
-        public string ServerRoomDescription => "";
-        public string ComputerRoomDescription => "";
-        public string RestingRoomDescription => "";
-        public string RubiksCube => "";
-        public string FlowerInPot => "";
-        public string ConcertPhoto => "";
-        public string PileOfStickyNotes => "";
-        public string DeskFan => "";
-        public string ChildsDrawing => "";
-        public string PenHolder => "";
-        public string CoffeeMachineCoins => "";
-        public string TravelBug => "";
-        public string Server => "";
-        public string OpenTerminal => "";
-        public string EmptyDesk => "";
-        public string WeirdLookingWorkingStation => "";
-        public string NotesAboutAUsbKey => "";
-        public string ComfyChairs => "";
-        public string CoffeeMachine => "";
+        public string OpenSpaceFirstDescription { get; }
+        public string DeskOneFirstDescription { get; }
+        public string DeskTwoFirstDescription { get; }
+        public string DeskThreeFirstDescription { get; }
+        public string DeskFourFirstDescription { get; }
+        public string ServerRoomFirstDescription { get; }
+        public string ComputerRoomFirstDescription { get; }
+        public string RestingRoomFirstDescription { get; }
+        public string OpenSpaceDescription { get; }
+        public string DeskOneDescription { get; }
+        public string DeskTwoDescription { get; }
+        public string DeskThreeDescription { get; }
+        public string DeskFourDescription { get; }
+        public string ServerRoomDescription { get; }
+        public string ComputerRoomDescription { get; }
+        public string RestingRoomDescription { get; }
+        public string RubiksCubeObjectName { get; }
+        public string FlowerInPotObjectName { get; }
+        public string ConcertPhotoObjectName { get; }
+        public string PileOfStickyNotesObjectName { get; }
+        public string DeskFanObjectName { get; }
+        public string ChildsDrawingObjectName { get; }
+        public string PenHolderObjectName { get; }
+        public string CoffeeMachineCoinsObjectName { get; }
+        public string TravelBugObjectName { get; }
+        public string ServerObjectName { get; }
+        public string OpenTerminalObjectName { get; }
+        public string EmptyDeskObjectName { get; }
+        public string WeirdLookingWorkingStationObjectName { get; }
+        public string NotesAboutAUsbKeyObjectName { get; }
+        public string ComfyChairsObjectName { get; }
+        public string CoffeeMachineObjectName { get; }
+        public string RubiksCubeObjectDesc { get; }
+        public string FlowerInPotObjectDesc { get; }
+        public string ConcertPhotoObjectDesc { get; }
+        public string PileOfStickyNotesObjectDesc { get; }
+        public string DeskFanObjectDesc { get; }
+        public string ChildsDrawingObjectDesc { get; }
+        public string PenHolderObjectDesc { get; }
+        public string CoffeeMachineCoinsObjectDesc { get; }
+        public string TravelBugObjectDesc { get; }
+        public string ServerObjectDesc { get; }
+        public string OpenTerminalObjectDesc { get; }
+        public string EmptyDeskObjectDesc { get; }
+        public string WeirdLookingWorkingStationObjectDesc { get; }
+        public string NotesAboutAUsbKeyObjectDesc { get; }
+        public string ComfyChairsObjectDesc { get; }
+        public string CoffeeMachineObjectDesc { get; }
+        public string EmptyInventory { get; }
     }
 }

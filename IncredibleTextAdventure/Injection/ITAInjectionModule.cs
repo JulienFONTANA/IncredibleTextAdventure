@@ -117,10 +117,11 @@ namespace IncredibleTextAdventure.Injection
             {
                 Bind<ILanguageConst>().To<LanguageConstEn>();
             }
-            else if (language == 'f')
-            {
-                Bind<ILanguageConst>().To<LanguageConstFr>();
-            }
+            // TODO - rebind Fr language module
+            //else if (language == 'f')
+            //{
+            //    Bind<ILanguageConst>().To<LanguageConstFr>();
+            //}
         }
 
         private void BindConsole()

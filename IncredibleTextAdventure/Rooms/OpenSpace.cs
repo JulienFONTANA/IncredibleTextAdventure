@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using IncredibleTextAdventure.Constant;
-using IncredibleTextAdventure.Items;
-using IncredibleTextAdventure.Service.LanguageModule;
+﻿using IncredibleTextAdventure.Service.LanguageModule;
 
 namespace IncredibleTextAdventure.Rooms
 {
@@ -14,7 +11,7 @@ namespace IncredibleTextAdventure.Rooms
             _languageConst = languageConst;
             Name = _languageConst.OpenSpaceName;
             FirstDescription = _languageConst.OpenSpaceFirstDescription;
-            ItemsInRoom = new List<IItem>();
+            IsRoomAccessible = true;
         }
 
         public override void UpdateDescription()

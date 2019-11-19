@@ -72,6 +72,7 @@
         string CoffeeMachineObjectDesc { get; }
 
         // Player
+        string EmptyInventory { get; }
 
         // Directives
     }

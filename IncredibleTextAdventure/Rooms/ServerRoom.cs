@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Items;
+using IncredibleTextAdventure.Items.ServerRoomItems;
 using IncredibleTextAdventure.Service.LanguageModule;
 
 namespace IncredibleTextAdventure.Rooms
@@ -9,12 +9,14 @@ namespace IncredibleTextAdventure.Rooms
     {
         private readonly ILanguageConst _languageConst;
 
-        public ServerRoom(ILanguageConst languageConst)
+        public ServerRoom(ILanguageConst languageConst,
+            IEnumerable<IServerRoomItem> itemsInRoom)
         {
             _languageConst = languageConst;
             Name = _languageConst.ServerRoomName;
             FirstDescription = _languageConst.ServerRoomFirstDescription;
-            ItemsInRoom = new List<IItem>();
+            IsRoomAccessible = true; // TODO Change this accessibility ?
+            ItemsInRoom = new List<IItem>(itemsInRoom);
         }
 
         public override void UpdateDescription()

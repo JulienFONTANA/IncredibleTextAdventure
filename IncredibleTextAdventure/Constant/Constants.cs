@@ -2,17 +2,17 @@
 {
     public static class Constants
     {
-        public static class Rooms
-        {
-            public const string OpenSpace = "Open Space";
-            public const string DeskOne = "Desk One";
-            public const string DeskTwo = "Desk Two";
-            public const string DeskThree = "Desk Three";
-            public const string DeskFour = "Desk Four";
-            public const string ServerRoom = "Server Room";
-            public const string ComputerRoom = "Computer Room";
-            public const string RestingRoom = "Resting Room";
-        }
+        //public static class Rooms
+        //{
+        //    public const string OpenSpace = "Open Space";
+        //    public const string DeskOne = "Desk One";
+        //    public const string DeskTwo = "Desk Two";
+        //    public const string DeskThree = "Desk Three";
+        //    public const string DeskFour = "Desk Four";
+        //    public const string ServerRoom = "Server Room";
+        //    public const string ComputerRoom = "Computer Room";
+        //    public const string RestingRoom = "Resting Room";
+        //}
 
         public static class Items
         {

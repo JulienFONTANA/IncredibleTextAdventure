@@ -50,7 +50,7 @@ namespace IncredibleTextAdventure.Service
             var startingRoom = _gameContext.GetRoom(_gameContext.GetPlayer().GetPlayerStartingLocation());
             _gameContext.GetPlayer().SetPlayerLocation(startingRoom);
             startingRoom.SetFirstTimeFalse();
-            _consoleWriter.WriteToConsole(_languageConst.Hello);
+            _consoleWriter.WriteToConsole(_languageConst.WelcomeMessage);
 #if DEBUG
             _consoleWriter.WriteToConsole("!!! You are in [DEBUG MODE] - To experience the game as expected, you should play on [RELEASE MODE]. !!!");
 #endif

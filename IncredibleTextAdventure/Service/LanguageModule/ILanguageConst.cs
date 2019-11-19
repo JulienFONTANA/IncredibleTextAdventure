@@ -3,7 +3,7 @@
     public interface ILanguageConst
     {
         // Introduction
-        string Hello { get; }
+        string WelcomeMessage { get; }
 
         // Errors
 

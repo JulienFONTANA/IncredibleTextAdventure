@@ -17,13 +17,11 @@ namespace IncredibleTextAdventureConsole
                                   "Ou voulez vous jouer en Français (appuyer sur f) ?");
 
                 input = Console.ReadKey().KeyChar;
-
-                Console.WriteLine($"Read the key {input}");
                 if (input == 'e' || input == 'f')
                 {
                     break;
                 }
-                Console.WriteLine($"Please press 'e' or 'f' / Prière d'appuyer sur 'e' ou 'f'");
+                Console.WriteLine("Please press 'e' or 'f' / Prière d'appuyer sur 'e' ou 'f'");
             }
 
             var kernel = new StandardKernel(new NinjectSettings

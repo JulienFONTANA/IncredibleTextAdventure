@@ -5,7 +5,7 @@
         public OpenTerminal()
         {
             Name = LanguageConst.OpenTerminalObjectName;
-            Description = "";
+            Description = LanguageConst.OpenTerminalObjectDesc;
         }
     }
 }

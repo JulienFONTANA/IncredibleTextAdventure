@@ -1,13 +1,11 @@
-﻿using IncredibleTextAdventure.Constant;
-
-namespace IncredibleTextAdventure.Items.Desk1Items
+﻿namespace IncredibleTextAdventure.Items.Desk1Items
 {
     public class RubiksCube : Item, IDesk1Item
     {
         public RubiksCube()
         {
-            Name = Constants.Items.RubiksCube;
-            Description = "";
+            Name = LanguageConst.RubiksCubeObjectName;
+            Description = LanguageConst.RubiksCubeObjectDesc;
         }
 
         //public override bool CanInteractWith(string other)

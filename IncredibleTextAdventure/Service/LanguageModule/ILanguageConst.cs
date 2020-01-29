@@ -3,7 +3,7 @@
     public interface ILanguageConst
     {
         // Introduction
-        string WelcomeMessage { get; }
+        string Hello { get; }
 
         // Errors
 
@@ -72,7 +72,6 @@
         string CoffeeMachineObjectDesc { get; }
 
         // Player
-        string EmptyInventory { get; }
 
         // Directives
     }

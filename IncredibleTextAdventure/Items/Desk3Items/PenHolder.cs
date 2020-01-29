@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.Desk3Items
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.Desk3Items
 {
     public class PenHolder : Item, IDesk3Item
     {
         public PenHolder()
         {
-            Name = LanguageConst.PenHolderObjectName;
-            Description = LanguageConst.PenHolderObjectDesc;
+            Name = Constants.Items.PenHolder;
+            Description = "";
         }
     }
 }

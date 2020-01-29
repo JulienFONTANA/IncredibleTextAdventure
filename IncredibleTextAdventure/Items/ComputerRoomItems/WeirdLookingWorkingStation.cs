@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.ComputerRoomItems
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.ComputerRoomItems
 {
     public class WeirdLookingWorkingStation : Item, IComputerRoomItem
     {
         public WeirdLookingWorkingStation()
         {
-            Name = LanguageConst.WeirdLookingWorkingStationObjectName;
-            Description = LanguageConst.WeirdLookingWorkingStationObjectDesc;
+            Name = Constants.Items.WeirdLookingWorkingStation;
+            Description = "";
         }
     }
 }

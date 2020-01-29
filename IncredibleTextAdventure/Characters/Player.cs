@@ -3,9 +3,9 @@ using IncredibleTextAdventure.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IncredibleTextAdventure.Constant;
 using IncredibleTextAdventure.Rooms;
 using IncredibleTextAdventure.Service;
-using IncredibleTextAdventure.Service.LanguageModule;
 
 namespace IncredibleTextAdventure.Characters
 {
@@ -13,21 +13,18 @@ namespace IncredibleTextAdventure.Characters
     {
         private List<IItem> Inventory { get; }
         private IRoom Location { get; set; }
-        private readonly ILanguageConst _languageConst;
-        private HashSet<IRoom> VisitedRooms { get; }
+        private HashSet<IRoom> VisitedRooms { get; set; }
 
         private readonly IConsoleWriter _consoleWriter;
 
-        private readonly string _startingLocation;
+        private const string StartingLocation = Constants.Rooms.OpenSpace;
 
-        public Player(IConsoleWriter consoleWriter, ILanguageConst languageConst)
+        public Player(IConsoleWriter consoleWriter)
         {
             Inventory = new List<IItem>();
             VisitedRooms = new HashSet<IRoom>();
 
             _consoleWriter = consoleWriter;
-            _languageConst = languageConst;
-            _startingLocation = _languageConst.OpenSpaceName;
         }
 
         public void AddToInventory(IItem item, bool verbose = true)
@@ -54,7 +51,8 @@ namespace IncredibleTextAdventure.Characters
         {
             if (Inventory.Count == 0)
             {
-                return _languageConst.EmptyInventory;
+                // TODO - VOVF
+                return "Your inventory is empty... ";
             }
             // TODO - VOVF
             return "Your have : " + string.Join(", ", Inventory.Select(x => x.Name));
@@ -79,7 +77,7 @@ namespace IncredibleTextAdventure.Characters
 
         public string GetPlayerStartingLocation()
         {
-            return _startingLocation;
+            return StartingLocation;
         }
 
         public HashSet<IRoom> GetPlayerVisitedRooms()

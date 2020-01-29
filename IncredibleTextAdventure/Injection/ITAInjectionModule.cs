@@ -113,11 +113,12 @@ namespace IncredibleTextAdventure.Injection
             Bind<IRoomStateManager>().To<RoomStateManager>();
             Bind<ISpecialEventManager>().To<SpecialEventManager>();
 
-            if (_language == 'e')
-            {
-                Bind<ILanguageConst>().To<LanguageConstEn>();
-            }
-            // TODO - rebind Fr language module
+            Bind<ILanguageConst>().To<LanguageConstEn>();
+
+            //if (_language == 'e')
+            //{
+            //    Bind<ILanguageConst>().To<LanguageConstEn>();
+            //}
             //else if (language == 'f')
             //{
             //    Bind<ILanguageConst>().To<LanguageConstFr>();

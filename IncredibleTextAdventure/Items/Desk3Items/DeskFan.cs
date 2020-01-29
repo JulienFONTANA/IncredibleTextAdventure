@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.Desk3Items
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.Desk3Items
 {
     public class DeskFan : Item, IDesk3Item
     {
         public DeskFan()
         {
-            Name = LanguageConst.DeskFanObjectName;
-            Description = LanguageConst.DeskFanObjectDesc;
+            Name = Constants.Items.DeskFan;
+            Description = "";
         }
     }
 }

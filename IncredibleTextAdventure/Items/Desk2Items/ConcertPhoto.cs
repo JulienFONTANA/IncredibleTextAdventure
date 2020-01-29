@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.Desk2Items
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.Desk2Items
 {
     public class ConcertPhoto : Item, IDesk2Item
     {
         public ConcertPhoto()
         {
-            Name = LanguageConst.ConcertPhotoObjectName;
-            Description = LanguageConst.ConcertPhotoObjectDesc;
+            Name = Constants.Items.ConcertPhoto;
+            Description = "";
         }
     }
 }

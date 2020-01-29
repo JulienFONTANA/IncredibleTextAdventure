@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\Constants.cs" />
     <Compile Include="Directives\GodMode\FullInfoDirective.cs" />
     <Compile Include="Directives\GodMode\GiveMeDirective.cs" />
     <Compile Include="Directives\GodMode\TeleportDirective.cs" />

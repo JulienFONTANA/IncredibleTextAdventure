@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.RestingRoomItems
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.RestingRoomItems
 {
     public class CoffeeMachine : Item, IRestingRoomItem
     {
         public CoffeeMachine()
         {
-            Name = LanguageConst.CoffeeMachineObjectName;
-            Description = LanguageConst.CoffeeMachineObjectDesc;
+            Name = Constants.Items.CoffeeMachine;
+            Description = "";
         }
     }
 }

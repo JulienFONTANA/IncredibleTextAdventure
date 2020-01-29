@@ -2,20 +2,16 @@
 {
     public class LanguageConstEn : ILanguageConst
     {
-        public string WelcomeMessage => "Welcome to [CSI Cyber La Défense]. If you're stuck, you can always ask for [help]. " +
-                                        "You've been called to the office of the main suspect, who you think tryied to use " +
-                                        "a [virus] to get information from the GroundSpeak servers. Find [where] the virus " +
-                                        "is and [why] he did it. Good luck officer.";
-
-        public string OpenSpaceName => "Open space";
-        public string DeskOneName => "First desk";
-        public string DeskTwoName => "Second desk";
-        public string DeskThreeName => "Third desk";
-        public string DeskFourName => "Fourth desk";
-        public string ServerRoomName => "Server room";
-        public string ComputerRoomName => "Computer room";
-        public string RestingRoomName => "Resting room";
-        public string OpenSpaceFirstDescription => "OpenSpaceFirstDescription";
+        public string Hello => "Hello";
+        public string OpenSpaceName => "OpenSpace";
+        public string DeskOneName => "DeskOneName";
+        public string DeskTwoName => "DeskTwoName";
+        public string DeskThreeName => "DeskThreeName";
+        public string DeskFourName => "DeskFourName";
+        public string ServerRoomName => "ServerRoomName";
+        public string ComputerRoomName => "ComputerRoomName";
+        public string RestingRoomName => "RestingRoomName";
+        public string OpenSpaceFirstDescription => "";
         public string DeskOneFirstDescription => "";
         public string DeskTwoFirstDescription => "";
         public string DeskThreeFirstDescription => "";
@@ -63,6 +59,21 @@
         public string NotesAboutAUsbKeyObjectDesc => "";
         public string ComfyChairsObjectDesc => "";
         public string CoffeeMachineObjectDesc => "";
-        public string EmptyInventory => "";
+        public string RubiksCube => "";
+        public string FlowerInPot => "";
+        public string ConcertPhoto => "";
+        public string PileOfStickyNotes => "";
+        public string DeskFan => "";
+        public string ChildsDrawing => "";
+        public string PenHolder => "";
+        public string CoffeeMachineCoins => "";
+        public string TravelBug => "";
+        public string Server => "";
+        public string OpenTerminal => "";
+        public string EmptyDesk => "";
+        public string WeirdLookingWorkingStation => "";
+        public string NotesAboutAUsbKey => "";
+        public string ComfyChairs => "";
+        public string CoffeeMachine => "";
     }
 }

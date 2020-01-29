@@ -1,11 +1,13 @@
-﻿namespace IncredibleTextAdventure.Items.ComputerRoomItems
+﻿using IncredibleTextAdventure.Constant;
+
+namespace IncredibleTextAdventure.Items.ComputerRoomItems
 {
     public class NotesAboutAUsbKey : Item, IComputerRoomItem
     {
         public NotesAboutAUsbKey()
         {
-            Name = LanguageConst.NotesAboutAUsbKeyObjectName;
-            Description = LanguageConst.NotesAboutAUsbKeyObjectDesc;
+            Name = Constants.Items.NotesAboutAUsbKey;
+            Description = "";
         }
     }
 }
